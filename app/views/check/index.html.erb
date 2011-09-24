@@ -1,0 +1,17 @@
+<div class='check'>
+	<div id="flash-messages">
+	<% if flash[:warning] or flash[:notice] %>
+	  <div class="notice" <% if flash[:warning] %>class="warning"<% end %>>
+	    <%= flash[:warning] || flash[:notice] %>
+	  </div>
+	<% end %>
+ 	</div>
+	
+	
+	<% form_tag 'check/test' do %>
+		<%= label_tag 'Enter your Facebook URL here' %>
+		<%= text_field_tag 'facebook' %>
+		
+		<%= submit_tag 'Check' %>
+	<% end -%>
+</div>

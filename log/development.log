@@ -1,0 +1,170 @@
+
+
+Started GET "/girls/1670" for 127.0.0.1 at Sat Sep 24 14:23:21 -0600 2011
+  Processing by GirlsController#show as HTML
+  Parameters: {"id"=>"1670"}
+  [1m[36mGirl Load (16.6ms)[0m  [1mSELECT "girls".* FROM "girls" WHERE ("girls"."id" = 1670) LIMIT 1[0m
+Rendered layouts/_header.html.erb (1.4ms)
+Rendered layouts/_footer.html.erb (0.4ms)
+Rendered girls/show.html.erb within layouts/application (13.6ms)
+Completed 200 OK in 56ms (Views: 32.9ms | ActiveRecord: 16.6ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Sep 24 14:23:34 -0600 2011
+  Processing by GirlsController#index as HTML
+  [1m[35mGirl Load (29.1ms)[0m  SELECT "girls".* FROM "girls" ORDER BY RANDOM() LIMIT 2
+Rendered layouts/_menwomen.html.erb (1.0ms)
+Rendered girls/_vote.html.erb (5.3ms)
+Rendered layouts/_header.html.erb (1.6ms)
+Rendered layouts/_footer.html.erb (0.2ms)
+Rendered girls/index.html.erb within layouts/application (18.7ms)
+Completed 200 OK in 60ms (Views: 26.2ms | ActiveRecord: 29.1ms)
+
+
+Started PUT "/girls/update/2144/1537" for 127.0.0.1 at Sat Sep 24 14:23:40 -0600 2011
+  Processing by GirlsController#update as JS
+  Parameters: {"lose"=>"1537", "win"=>"2144"}
+  [1m[36mGirl Load (0.2ms)[0m  [1mSELECT "girls".* FROM "girls" WHERE ("girls"."id" = 2144) LIMIT 1[0m
+  [1m[35mGirl Load (0.2ms)[0m  SELECT "girls".* FROM "girls" WHERE ("girls"."id" = 1537) LIMIT 1
+  [1m[36mAREL (0.3ms)[0m  [1mUPDATE "girls" SET "score" = 1425, "updated_at" = '2011-09-24 20:23:40.585007' WHERE ("girls"."id" = 2144)[0m
+  [1m[35mAREL (0.3ms)[0m  UPDATE "girls" SET "score" = 1374, "updated_at" = '2011-09-24 20:23:40.590401' WHERE ("girls"."id" = 1537)
+  [1m[36mGirl Load (3.5ms)[0m  [1mSELECT "girls".* FROM "girls" ORDER BY RANDOM() LIMIT 2[0m
+Rendered girls/_vote.html.erb (1.8ms)
+Rendered girls/update.js.erb (8.1ms)
+Completed 200 OK in 41ms (Views: 17.0ms | ActiveRecord: 4.5ms)
+
+
+Started PUT "/girls/update/2350/1987" for 127.0.0.1 at Sat Sep 24 14:23:41 -0600 2011
+  Processing by GirlsController#update as JS
+  Parameters: {"lose"=>"1987", "win"=>"2350"}
+  [1m[35mGirl Load (0.2ms)[0m  SELECT "girls".* FROM "girls" WHERE ("girls"."id" = 2350) LIMIT 1
+  [1m[36mGirl Load (0.1ms)[0m  [1mSELECT "girls".* FROM "girls" WHERE ("girls"."id" = 1987) LIMIT 1[0m
+  [1m[35mAREL (9.8ms)[0m  UPDATE "girls" SET "updated_at" = '2011-09-24 20:23:41.825102', "score" = 1425 WHERE ("girls"."id" = 2350)
+  [1m[36mAREL (310.8ms)[0m  [1mUPDATE "girls" SET "updated_at" = '2011-09-24 20:23:41.844826', "score" = 1374 WHERE ("girls"."id" = 1987)[0m
+  [1m[35mGirl Load (3.7ms)[0m  SELECT "girls".* FROM "girls" ORDER BY RANDOM() LIMIT 2
+Rendered girls/_vote.html.erb (1.8ms)
+Rendered girls/update.js.erb (8.1ms)
+Completed 200 OK in 365ms (Views: 16.6ms | ActiveRecord: 324.6ms)
+
+
+Started PUT "/girls/update/1710/1655" for 127.0.0.1 at Sat Sep 24 14:23:43 -0600 2011
+  Processing by GirlsController#update as JS
+  Parameters: {"lose"=>"1655", "win"=>"1710"}
+  [1m[36mGirl Load (0.2ms)[0m  [1mSELECT "girls".* FROM "girls" WHERE ("girls"."id" = 1710) LIMIT 1[0m
+  [1m[35mGirl Load (0.2ms)[0m  SELECT "girls".* FROM "girls" WHERE ("girls"."id" = 1655) LIMIT 1
+  [1m[36mAREL (0.4ms)[0m  [1mUPDATE "girls" SET "updated_at" = '2011-09-24 20:23:43.378297', "score" = 1402 WHERE ("girls"."id" = 1710)[0m
+  [1m[35mAREL (0.4ms)[0m  UPDATE "girls" SET "updated_at" = '2011-09-24 20:23:43.383471', "score" = 1372 WHERE ("girls"."id" = 1655)
+  [1m[36mGirl Load (3.7ms)[0m  [1mSELECT "girls".* FROM "girls" ORDER BY RANDOM() LIMIT 2[0m
+Rendered girls/_vote.html.erb (1.8ms)
+Rendered girls/update.js.erb (8.2ms)
+Completed 200 OK in 38ms (Views: 14.2ms | ActiveRecord: 4.8ms)
+
+
+Started PUT "/girls/update/1881/1671" for 127.0.0.1 at Sat Sep 24 14:23:45 -0600 2011
+  Processing by GirlsController#update as JS
+  Parameters: {"lose"=>"1671", "win"=>"1881"}
+  [1m[35mGirl Load (0.2ms)[0m  SELECT "girls".* FROM "girls" WHERE ("girls"."id" = 1881) LIMIT 1
+  [1m[36mGirl Load (0.1ms)[0m  [1mSELECT "girls".* FROM "girls" WHERE ("girls"."id" = 1671) LIMIT 1[0m
+  [1m[35mAREL (0.3ms)[0m  UPDATE "girls" SET "updated_at" = '2011-09-24 20:23:45.241450', "score" = 1425 WHERE ("girls"."id" = 1881)
+  [1m[36mAREL (0.3ms)[0m  [1mUPDATE "girls" SET "updated_at" = '2011-09-24 20:23:45.246960', "score" = 1374 WHERE ("girls"."id" = 1671)[0m
+  [1m[35mGirl Load (3.7ms)[0m  SELECT "girls".* FROM "girls" ORDER BY RANDOM() LIMIT 2
+Rendered girls/_vote.html.erb (1.7ms)
+Rendered girls/update.js.erb (8.2ms)
+Completed 200 OK in 38ms (Views: 14.8ms | ActiveRecord: 4.6ms)
+
+
+Started PUT "/girls/update/1816/1588" for 127.0.0.1 at Sat Sep 24 14:23:46 -0600 2011
+  Processing by GirlsController#update as JS
+  Parameters: {"lose"=>"1588", "win"=>"1816"}
+  [1m[36mGirl Load (0.2ms)[0m  [1mSELECT "girls".* FROM "girls" WHERE ("girls"."id" = 1816) LIMIT 1[0m
+  [1m[35mGirl Load (0.1ms)[0m  SELECT "girls".* FROM "girls" WHERE ("girls"."id" = 1588) LIMIT 1
+  [1m[36mAREL (0.3ms)[0m  [1mUPDATE "girls" SET "updated_at" = '2011-09-24 20:23:46.423718', "score" = 1427 WHERE ("girls"."id" = 1816)[0m
+  [1m[35mAREL (0.3ms)[0m  UPDATE "girls" SET "updated_at" = '2011-09-24 20:23:46.428786', "score" = 1397 WHERE ("girls"."id" = 1588)
+  [1m[36mGirl Load (3.6ms)[0m  [1mSELECT "girls".* FROM "girls" ORDER BY RANDOM() LIMIT 2[0m
+Rendered girls/_vote.html.erb (79.6ms)
+Rendered girls/update.js.erb (86.1ms)
+Completed 200 OK in 115ms (Views: 92.6ms | ActiveRecord: 4.6ms)
+
+
+Started PUT "/girls/update/1963/1344" for 127.0.0.1 at Sat Sep 24 14:23:47 -0600 2011
+  Processing by GirlsController#update as JS
+  Parameters: {"lose"=>"1344", "win"=>"1963"}
+  [1m[35mGirl Load (0.2ms)[0m  SELECT "girls".* FROM "girls" WHERE ("girls"."id" = 1963) LIMIT 1
+  [1m[36mGirl Load (0.1ms)[0m  [1mSELECT "girls".* FROM "girls" WHERE ("girls"."id" = 1344) LIMIT 1[0m
+  [1m[35mAREL (0.3ms)[0m  UPDATE "girls" SET "score" = 1425, "updated_at" = '2011-09-24 20:23:47.720090' WHERE ("girls"."id" = 1963)
+  [1m[36mAREL (0.3ms)[0m  [1mUPDATE "girls" SET "score" = 1374, "updated_at" = '2011-09-24 20:23:47.724944' WHERE ("girls"."id" = 1344)[0m
+  [1m[35mGirl Load (3.5ms)[0m  SELECT "girls".* FROM "girls" ORDER BY RANDOM() LIMIT 2
+Rendered girls/_vote.html.erb (1.8ms)
+Rendered girls/update.js.erb (7.9ms)
+Completed 200 OK in 37ms (Views: 14.8ms | ActiveRecord: 4.4ms)
+
+
+Started PUT "/girls/update/1960/1638" for 127.0.0.1 at Sat Sep 24 14:23:48 -0600 2011
+  Processing by GirlsController#update as JS
+  Parameters: {"lose"=>"1638", "win"=>"1960"}
+  [1m[36mGirl Load (0.2ms)[0m  [1mSELECT "girls".* FROM "girls" WHERE ("girls"."id" = 1960) LIMIT 1[0m
+  [1m[35mGirl Load (0.1ms)[0m  SELECT "girls".* FROM "girls" WHERE ("girls"."id" = 1638) LIMIT 1
+  [1m[36mAREL (0.3ms)[0m  [1mUPDATE "girls" SET "score" = 1423, "updated_at" = '2011-09-24 20:23:48.784038' WHERE ("girls"."id" = 1960)[0m
+  [1m[35mAREL (0.4ms)[0m  UPDATE "girls" SET "score" = 1350, "updated_at" = '2011-09-24 20:23:48.789783' WHERE ("girls"."id" = 1638)
+  [1m[36mGirl Load (3.6ms)[0m  [1mSELECT "girls".* FROM "girls" ORDER BY RANDOM() LIMIT 2[0m
+Rendered girls/_vote.html.erb (1.7ms)
+Rendered girls/update.js.erb (7.9ms)
+Completed 200 OK in 38ms (Views: 14.8ms | ActiveRecord: 4.6ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Sep 24 14:27:01 -0600 2011
+  Processing by GirlsController#index as HTML
+  [1m[35mGirl Load (100.0ms)[0m  SELECT "girls".* FROM "girls" ORDER BY RANDOM() LIMIT 2
+Rendered layouts/_menwomen.html.erb (191.9ms)
+Rendered girls/_vote.html.erb (294.7ms)
+Rendered layouts/_header.html.erb (1.3ms)
+Rendered layouts/_footer.html.erb (0.3ms)
+Rendered girls/index.html.erb within layouts/application (682.5ms)
+Completed 200 OK in 1020ms (Views: 884.6ms | ActiveRecord: 100.0ms)
+
+
+Started GET "/winners" for 127.0.0.1 at Sat Sep 24 14:27:34 -0600 2011
+  Processing by WinnersController#index as HTML
+  [1m[36mGirl Load (4.5ms)[0m  [1mSELECT "girls".* FROM "girls" ORDER BY score DESC LIMIT 5 OFFSET 0[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT COUNT(*) FROM "girls"
+  [1m[36mGuys Load (3.2ms)[0m  [1mSELECT "guys".* FROM "guys" ORDER BY score DESC LIMIT 5 OFFSET 0[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT COUNT(*) FROM "guys"
+Rendered layouts/_header.html.erb (1.5ms)
+Rendered layouts/_footer.html.erb (0.3ms)
+Rendered winners/index.html.erb within layouts/application (85.2ms)
+Completed 200 OK in 290ms (Views: 199.7ms | ActiveRecord: 8.2ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Sep 24 14:27:39 -0600 2011
+  Processing by GirlsController#index as HTML
+  [1m[36mGirl Load (3.8ms)[0m  [1mSELECT "girls".* FROM "girls" ORDER BY RANDOM() LIMIT 2[0m
+Rendered layouts/_menwomen.html.erb (1.8ms)
+Rendered girls/_vote.html.erb (7.6ms)
+Rendered layouts/_header.html.erb (1.9ms)
+Rendered layouts/_footer.html.erb (0.4ms)
+Rendered girls/index.html.erb within layouts/application (25.0ms)
+Completed 200 OK in 44ms (Views: 31.2ms | ActiveRecord: 3.8ms)
+
+
+Started POST "/girls/update/1548/2240" for 127.0.0.1 at Sat Sep 24 14:32:50 -0600 2011
+  Processing by GirlsController#update as JS
+  Parameters: {"lose"=>"2240", "win"=>"1548"}
+  [1m[35mGirl Load (21.7ms)[0m  SELECT "girls".* FROM "girls" WHERE ("girls"."id" = 1548) LIMIT 1
+  [1m[36mGirl Load (0.2ms)[0m  [1mSELECT "girls".* FROM "girls" WHERE ("girls"."id" = 2240) LIMIT 1[0m
+  [1m[35mAREL (0.4ms)[0m  UPDATE "girls" SET "score" = 1422, "updated_at" = '2011-09-24 20:32:50.716133' WHERE ("girls"."id" = 1548)
+  [1m[36mAREL (0.7ms)[0m  [1mUPDATE "girls" SET "score" = 1348, "updated_at" = '2011-09-24 20:32:50.748505' WHERE ("girls"."id" = 2240)[0m
+  [1m[35mGirl Load (30.8ms)[0m  SELECT "girls".* FROM "girls" ORDER BY RANDOM() LIMIT 2
+Rendered girls/_vote.html.erb (21.8ms)
+Rendered girls/update.js.erb (55.9ms)
+Completed 200 OK in 159ms (Views: 37.9ms | ActiveRecord: 53.8ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Sep 24 14:40:46 -0600 2011
+  Processing by GirlsController#index as HTML
+  [1m[36mGirl Load (19.0ms)[0m  [1mSELECT "girls".* FROM "girls" ORDER BY RANDOM() LIMIT 2[0m
+Rendered layouts/_menwomen.html.erb (1.0ms)
+Rendered girls/_vote.html.erb (5.8ms)
+Rendered layouts/_header.html.erb (1.4ms)
+Rendered layouts/_footer.html.erb (0.3ms)
+Rendered girls/index.html.erb within layouts/application (18.9ms)
+Completed 200 OK in 49ms (Views: 24.6ms | ActiveRecord: 19.0ms)

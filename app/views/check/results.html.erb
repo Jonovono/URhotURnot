@@ -1,0 +1,51 @@
+<script>
+$(function() {
+	$("#remove-button").click(function() {
+		alert("You will be removed");
+		$("#remove-button").hide();
+	});
+	
+	$("#add-button").click(function() {
+		alert("You will be added!");
+		$("#add-button").hide();
+	});
+});
+</script>
+
+<div class='check'>
+	<% puts "In view: #{@name}" %>
+	<% if @girl != nil%>
+		Welcome <%= @girl.name %>: <br />
+		Fb ID: <%= @girl.fb_id %> <br />
+		Score: <%= @girl.score %> <br />
+		Picture: <%= link_to(image_tag("https://s3.amazonaws.com/sadf/girls/girls/" + @girl.picture, 
+												:height => '150'), @girl) %> <br /> <br />
+		
+		<%= button_to('Click here if you would like to remove yourself', 'index',
+						:method => Removal.create(:fb_id => URI.decode(@girl.username)), :remote => true,
+															:id => 'remove-button') %>
+	
+	<% elsif @boy != nil %>
+		Welcome <%= @boy.name %><br />
+		FB ID: <%= @boy.fb_id %><br />
+		Score: <%= @boy.score %><br />
+		Picture: <%= link_to(image_tag("https://s3.amazonaws.com/sadf/girls/guys/" + @boy.picture,
+															:height => '150'), @boy) %><br /><br />
+		<%= button_to('Click here if you would like to remove yourself', 'index',
+					:method => Removal.create(:fb_id => URI.decode(@boy.username)), :remote=> true,
+																:id => 'remove-button')%>
+	
+	
+	
+	<% elsif @girl == nil || @boy == nil%>
+		You were not found :( <br /><br />
+		<%= button_to('Click here to add yourself', 'addition',
+		 :method => Addtion.create(:fb_id=>URI.decode(@name)),
+								:remote => true, :id => 'add-button')%>
+	<% end %>
+	
+	<br /> <br />
+	
+	<%= link_to "Check Another Person", check_path %>
+</div>
+

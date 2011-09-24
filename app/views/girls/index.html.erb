@@ -1,0 +1,33 @@
+<script>
+$(function() {
+	$(document).keyup(function(e){
+	    if (e.keyCode == 37) { 
+		var left = $("#leftimage");
+		var url = left.attr('href');
+	 $.ajax({
+		type: 'PUT',
+	 	url:url,
+		dataType: 'script'
+	 });
+		       return false;
+	    }
+	
+		else if (e.keyCode == 39) {
+			var right = $("#rightimage");
+			var url = right.attr("href");
+			
+			$.ajax({
+			type: 'PUT',
+		 	url:url,
+			dataType: 'script'
+		 });
+		return false;
+		}
+	});
+});
+</script>
+<%= render('layouts/menwomen')%>
+
+<div class='vote' id='vote'>
+<%= render('vote') %>
+</div>

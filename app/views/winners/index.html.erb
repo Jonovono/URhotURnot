@@ -1,0 +1,24 @@
+<div class='both-sex'>
+
+<div id='top-girls'>
+	<h1>Top Women</h1>
+	<% @girls.each do |girl| %>
+	<%= link_to (image_tag(display_girl_image(girl), :height => '70'), girl) %>
+		<%= girl.score %> <br />
+	<% end %>
+	
+	<%= will_paginate @girls,:param_name => 'girls_page' %>
+</div>
+
+<div id='top-boys'>
+	<h1>Top Men</h1>
+	<% @boys.each do |boy| %>
+	<%= link_to (image_tag(display_guy_image(boy), :height => '70'), boy) %>
+		<%= boy.score %> <br />
+	<% end %>
+	
+	<%= will_paginate @boys, :param_name => 'boys_page' %>
+	
+</div>
+
+</div>

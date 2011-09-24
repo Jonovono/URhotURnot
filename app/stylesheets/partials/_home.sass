@@ -1,0 +1,97 @@
+
+
+.top
+  position: relative
+  +column(24, true)
+  //+prepend(1)
+  background: $uryellow
+  height: 60px
+  h1
+    color: $urgreen
+    font-size: 3.0em
+    text-align: center
+  h3
+    color: $urblack
+    float: left
+
+  .side
+    position: absolute
+    top: 1em
+    right: 20px
+#message
+  +column(21, true)
+  margin-top: 10px
+  text-align: center
+
+
+.men-women
+  +column(10,true)
+  +prepend(7)
+  //+prepend(1)
+  margin-top: 50px
+  text-align: center
+  font-size: 2.0em
+  a
+    +link-colors($urgreen,$urgreen,$urgreen,$urgreen,$urgreen)
+
+.vote
+  +column(24)
+  +prepend(1)
+  text-align: center
+  margin-top: 3em
+
+
+    
+  #left
+    +column(10)
+  #middle
+    //text-align: center
+    margin-top: 2em
+    font-size: 1.7em
+    +column(1)
+  #right
+    position: relative
+    +column(10,true)
+    #orange-image
+      position: absolute
+      top: -130px
+      right: -50px
+      //z-index: -1
+      //left: $width + 10
+      //right: 200px
+      //float: right
+
+#page-footer
+  position: absolute
+  bottom: 2em
+  font-size: .5em
+
+#show-girl
+  position: absolute
+  +column(24)
+  text-align: center
+  margin-top: 100px
+
+.both-sex
+  position: relative
+  text-align: center
+  #top-girls
+    //position: relative
+    +column(12)
+    height: 60px
+    margin-top: 100px
+  #top-boys
+    +column(12, true)
+    margin-top: 100px
+
+.check
+  position: absolute
+  +column(24)
+  margin-top: 150px
+  text-align: center
+	
+a
+  +hover-link
+  +link-colors($urgreen,$urgreen,$urgreen,$urgreen,$urgreen)
+  //font-weight: bold
+	

@@ -1,0 +1,29 @@
+	<div id='message'>
+	Click or use the <strong>arrow keys on the keyboard</strong> to indicate who is more attractive. <br />
+	If there are multiple people in the picture, just vote for the better picture! ✠
+	</div>
+	<div id='photos'>
+
+		
+	<div id='left'>
+		<%= link_to image_tag(display_girl_image(@left), :width => 300), 
+										update_girls_path(@left, @right),
+		 								:method => :post, :remote => true, 
+										:id=>'leftimage' %>
+	</div>
+	<div id='middle'>
+		OR
+	</div>
+
+	<div id='right'>
+
+		<%= link_to image_tag(display_girl_image(@right), :width => 300), 
+										 update_girls_path(@right, @left),
+										  :method => :post, 
+										  :remote => true,:accesskey => "r",
+										  :id=>'rightimage'%>
+		<div id='orange-image'>								
+			<%= image_tag("orange-words.png")%>
+		</div>
+	</div>
+	</div>
