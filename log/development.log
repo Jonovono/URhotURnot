@@ -413,3 +413,23 @@ Rendered layouts/_header.html.erb (1.4ms)
 Rendered layouts/_footer.html.erb (0.3ms)
 Rendered guys/show.html.erb within layouts/application (12.0ms)
 Completed 200 OK in 23ms (Views: 17.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/guys/714" for 127.0.0.1 at Sat Sep 24 15:32:07 -0600 2011
+  Processing by GuysController#show as HTML
+  Parameters: {"id"=>"714"}
+  [1m[35mGuys Load (0.2ms)[0m  SELECT "guys".* FROM "guys" WHERE ("guys"."id" = 714) LIMIT 1
+Rendered layouts/_header.html.erb (1.6ms)
+Rendered layouts/_footer.html.erb (0.3ms)
+Rendered guys/show.html.erb within layouts/application (177.7ms)
+Completed 200 OK in 189ms (Views: 182.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/guys/714" for 127.0.0.1 at Sat Sep 24 15:32:30 -0600 2011
+  Processing by GuysController#show as HTML
+  Parameters: {"id"=>"714"}
+  [1m[36mGuys Load (0.2ms)[0m  [1mSELECT "guys".* FROM "guys" WHERE ("guys"."id" = 714) LIMIT 1[0m
+Rendered layouts/_header.html.erb (1.5ms)
+Rendered layouts/_footer.html.erb (0.5ms)
+Rendered guys/show.html.erb within layouts/application (12.9ms)
+Completed 200 OK in 40ms (Views: 19.1ms | ActiveRecord: 0.2ms)

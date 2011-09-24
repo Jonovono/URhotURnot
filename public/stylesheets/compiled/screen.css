@@ -248,17 +248,16 @@ small {
   float: left;
   margin-right: 10px;
   width: 430px;
-  text-align: center;
   margin-top: 100px; }
   /* line 147, ../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.11.5/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
   * html #show-girl {
     overflow-x: hidden; }
 
-/* line 75, ../../../app/stylesheets/partials/_home.sass */
+/* line 74, ../../../app/stylesheets/partials/_home.sass */
 .both-sex {
   position: relative;
   text-align: center; }
-  /* line 78, ../../../app/stylesheets/partials/_home.sass */
+  /* line 77, ../../../app/stylesheets/partials/_home.sass */
   .both-sex #top-girls {
     display: inline;
     float: left;
@@ -269,7 +268,7 @@ small {
     /* line 147, ../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.11.5/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
     * html .both-sex #top-girls {
       overflow-x: hidden; }
-  /* line 83, ../../../app/stylesheets/partials/_home.sass */
+  /* line 82, ../../../app/stylesheets/partials/_home.sass */
   .both-sex #top-boys {
     display: inline;
     float: left;
@@ -280,20 +279,19 @@ small {
     * html .both-sex #top-boys {
       overflow-x: hidden; }
 
-/* line 87, ../../../app/stylesheets/partials/_home.sass */
+/* line 86, ../../../app/stylesheets/partials/_home.sass */
 .check {
   position: absolute;
   display: inline;
   float: left;
   margin-right: 10px;
   width: 30px;
-  margin-top: 150px;
-  text-align: center; }
+  margin-top: 150px; }
   /* line 147, ../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.11.5/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
   * html .check {
     overflow-x: hidden; }
 
-/* line 93, ../../../app/stylesheets/partials/_home.sass */
+/* line 91, ../../../app/stylesheets/partials/_home.sass */
 a {
   text-decoration: none;
   color: #00512f; }
