@@ -168,3 +168,61 @@ Rendered layouts/_header.html.erb (1.4ms)
 Rendered layouts/_footer.html.erb (0.3ms)
 Rendered girls/index.html.erb within layouts/application (18.9ms)
 Completed 200 OK in 49ms (Views: 24.6ms | ActiveRecord: 19.0ms)
+
+
+Started GET "/winners" for 127.0.0.1 at Sat Sep 24 14:53:23 -0600 2011
+  Processing by WinnersController#index as HTML
+  [1m[36mGirl Load (4.0ms)[0m  [1mSELECT "girls".* FROM "girls" ORDER BY score DESC LIMIT 5 OFFSET 0[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) FROM "girls"
+  [1m[36mGuys Load (3.6ms)[0m  [1mSELECT "guys".* FROM "guys" ORDER BY score DESC LIMIT 5 OFFSET 0[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) FROM "guys"
+Rendered layouts/_header.html.erb (1.3ms)
+Rendered layouts/_footer.html.erb (0.3ms)
+Rendered winners/index.html.erb within layouts/application (104.8ms)
+Completed 200 OK in 120ms (Views: 102.3ms | ActiveRecord: 7.8ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Sep 24 14:53:55 -0600 2011
+  Processing by GirlsController#index as HTML
+  [1m[36mGirl Load (4.0ms)[0m  [1mSELECT "girls".* FROM "girls" ORDER BY RANDOM() LIMIT 2[0m
+Rendered layouts/_menwomen.html.erb (1.3ms)
+Rendered girls/_vote.html.erb (7.3ms)
+Rendered layouts/_header.html.erb (1.1ms)
+Rendered layouts/_footer.html.erb (0.2ms)
+Rendered girls/index.html.erb within layouts/application (19.0ms)
+Completed 200 OK in 34ms (Views: 24.8ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/guys" for 127.0.0.1 at Sat Sep 24 14:53:56 -0600 2011
+  Processing by GuysController#index as HTML
+  [1m[35mGuys Load (2.9ms)[0m  SELECT "guys".* FROM "guys" ORDER BY RANDOM() LIMIT 2
+Rendered layouts/_menwomen.html.erb (0.9ms)
+Rendered guys/_vote.html.erb (5.6ms)
+Rendered layouts/_header.html.erb (1.3ms)
+Rendered layouts/_footer.html.erb (0.2ms)
+Rendered guys/index.html.erb within layouts/application (17.0ms)
+Completed 200 OK in 45ms (Views: 37.3ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/winners" for 127.0.0.1 at Sat Sep 24 14:53:58 -0600 2011
+  Processing by WinnersController#index as HTML
+  [1m[36mGirl Load (3.8ms)[0m  [1mSELECT "girls".* FROM "girls" ORDER BY score DESC LIMIT 5 OFFSET 0[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) FROM "girls"
+  [1m[36mGuys Load (2.6ms)[0m  [1mSELECT "guys".* FROM "guys" ORDER BY score DESC LIMIT 5 OFFSET 0[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) FROM "guys"
+Rendered layouts/_header.html.erb (1.2ms)
+Rendered layouts/_footer.html.erb (0.3ms)
+Rendered winners/index.html.erb within layouts/application (36.9ms)
+Completed 200 OK in 125ms (Views: 34.8ms | ActiveRecord: 6.6ms)
+
+
+Started GET "/winners" for 127.0.0.1 at Sat Sep 24 14:54:56 -0600 2011
+  Processing by WinnersController#index as HTML
+  [1m[36mGirl Load (4.2ms)[0m  [1mSELECT "girls".* FROM "girls" ORDER BY score DESC LIMIT 5 OFFSET 0[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT COUNT(*) FROM "girls"
+  [1m[36mGuys Load (2.8ms)[0m  [1mSELECT "guys".* FROM "guys" ORDER BY score DESC LIMIT 5 OFFSET 0[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) FROM "guys"
+Rendered layouts/_header.html.erb (1.3ms)
+Rendered layouts/_footer.html.erb (0.3ms)
+Rendered winners/index.html.erb within layouts/application (38.9ms)
+Completed 200 OK in 53ms (Views: 36.4ms | ActiveRecord: 7.3ms)
