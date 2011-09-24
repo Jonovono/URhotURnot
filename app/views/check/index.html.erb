@@ -1,3 +1,4 @@
+<div class='check'>
 	<div id="flash-messages">
 	<% if flash[:warning] or flash[:notice] %>
 	  <div class="notice" <% if flash[:warning] %>class="warning"<% end %>>
@@ -13,3 +14,4 @@
 		
 		<%= submit_tag 'Check' %>
 	<% end -%>
+</div>

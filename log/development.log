@@ -274,3 +274,122 @@ Rendered layouts/_header.html.erb (1.2ms)
 Rendered layouts/_footer.html.erb (0.2ms)
 Rendered winners/index.html.erb within layouts/application (35.9ms)
 Completed 200 OK in 49ms (Views: 34.3ms | ActiveRecord: 6.4ms)
+
+
+Started GET "/winners" for 127.0.0.1 at Sat Sep 24 15:26:10 -0600 2011
+  Processing by WinnersController#index as HTML
+  [1m[36mGirl Load (5.0ms)[0m  [1mSELECT "girls".* FROM "girls" ORDER BY score DESC LIMIT 5 OFFSET 0[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT COUNT(*) FROM "girls"
+  [1m[36mGuys Load (3.8ms)[0m  [1mSELECT "guys".* FROM "guys" ORDER BY score DESC LIMIT 5 OFFSET 0[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT COUNT(*) FROM "guys"
+Rendered layouts/_header.html.erb (1.6ms)
+Rendered layouts/_footer.html.erb (0.5ms)
+Rendered winners/index.html.erb within layouts/application (56.4ms)
+Completed 200 OK in 75ms (Views: 53.6ms | ActiveRecord: 9.2ms)
+
+
+Started GET "/check" for 127.0.0.1 at Sat Sep 24 15:26:13 -0600 2011
+  Processing by CheckController#index as HTML
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_check_index_html_erb__1253703573_2176301660_0 at /Users/Jordan/Desktop/tester/app/views/check/index.html.erb:11)
+Rendered layouts/_header.html.erb (1.2ms)
+Rendered layouts/_footer.html.erb (0.2ms)
+Rendered check/index.html.erb within layouts/application (8.9ms)
+Completed 200 OK in 15ms (Views: 14.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/check" for 127.0.0.1 at Sat Sep 24 15:26:42 -0600 2011
+  Processing by CheckController#index as HTML
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_check_index_html_erb__1253703573_2199404120_0 at /Users/Jordan/Desktop/tester/app/views/check/index.html.erb:11)
+Rendered layouts/_header.html.erb (1.2ms)
+Rendered layouts/_footer.html.erb (0.2ms)
+Rendered check/index.html.erb within layouts/application (8.1ms)
+Completed 200 OK in 13ms (Views: 12.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/check" for 127.0.0.1 at Sat Sep 24 15:26:45 -0600 2011
+  Processing by CheckController#index as HTML
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_check_index_html_erb__1253703573_2200096920_0 at /Users/Jordan/Desktop/tester/app/views/check/index.html.erb:11)
+Rendered layouts/_header.html.erb (1.4ms)
+Rendered layouts/_footer.html.erb (0.3ms)
+Rendered check/index.html.erb within layouts/application (8.9ms)
+Completed 200 OK in 14ms (Views: 13.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/winners" for 127.0.0.1 at Sat Sep 24 15:26:48 -0600 2011
+  Processing by WinnersController#index as HTML
+  [1m[36mGirl Load (3.7ms)[0m  [1mSELECT "girls".* FROM "girls" ORDER BY score DESC LIMIT 5 OFFSET 0[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) FROM "girls"
+  [1m[36mGuys Load (2.7ms)[0m  [1mSELECT "guys".* FROM "guys" ORDER BY score DESC LIMIT 5 OFFSET 0[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT COUNT(*) FROM "guys"
+Rendered layouts/_header.html.erb (19.7ms)
+Rendered layouts/_footer.html.erb (0.3ms)
+Rendered winners/index.html.erb within layouts/application (56.8ms)
+Completed 200 OK in 70ms (Views: 54.9ms | ActiveRecord: 6.7ms)
+
+
+Started GET "/girls/1325" for 127.0.0.1 at Sat Sep 24 15:26:49 -0600 2011
+  Processing by GirlsController#show as HTML
+  Parameters: {"id"=>"1325"}
+  [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mGirl Load (0.2ms)[0m  SELECT "girls".* FROM "girls" WHERE ("girls"."id" = 1325) LIMIT 1
+Rendered layouts/_header.html.erb (1.3ms)
+Rendered layouts/_footer.html.erb (0.3ms)
+Rendered girls/show.html.erb within layouts/application (11.9ms)
+Completed 200 OK in 24ms (Views: 17.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/winners" for 127.0.0.1 at Sat Sep 24 15:26:52 -0600 2011
+  Processing by WinnersController#index as HTML
+  [1m[36mGirl Load (3.8ms)[0m  [1mSELECT "girls".* FROM "girls" ORDER BY score DESC LIMIT 5 OFFSET 0[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) FROM "girls"
+  [1m[36mGuys Load (3.0ms)[0m  [1mSELECT "guys".* FROM "guys" ORDER BY score DESC LIMIT 5 OFFSET 0[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT COUNT(*) FROM "guys"
+Rendered layouts/_header.html.erb (1.3ms)
+Rendered layouts/_footer.html.erb (0.3ms)
+Rendered winners/index.html.erb within layouts/application (50.9ms)
+Completed 200 OK in 65ms (Views: 48.7ms | ActiveRecord: 7.2ms)
+
+
+Started GET "/girls/2426" for 127.0.0.1 at Sat Sep 24 15:26:53 -0600 2011
+  Processing by GirlsController#show as HTML
+  Parameters: {"id"=>"2426"}
+  [1m[36mGirl Load (0.2ms)[0m  [1mSELECT "girls".* FROM "girls" WHERE ("girls"."id" = 2426) LIMIT 1[0m
+Rendered layouts/_header.html.erb (1.3ms)
+Rendered layouts/_footer.html.erb (0.2ms)
+Rendered girls/show.html.erb within layouts/application (12.1ms)
+Completed 200 OK in 23ms (Views: 17.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/girls/2426" for 127.0.0.1 at Sat Sep 24 15:27:11 -0600 2011
+  Processing by GirlsController#show as HTML
+  Parameters: {"id"=>"2426"}
+  [1m[35mGirl Load (0.3ms)[0m  SELECT "girls".* FROM "girls" WHERE ("girls"."id" = 2426) LIMIT 1
+Rendered layouts/_header.html.erb (1.7ms)
+Rendered layouts/_footer.html.erb (0.5ms)
+Rendered girls/show.html.erb within layouts/application (17.6ms)
+Completed 200 OK in 32ms (Views: 24.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/winners" for 127.0.0.1 at Sat Sep 24 15:27:13 -0600 2011
+  Processing by WinnersController#index as HTML
+  [1m[36mGirl Load (4.6ms)[0m  [1mSELECT "girls".* FROM "girls" ORDER BY score DESC LIMIT 5 OFFSET 0[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT COUNT(*) FROM "girls"
+  [1m[36mGuys Load (3.1ms)[0m  [1mSELECT "guys".* FROM "guys" ORDER BY score DESC LIMIT 5 OFFSET 0[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT COUNT(*) FROM "guys"
+Rendered layouts/_header.html.erb (1.3ms)
+Rendered layouts/_footer.html.erb (0.2ms)
+Rendered winners/index.html.erb within layouts/application (40.2ms)
+Completed 200 OK in 56ms (Views: 37.2ms | ActiveRecord: 8.1ms)
+
+
+Started GET "/guys/714" for 127.0.0.1 at Sat Sep 24 15:27:14 -0600 2011
+  Processing by GuysController#show as HTML
+  Parameters: {"id"=>"714"}
+  [1m[36mGuys Load (0.2ms)[0m  [1mSELECT "guys".* FROM "guys" WHERE ("guys"."id" = 714) LIMIT 1[0m
+Rendered layouts/_header.html.erb (1.3ms)
+Rendered layouts/_footer.html.erb (0.3ms)
+Rendered guys/show.html.erb within layouts/application (13.6ms)
+Completed 200 OK in 26ms (Views: 19.7ms | ActiveRecord: 0.2ms)
