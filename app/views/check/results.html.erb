@@ -12,7 +12,6 @@ $(function() {
 });
 </script>
 
-<div class='check'>
 	<% puts "In view: #{@name}" %>
 	<% if @girl != nil%>
 		Welcome <%= @girl.name %>: <br />
@@ -47,5 +46,4 @@ $(function() {
 	<br /> <br />
 	
 	<%= link_to "Check Another Person", check_path %>
-</div>
 
