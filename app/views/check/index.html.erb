@@ -1,4 +1,4 @@
-<div class='check'>
+<div id='check'>
 	<div id="flash-messages">
 	<% if flash[:warning] or flash[:notice] %>
 	  <div class="notice" <% if flash[:warning] %>class="warning"<% end %>>
@@ -10,7 +10,7 @@
 	
 	<% form_tag 'check/test' do %>
 		<%= label_tag 'Enter your Facebook URL here' %>
-		<%= text_field_tag 'facebook' %>
+		<%= text_field_tag 'facebook', '', :size=> 75 %>
 		
 		<%= submit_tag 'Check' %>
 	<% end -%>

@@ -1,4 +1,9 @@
 <div class='men-women'>
 	<%= link_to_unless_current "Men", guys_path %> or 
 	<%= link_to_unless_current "Women", root_path %>
+	<% if params[:controller] == "guys" %>
+		<%= button_to "SKIP", guys_path %>
+	<% else %>
+		<%= button_to "SKIP", root_path %>
+	<% end %>	
 </div>

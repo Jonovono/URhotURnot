@@ -1169,3 +1169,3099 @@ Rendered layouts/_header.html.erb (1.2ms)
 Rendered layouts/_footer.html.erb (0.3ms)
 Rendered girls/index.html.erb within layouts/application (17.6ms)
 Completed 200 OK in 31ms (Views: 22.4ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/rails/info/properties" for 127.0.0.1 at Thu Sep 29 17:02:19 -0600 2011
+  Processing by Rails::InfoController#properties as HTML
+  [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Rendered inline template (0.4ms)
+Completed 200 OK in 24ms (Views: 1.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/home/imdex" for 127.0.0.1 at Thu Sep 29 17:02:31 -0600 2011
+
+ActionController::RoutingError (No route matches "/home/imdex"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/home/index" for 127.0.0.1 at Thu Sep 29 17:02:34 -0600 2011
+  Processing by HomeController#index as HTML
+Rendered layouts/_header.html.erb (1.9ms)
+Rendered layouts/_footer.html.erb (0.4ms)
+Rendered home/index.html.erb within layouts/application (42.2ms)
+Completed 200 OK in 69ms (Views: 69.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home/index" for 127.0.0.1 at Thu Sep 29 17:02:40 -0600 2011
+  Processing by HomeController#index as HTML
+Rendered layouts/_header.html.erb (1.5ms)
+Rendered layouts/_footer.html.erb (0.3ms)
+Rendered home/index.html.erb within layouts/application (8.4ms)
+Completed 200 OK in 15ms (Views: 14.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/winners" for 127.0.0.1 at Thu Sep 29 17:03:07 -0600 2011
+  Processing by WinnersController#index as HTML
+  [1m[35mGirl Load (30.4ms)[0m  SELECT "girls".* FROM "girls" ORDER BY score DESC LIMIT 5 OFFSET 0
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT COUNT(*) FROM "girls"[0m
+  [1m[35mGuys Load (5.3ms)[0m  SELECT "guys".* FROM "guys" ORDER BY score DESC LIMIT 5 OFFSET 0
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT COUNT(*) FROM "guys"[0m
+Rendered layouts/_header.html.erb (1.5ms)
+Rendered layouts/_footer.html.erb (0.3ms)
+Rendered winners/index.html.erb within layouts/application (143.3ms)
+Completed 200 OK in 209ms (Views: 131.2ms | ActiveRecord: 36.2ms)
+
+
+Started GET "/girls/index" for 127.0.0.1 at Thu Sep 29 17:03:37 -0600 2011
+  Processing by GirlsController#index as HTML
+  [1m[35mGirl Load (4.8ms)[0m  SELECT "girls".* FROM "girls" ORDER BY RANDOM() LIMIT 2
+Rendered layouts/_menwomen.html.erb (1.2ms)
+Rendered girls/_vote.html.erb (5.9ms)
+Rendered layouts/_header.html.erb (1.3ms)
+Rendered layouts/_footer.html.erb (0.2ms)
+Rendered girls/index.html.erb within layouts/application (49.7ms)
+Completed 200 OK in 83ms (Views: 72.4ms | ActiveRecord: 4.8ms)
+
+
+Started PUT "/girls/update/2142/1997" for 127.0.0.1 at Thu Sep 29 17:03:40 -0600 2011
+  Processing by GirlsController#update as JS
+  Parameters: {"lose"=>"1997", "win"=>"2142"}
+  [1m[36mGirl Load (0.2ms)[0m  [1mSELECT "girls".* FROM "girls" WHERE ("girls"."id" = 2142) LIMIT 1[0m
+  [1m[35mGirl Load (0.2ms)[0m  SELECT "girls".* FROM "girls" WHERE ("girls"."id" = 1997) LIMIT 1
+  [1m[36mAREL (0.3ms)[0m  [1mUPDATE "girls" SET "updated_at" = '2011-09-29 23:03:40.125667', "score" = 1425 WHERE ("girls"."id" = 2142)[0m
+  [1m[35mAREL (0.3ms)[0m  UPDATE "girls" SET "updated_at" = '2011-09-29 23:03:40.129642', "score" = 1376 WHERE ("girls"."id" = 1997)
+  [1m[36mGirl Load (3.7ms)[0m  [1mSELECT "girls".* FROM "girls" ORDER BY RANDOM() LIMIT 2[0m
+Rendered girls/_vote.html.erb (1.9ms)
+Rendered girls/update.js.erb (8.6ms)
+Completed 200 OK in 147ms (Views: 46.5ms | ActiveRecord: 4.8ms)
+
+
+Started GET "/check" for 127.0.0.1 at Thu Sep 29 17:03:49 -0600 2011
+  Processing by CheckController#index as HTML
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_check_index_html_erb__1253703573_2177996120_0 at /Users/Jordan/Desktop/tester/app/views/check/index.html.erb:11)
+Rendered layouts/_header.html.erb (2.1ms)
+Rendered layouts/_footer.html.erb (0.7ms)
+Rendered check/index.html.erb within layouts/application (14.1ms)
+Completed 200 OK in 44ms (Views: 42.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/check" for 127.0.0.1 at Thu Sep 29 17:03:50 -0600 2011
+  Processing by CheckController#index as HTML
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_check_index_html_erb__1253703573_2176565140_0 at /Users/Jordan/Desktop/tester/app/views/check/index.html.erb:11)
+Rendered layouts/_header.html.erb (1.2ms)
+Rendered layouts/_footer.html.erb (0.3ms)
+Rendered check/index.html.erb within layouts/application (8.9ms)
+Completed 200 OK in 15ms (Views: 14.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/check" for 127.0.0.1 at Thu Sep 29 17:04:20 -0600 2011
+  Processing by CheckController#index as HTML
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_check_index_html_erb__1253703573_2179224340_0 at /Users/Jordan/Desktop/tester/app/views/check/index.html.erb:11)
+Rendered layouts/_header.html.erb (2.1ms)
+Rendered layouts/_footer.html.erb (0.4ms)
+Rendered check/index.html.erb within layouts/application (12.7ms)
+Completed 200 OK in 18ms (Views: 17.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/girls/index" for 127.0.0.1 at Thu Sep 29 17:04:26 -0600 2011
+  Processing by GirlsController#index as HTML
+  [1m[35mGirl Load (5.5ms)[0m  SELECT "girls".* FROM "girls" ORDER BY RANDOM() LIMIT 2
+Rendered layouts/_menwomen.html.erb (1.4ms)
+Rendered girls/_vote.html.erb (8.6ms)
+Rendered layouts/_header.html.erb (18.3ms)
+Rendered layouts/_footer.html.erb (0.5ms)
+Rendered girls/index.html.erb within layouts/application (70.0ms)
+Completed 200 OK in 200ms (Views: 87.7ms | ActiveRecord: 5.5ms)
+
+
+Started GET "/guys" for 127.0.0.1 at Thu Sep 29 17:04:32 -0600 2011
+  Processing by GuysController#index as HTML
+  [1m[36mGuys Load (2.9ms)[0m  [1mSELECT "guys".* FROM "guys" ORDER BY RANDOM() LIMIT 2[0m
+Rendered layouts/_menwomen.html.erb (1.0ms)
+Rendered guys/_vote.html.erb (5.8ms)
+Rendered layouts/_header.html.erb (1.2ms)
+Rendered layouts/_footer.html.erb (0.3ms)
+Rendered guys/index.html.erb within layouts/application (17.9ms)
+Completed 200 OK in 49ms (Views: 41.6ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/guys" for 127.0.0.1 at Thu Sep 29 17:04:43 -0600 2011
+  Processing by GuysController#index as HTML
+  [1m[35mGuys Load (2.8ms)[0m  SELECT "guys".* FROM "guys" ORDER BY RANDOM() LIMIT 2
+Rendered layouts/_menwomen.html.erb (1.0ms)
+Rendered guys/_vote.html.erb (6.0ms)
+Rendered layouts/_header.html.erb (2.4ms)
+Rendered layouts/_footer.html.erb (0.3ms)
+Rendered guys/index.html.erb within layouts/application (19.6ms)
+Completed 200 OK in 33ms (Views: 24.9ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/guys" for 127.0.0.1 at Thu Sep 29 17:05:07 -0600 2011
+  Processing by GuysController#index as HTML
+  [1m[36mGuys Load (2.9ms)[0m  [1mSELECT "guys".* FROM "guys" ORDER BY RANDOM() LIMIT 2[0m
+Rendered layouts/_menwomen.html.erb (1.0ms)
+Rendered guys/_vote.html.erb (5.9ms)
+Rendered layouts/_header.html.erb (1.5ms)
+Rendered layouts/_footer.html.erb (0.3ms)
+Rendered guys/index.html.erb within layouts/application (19.9ms)
+Completed 200 OK in 33ms (Views: 25.4ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/guys" for 127.0.0.1 at Thu Sep 29 17:05:27 -0600 2011
+  Processing by GuysController#index as HTML
+  [1m[35mGuys Load (2.8ms)[0m  SELECT "guys".* FROM "guys" ORDER BY RANDOM() LIMIT 2
+Rendered layouts/_menwomen.html.erb (1.3ms)
+Rendered guys/_vote.html.erb (7.6ms)
+Rendered layouts/_header.html.erb (1.3ms)
+Rendered layouts/_footer.html.erb (0.3ms)
+Rendered guys/index.html.erb within layouts/application (20.7ms)
+Completed 200 OK in 34ms (Views: 26.3ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/guys" for 127.0.0.1 at Thu Sep 29 17:05:34 -0600 2011
+  Processing by GuysController#index as HTML
+  [1m[36mGuys Load (3.0ms)[0m  [1mSELECT "guys".* FROM "guys" ORDER BY RANDOM() LIMIT 2[0m
+Rendered layouts/_menwomen.html.erb (2.2ms)
+Rendered guys/_vote.html.erb (6.1ms)
+Rendered layouts/_header.html.erb (1.2ms)
+Rendered layouts/_footer.html.erb (0.2ms)
+Rendered guys/index.html.erb within layouts/application (19.6ms)
+Completed 200 OK in 33ms (Views: 24.9ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/guys" for 127.0.0.1 at Thu Sep 29 17:05:40 -0600 2011
+  Processing by GuysController#index as HTML
+  [1m[35mGuys Load (2.9ms)[0m  SELECT "guys".* FROM "guys" ORDER BY RANDOM() LIMIT 2
+Rendered layouts/_menwomen.html.erb (0.9ms)
+Rendered guys/_vote.html.erb (5.9ms)
+Rendered layouts/_header.html.erb (1.2ms)
+Rendered layouts/_footer.html.erb (0.2ms)
+Rendered guys/index.html.erb within layouts/application (17.6ms)
+Completed 200 OK in 31ms (Views: 23.0ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/guys" for 127.0.0.1 at Thu Sep 29 17:05:50 -0600 2011
+  Processing by GuysController#index as HTML
+  [1m[36mGuys Load (2.9ms)[0m  [1mSELECT "guys".* FROM "guys" ORDER BY RANDOM() LIMIT 2[0m
+Rendered layouts/_menwomen.html.erb (0.9ms)
+Rendered guys/_vote.html.erb (5.9ms)
+Rendered layouts/_header.html.erb (1.3ms)
+Rendered layouts/_footer.html.erb (0.2ms)
+Rendered guys/index.html.erb within layouts/application (18.4ms)
+Completed 200 OK in 32ms (Views: 24.0ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/girls/index" for 127.0.0.1 at Thu Sep 29 17:06:40 -0600 2011
+  Processing by GirlsController#index as HTML
+  [1m[36mGirl Load (4.1ms)[0m  [1mSELECT "girls".* FROM "girls" ORDER BY RANDOM() LIMIT 2[0m
+Rendered layouts/_menwomen.html.erb (1.0ms)
+Rendered girls/_vote.html.erb (7.6ms)
+Rendered layouts/_header.html.erb (1.4ms)
+Rendered layouts/_footer.html.erb (0.3ms)
+Rendered girls/index.html.erb within layouts/application (21.4ms)
+Completed 200 OK in 37ms (Views: 27.6ms | ActiveRecord: 4.1ms)
+
+
+Started GET "/guys" for 127.0.0.1 at Thu Sep 29 17:06:47 -0600 2011
+  Processing by GuysController#index as HTML
+  [1m[35mGuys Load (2.6ms)[0m  SELECT "guys".* FROM "guys" ORDER BY RANDOM() LIMIT 2
+Rendered layouts/_menwomen.html.erb (1.3ms)
+Rendered guys/_vote.html.erb (5.9ms)
+Rendered layouts/_header.html.erb (2.8ms)
+Rendered layouts/_footer.html.erb (0.3ms)
+Rendered guys/index.html.erb within layouts/application (21.7ms)
+Completed 200 OK in 36ms (Views: 28.0ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/guys" for 127.0.0.1 at Thu Sep 29 17:08:19 -0600 2011
+  Processing by GuysController#index as HTML
+  [1m[36mGuys Load (2.9ms)[0m  [1mSELECT "guys".* FROM "guys" ORDER BY RANDOM() LIMIT 2[0m
+Rendered layouts/_menwomen.html.erb (1.0ms)
+Rendered guys/_vote.html.erb (87.3ms)
+Rendered layouts/_header.html.erb (1.4ms)
+Rendered layouts/_footer.html.erb (0.3ms)
+Rendered guys/index.html.erb within layouts/application (99.4ms)
+Completed 200 OK in 113ms (Views: 105.2ms | ActiveRecord: 2.9ms)
+
+
+Started POST "/" for 127.0.0.1 at Thu Sep 29 17:08:22 -0600 2011
+  Processing by GirlsController#index as HTML
+  Parameters: {"authenticity_token"=>"YHGjQuSTIV2X2JML4TRT7UN9trrWp+qPXtic45TVHS4="}
+  [1m[35mGirl Load (4.0ms)[0m  SELECT "girls".* FROM "girls" ORDER BY RANDOM() LIMIT 2
+Rendered layouts/_menwomen.html.erb (1.0ms)
+Rendered girls/_vote.html.erb (6.5ms)
+Rendered layouts/_header.html.erb (1.5ms)
+Rendered layouts/_footer.html.erb (0.3ms)
+Rendered girls/index.html.erb within layouts/application (19.3ms)
+Completed 200 OK in 40ms (Views: 25.2ms | ActiveRecord: 4.0ms)
+
+
+Started POST "/" for 127.0.0.1 at Thu Sep 29 17:08:23 -0600 2011
+  Processing by GirlsController#index as HTML
+  Parameters: {"authenticity_token"=>"YHGjQuSTIV2X2JML4TRT7UN9trrWp+qPXtic45TVHS4="}
+  [1m[36mGirl Load (5.6ms)[0m  [1mSELECT "girls".* FROM "girls" ORDER BY RANDOM() LIMIT 2[0m
+Rendered layouts/_menwomen.html.erb (1.8ms)
+Rendered girls/_vote.html.erb (9.2ms)
+Rendered layouts/_header.html.erb (1.4ms)
+Rendered layouts/_footer.html.erb (0.4ms)
+Rendered girls/index.html.erb within layouts/application (28.3ms)
+Completed 200 OK in 48ms (Views: 36.3ms | ActiveRecord: 5.6ms)
+
+
+Started GET "/guys" for 127.0.0.1 at Thu Sep 29 17:08:27 -0600 2011
+  Processing by GuysController#index as HTML
+  [1m[35mGuys Load (3.4ms)[0m  SELECT "guys".* FROM "guys" ORDER BY RANDOM() LIMIT 2
+Rendered layouts/_menwomen.html.erb (4.5ms)
+Rendered guys/_vote.html.erb (8.3ms)
+Rendered layouts/_header.html.erb (1.2ms)
+Rendered layouts/_footer.html.erb (0.2ms)
+Rendered guys/index.html.erb within layouts/application (27.1ms)
+Completed 200 OK in 44ms (Views: 34.5ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/" for 127.0.0.1 at Thu Sep 29 17:08:28 -0600 2011
+  Processing by GirlsController#index as HTML
+  [1m[36mGirl Load (4.0ms)[0m  [1mSELECT "girls".* FROM "girls" ORDER BY RANDOM() LIMIT 2[0m
+Rendered layouts/_menwomen.html.erb (1.0ms)
+Rendered girls/_vote.html.erb (7.2ms)
+Rendered layouts/_header.html.erb (1.4ms)
+Rendered layouts/_footer.html.erb (0.3ms)
+Rendered girls/index.html.erb within layouts/application (20.3ms)
+Completed 200 OK in 37ms (Views: 26.2ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/guys" for 127.0.0.1 at Thu Sep 29 17:08:30 -0600 2011
+  Processing by GuysController#index as HTML
+  [1m[35mGuys Load (6.7ms)[0m  SELECT "guys".* FROM "guys" ORDER BY RANDOM() LIMIT 2
+Rendered layouts/_menwomen.html.erb (1.5ms)
+Rendered guys/_vote.html.erb (9.1ms)
+Rendered layouts/_header.html.erb (1.7ms)
+Rendered layouts/_footer.html.erb (0.5ms)
+Rendered guys/index.html.erb within layouts/application (26.1ms)
+Completed 200 OK in 46ms (Views: 32.6ms | ActiveRecord: 6.7ms)
+
+
+Started POST "/" for 127.0.0.1 at Thu Sep 29 17:08:32 -0600 2011
+  Processing by GirlsController#index as HTML
+  Parameters: {"authenticity_token"=>"YHGjQuSTIV2X2JML4TRT7UN9trrWp+qPXtic45TVHS4="}
+  [1m[36mGirl Load (3.9ms)[0m  [1mSELECT "girls".* FROM "girls" ORDER BY RANDOM() LIMIT 2[0m
+Rendered layouts/_menwomen.html.erb (1.1ms)
+Rendered girls/_vote.html.erb (6.1ms)
+Rendered layouts/_header.html.erb (1.7ms)
+Rendered layouts/_footer.html.erb (0.3ms)
+Rendered girls/index.html.erb within layouts/application (21.9ms)
+Completed 200 OK in 38ms (Views: 28.8ms | ActiveRecord: 3.9ms)
+
+
+Started POST "/" for 127.0.0.1 at Thu Sep 29 17:08:45 -0600 2011
+  Processing by GirlsController#index as HTML
+  Parameters: {"authenticity_token"=>"YHGjQuSTIV2X2JML4TRT7UN9trrWp+qPXtic45TVHS4="}
+  [1m[35mGirl Load (4.1ms)[0m  SELECT "girls".* FROM "girls" ORDER BY RANDOM() LIMIT 2
+Rendered layouts/_menwomen.html.erb (1.1ms)
+Rendered girls/_vote.html.erb (6.8ms)
+Rendered layouts/_header.html.erb (1.3ms)
+Rendered layouts/_footer.html.erb (0.2ms)
+Rendered girls/index.html.erb within layouts/application (20.4ms)
+Completed 200 OK in 35ms (Views: 25.9ms | ActiveRecord: 4.1ms)
+
+
+Started GET "/guys" for 127.0.0.1 at Thu Sep 29 17:08:46 -0600 2011
+  Processing by GuysController#index as HTML
+  [1m[36mGuys Load (2.9ms)[0m  [1mSELECT "guys".* FROM "guys" ORDER BY RANDOM() LIMIT 2[0m
+Rendered layouts/_menwomen.html.erb (0.9ms)
+Rendered guys/_vote.html.erb (21.9ms)
+Rendered guys/index.html.erb within layouts/application (26.2ms)
+Completed   in 40ms
+
+ActionView::Template::Error (undefined local variable or method `men_path' for #<#<Class:0x103af3670>:0x103ae6f38>):
+    17: 	<br />
+    18: 	<br />
+    19: 
+    20: <%= button_to "SKIP", men_path %>
+    21: </div>
+    22: 
+    23: <div id='right'>
+  app/views/guys/_vote.html.erb:20:in `_app_views_guys__vote_html_erb__189981865_2178300340_2700030'
+  app/views/guys/index.html.erb:32:in `_app_views_guys_index_html_erb___1279730862_2178353720_0'
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (6.4ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (142.5ms)
+
+
+Started GET "/guys" for 127.0.0.1 at Thu Sep 29 17:08:52 -0600 2011
+  Processing by GuysController#index as HTML
+  [1m[35mGuys Load (2.8ms)[0m  SELECT "guys".* FROM "guys" ORDER BY RANDOM() LIMIT 2
+Rendered layouts/_menwomen.html.erb (2.2ms)
+Rendered guys/_vote.html.erb (8.1ms)
+Rendered layouts/_header.html.erb (1.8ms)
+Rendered layouts/_footer.html.erb (0.4ms)
+Rendered guys/index.html.erb within layouts/application (23.6ms)
+Completed 200 OK in 38ms (Views: 29.7ms | ActiveRecord: 2.8ms)
+
+
+Started POST "/guys" for 127.0.0.1 at Thu Sep 29 17:08:57 -0600 2011
+  Processing by GuysController#index as HTML
+  Parameters: {"authenticity_token"=>"YHGjQuSTIV2X2JML4TRT7UN9trrWp+qPXtic45TVHS4="}
+  [1m[36mGuys Load (2.9ms)[0m  [1mSELECT "guys".* FROM "guys" ORDER BY RANDOM() LIMIT 2[0m
+Rendered layouts/_menwomen.html.erb (1.0ms)
+Rendered guys/_vote.html.erb (6.0ms)
+Rendered layouts/_header.html.erb (1.5ms)
+Rendered layouts/_footer.html.erb (0.3ms)
+Rendered guys/index.html.erb within layouts/application (18.0ms)
+Completed 200 OK in 32ms (Views: 23.7ms | ActiveRecord: 2.9ms)
+
+
+Started POST "/guys" for 127.0.0.1 at Thu Sep 29 17:08:58 -0600 2011
+  Processing by GuysController#index as HTML
+  Parameters: {"authenticity_token"=>"YHGjQuSTIV2X2JML4TRT7UN9trrWp+qPXtic45TVHS4="}
+  [1m[35mGuys Load (2.9ms)[0m  SELECT "guys".* FROM "guys" ORDER BY RANDOM() LIMIT 2
+Rendered layouts/_menwomen.html.erb (1.1ms)
+Rendered guys/_vote.html.erb (6.7ms)
+Rendered layouts/_header.html.erb (1.2ms)
+Rendered layouts/_footer.html.erb (0.2ms)
+Rendered guys/index.html.erb within layouts/application (20.0ms)
+Completed 200 OK in 34ms (Views: 25.4ms | ActiveRecord: 2.9ms)
+
+
+Started POST "/guys" for 127.0.0.1 at Thu Sep 29 17:08:59 -0600 2011
+  Processing by GuysController#index as HTML
+  Parameters: {"authenticity_token"=>"YHGjQuSTIV2X2JML4TRT7UN9trrWp+qPXtic45TVHS4="}
+  [1m[36mGuys Load (2.8ms)[0m  [1mSELECT "guys".* FROM "guys" ORDER BY RANDOM() LIMIT 2[0m
+Rendered layouts/_menwomen.html.erb (1.2ms)
+Rendered guys/_vote.html.erb (7.2ms)
+Rendered layouts/_header.html.erb (1.2ms)
+Rendered layouts/_footer.html.erb (0.2ms)
+Rendered guys/index.html.erb within layouts/application (19.1ms)
+Completed 200 OK in 32ms (Views: 24.6ms | ActiveRecord: 2.8ms)
+
+
+Started POST "/guys" for 127.0.0.1 at Thu Sep 29 17:09:00 -0600 2011
+  Processing by GuysController#index as HTML
+  Parameters: {"authenticity_token"=>"YHGjQuSTIV2X2JML4TRT7UN9trrWp+qPXtic45TVHS4="}
+  [1m[35mGuys Load (2.9ms)[0m  SELECT "guys".* FROM "guys" ORDER BY RANDOM() LIMIT 2
+Rendered layouts/_menwomen.html.erb (0.9ms)
+Rendered guys/_vote.html.erb (5.8ms)
+Rendered layouts/_header.html.erb (1.6ms)
+Rendered layouts/_footer.html.erb (0.2ms)
+Rendered guys/index.html.erb within layouts/application (17.9ms)
+Completed 200 OK in 31ms (Views: 23.3ms | ActiveRecord: 2.9ms)
+
+
+Started POST "/guys" for 127.0.0.1 at Thu Sep 29 17:09:01 -0600 2011
+  Processing by GuysController#index as HTML
+  Parameters: {"authenticity_token"=>"YHGjQuSTIV2X2JML4TRT7UN9trrWp+qPXtic45TVHS4="}
+  [1m[36mGuys Load (2.9ms)[0m  [1mSELECT "guys".* FROM "guys" ORDER BY RANDOM() LIMIT 2[0m
+Rendered layouts/_menwomen.html.erb (1.4ms)
+Rendered guys/_vote.html.erb (5.9ms)
+Rendered layouts/_header.html.erb (1.1ms)
+Rendered layouts/_footer.html.erb (81.2ms)
+Rendered guys/index.html.erb within layouts/application (99.2ms)
+Completed 200 OK in 115ms (Views: 106.3ms | ActiveRecord: 2.9ms)
+
+
+Started POST "/guys" for 127.0.0.1 at Thu Sep 29 17:09:01 -0600 2011
+  Processing by GuysController#index as HTML
+  Parameters: {"authenticity_token"=>"YHGjQuSTIV2X2JML4TRT7UN9trrWp+qPXtic45TVHS4="}
+  [1m[35mGuys Load (3.1ms)[0m  SELECT "guys".* FROM "guys" ORDER BY RANDOM() LIMIT 2
+Rendered layouts/_menwomen.html.erb (0.9ms)
+Rendered guys/_vote.html.erb (6.4ms)
+Rendered layouts/_header.html.erb (1.2ms)
+Rendered layouts/_footer.html.erb (0.3ms)
+Rendered guys/index.html.erb within layouts/application (18.0ms)
+Completed 200 OK in 32ms (Views: 23.4ms | ActiveRecord: 3.1ms)
+
+
+Started POST "/guys" for 127.0.0.1 at Thu Sep 29 17:09:27 -0600 2011
+  Processing by GuysController#index as HTML
+  Parameters: {"authenticity_token"=>"YHGjQuSTIV2X2JML4TRT7UN9trrWp+qPXtic45TVHS4="}
+  [1m[36mGuys Load (2.9ms)[0m  [1mSELECT "guys".* FROM "guys" ORDER BY RANDOM() LIMIT 2[0m
+Rendered layouts/_menwomen.html.erb (0.9ms)
+Rendered guys/_vote.html.erb (5.9ms)
+Rendered layouts/_header.html.erb (1.2ms)
+Rendered layouts/_footer.html.erb (0.3ms)
+Rendered guys/index.html.erb within layouts/application (18.0ms)
+Completed 200 OK in 31ms (Views: 23.3ms | ActiveRecord: 2.9ms)
+
+
+Started POST "/guys" for 127.0.0.1 at Thu Sep 29 17:09:35 -0600 2011
+  Processing by GuysController#index as HTML
+  Parameters: {"authenticity_token"=>"YHGjQuSTIV2X2JML4TRT7UN9trrWp+qPXtic45TVHS4="}
+  [1m[35mGuys Load (2.8ms)[0m  SELECT "guys".* FROM "guys" ORDER BY RANDOM() LIMIT 2
+Rendered layouts/_menwomen.html.erb (1.7ms)
+Rendered guys/_vote.html.erb (7.4ms)
+Rendered layouts/_header.html.erb (1.7ms)
+Rendered layouts/_footer.html.erb (0.5ms)
+Rendered guys/index.html.erb within layouts/application (21.7ms)
+Completed 200 OK in 35ms (Views: 27.3ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/" for 127.0.0.1 at Thu Sep 29 17:09:38 -0600 2011
+  Processing by GirlsController#index as HTML
+  [1m[36mGirl Load (4.8ms)[0m  [1mSELECT "girls".* FROM "girls" ORDER BY RANDOM() LIMIT 2[0m
+Rendered layouts/_menwomen.html.erb (0.9ms)
+Rendered girls/_vote.html.erb (5.8ms)
+Rendered layouts/_header.html.erb (1.4ms)
+Rendered layouts/_footer.html.erb (0.3ms)
+Rendered girls/index.html.erb within layouts/application (118.9ms)
+Completed 200 OK in 135ms (Views: 124.8ms | ActiveRecord: 4.8ms)
+
+
+Started GET "/" for 127.0.0.1 at Thu Sep 29 17:09:39 -0600 2011
+  Processing by GirlsController#index as HTML
+  [1m[35mGirl Load (4.0ms)[0m  SELECT "girls".* FROM "girls" ORDER BY RANDOM() LIMIT 2
+Rendered layouts/_menwomen.html.erb (1.1ms)
+Rendered girls/_vote.html.erb (7.0ms)
+Rendered layouts/_header.html.erb (2.7ms)
+Rendered layouts/_footer.html.erb (0.5ms)
+Rendered girls/index.html.erb within layouts/application (24.1ms)
+Completed 200 OK in 43ms (Views: 31.9ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/guys" for 127.0.0.1 at Thu Sep 29 17:09:40 -0600 2011
+  Processing by GuysController#index as HTML
+  [1m[36mGuys Load (3.2ms)[0m  [1mSELECT "guys".* FROM "guys" ORDER BY RANDOM() LIMIT 2[0m
+Rendered layouts/_menwomen.html.erb (0.9ms)
+Rendered guys/_vote.html.erb (6.2ms)
+Rendered layouts/_header.html.erb (1.3ms)
+Rendered layouts/_footer.html.erb (0.3ms)
+Rendered guys/index.html.erb within layouts/application (18.7ms)
+Completed 200 OK in 33ms (Views: 24.2ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/guys" for 127.0.0.1 at Thu Sep 29 17:09:41 -0600 2011
+  Processing by GuysController#index as HTML
+  [1m[35mGuys Load (3.1ms)[0m  SELECT "guys".* FROM "guys" ORDER BY RANDOM() LIMIT 2
+Rendered layouts/_menwomen.html.erb (1.1ms)
+Rendered guys/_vote.html.erb (101.5ms)
+Rendered layouts/_header.html.erb (2.1ms)
+Rendered layouts/_footer.html.erb (0.4ms)
+Rendered guys/index.html.erb within layouts/application (118.6ms)
+Completed 200 OK in 133ms (Views: 123.9ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/guys" for 127.0.0.1 at Thu Sep 29 17:09:42 -0600 2011
+  Processing by GuysController#index as HTML
+  [1m[36mGuys Load (2.8ms)[0m  [1mSELECT "guys".* FROM "guys" ORDER BY RANDOM() LIMIT 2[0m
+Rendered layouts/_menwomen.html.erb (0.9ms)
+Rendered guys/_vote.html.erb (5.8ms)
+Rendered layouts/_header.html.erb (1.5ms)
+Rendered layouts/_footer.html.erb (0.5ms)
+Rendered guys/index.html.erb within layouts/application (19.0ms)
+Completed 200 OK in 32ms (Views: 24.5ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/guys" for 127.0.0.1 at Thu Sep 29 17:09:43 -0600 2011
+  Processing by GuysController#index as HTML
+  [1m[35mGuys Load (3.7ms)[0m  SELECT "guys".* FROM "guys" ORDER BY RANDOM() LIMIT 2
+Rendered layouts/_menwomen.html.erb (1.3ms)
+Rendered guys/_vote.html.erb (6.2ms)
+Rendered layouts/_header.html.erb (1.2ms)
+Rendered layouts/_footer.html.erb (0.3ms)
+Rendered guys/index.html.erb within layouts/application (19.0ms)
+Completed 200 OK in 36ms (Views: 26.1ms | ActiveRecord: 3.7ms)
+
+
+Started POST "/guys" for 127.0.0.1 at Thu Sep 29 17:09:45 -0600 2011
+  Processing by GuysController#index as HTML
+  Parameters: {"authenticity_token"=>"YHGjQuSTIV2X2JML4TRT7UN9trrWp+qPXtic45TVHS4="}
+  [1m[36mGuys Load (2.8ms)[0m  [1mSELECT "guys".* FROM "guys" ORDER BY RANDOM() LIMIT 2[0m
+Rendered layouts/_menwomen.html.erb (0.9ms)
+Rendered guys/_vote.html.erb (5.9ms)
+Rendered layouts/_header.html.erb (1.1ms)
+Rendered layouts/_footer.html.erb (0.2ms)
+Rendered guys/index.html.erb within layouts/application (17.4ms)
+Completed 200 OK in 31ms (Views: 23.1ms | ActiveRecord: 2.8ms)
+
+
+Started POST "/guys" for 127.0.0.1 at Thu Sep 29 17:10:03 -0600 2011
+  Processing by GuysController#index as HTML
+  Parameters: {"authenticity_token"=>"YHGjQuSTIV2X2JML4TRT7UN9trrWp+qPXtic45TVHS4="}
+  [1m[35mGuys Load (6.3ms)[0m  SELECT "guys".* FROM "guys" ORDER BY RANDOM() LIMIT 2
+Rendered layouts/_menwomen.html.erb (1.2ms)
+Rendered guys/_vote.html.erb (10.8ms)
+Rendered layouts/_header.html.erb (151.6ms)
+Rendered layouts/_footer.html.erb (0.4ms)
+Rendered guys/index.html.erb within layouts/application (181.3ms)
+Completed 200 OK in 206ms (Views: 188.7ms | ActiveRecord: 6.3ms)
+
+
+Started POST "/guys" for 127.0.0.1 at Thu Sep 29 17:10:04 -0600 2011
+  Processing by GuysController#index as HTML
+  Parameters: {"authenticity_token"=>"YHGjQuSTIV2X2JML4TRT7UN9trrWp+qPXtic45TVHS4="}
+  [1m[36mGuys Load (3.0ms)[0m  [1mSELECT "guys".* FROM "guys" ORDER BY RANDOM() LIMIT 2[0m
+Rendered layouts/_menwomen.html.erb (0.9ms)
+Rendered guys/_vote.html.erb (6.3ms)
+Rendered layouts/_header.html.erb (1.1ms)
+Rendered layouts/_footer.html.erb (0.2ms)
+Rendered guys/index.html.erb within layouts/application (17.7ms)
+Completed 200 OK in 32ms (Views: 23.3ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Thu Sep 29 17:10:16 -0600 2011
+  Processing by GirlsController#index as HTML
+  [1m[35mGirl Load (3.8ms)[0m  SELECT "girls".* FROM "girls" ORDER BY RANDOM() LIMIT 2
+Rendered layouts/_menwomen.html.erb (1.3ms)
+Rendered girls/_vote.html.erb (6.9ms)
+Rendered layouts/_header.html.erb (1.9ms)
+Rendered layouts/_footer.html.erb (0.4ms)
+Rendered girls/index.html.erb within layouts/application (23.1ms)
+Completed 200 OK in 39ms (Views: 29.7ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/" for 127.0.0.1 at Thu Sep 29 17:10:45 -0600 2011
+  Processing by GirlsController#index as HTML
+  [1m[36mGirl Load (3.9ms)[0m  [1mSELECT "girls".* FROM "girls" ORDER BY RANDOM() LIMIT 2[0m
+Rendered layouts/_menwomen.html.erb (1.1ms)
+Rendered girls/_vote.html.erb (6.7ms)
+Rendered layouts/_header.html.erb (1.5ms)
+Rendered layouts/_footer.html.erb (0.3ms)
+Rendered girls/index.html.erb within layouts/application (20.2ms)
+Completed 200 OK in 35ms (Views: 25.6ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/" for 127.0.0.1 at Thu Sep 29 17:11:06 -0600 2011
+  Processing by GirlsController#index as HTML
+  [1m[35mGirl Load (3.7ms)[0m  SELECT "girls".* FROM "girls" ORDER BY RANDOM() LIMIT 2
+Rendered layouts/_menwomen.html.erb (1.1ms)
+Rendered girls/_vote.html.erb (5.5ms)
+Rendered layouts/_header.html.erb (1.3ms)
+Rendered layouts/_footer.html.erb (0.5ms)
+Rendered girls/index.html.erb within layouts/application (18.7ms)
+Completed 200 OK in 33ms (Views: 24.4ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/" for 127.0.0.1 at Thu Sep 29 17:11:30 -0600 2011
+  Processing by GirlsController#index as HTML
+  [1m[36mGirl Load (3.8ms)[0m  [1mSELECT "girls".* FROM "girls" ORDER BY RANDOM() LIMIT 2[0m
+Rendered layouts/_menwomen.html.erb (0.9ms)
+Rendered girls/_vote.html.erb (6.0ms)
+Rendered layouts/_header.html.erb (1.4ms)
+Rendered layouts/_footer.html.erb (0.3ms)
+Rendered girls/index.html.erb within layouts/application (18.8ms)
+Completed 200 OK in 34ms (Views: 25.0ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/" for 127.0.0.1 at Thu Sep 29 17:11:31 -0600 2011
+  Processing by GirlsController#index as HTML
+  [1m[35mGirl Load (3.8ms)[0m  SELECT "girls".* FROM "girls" ORDER BY RANDOM() LIMIT 2
+Rendered layouts/_menwomen.html.erb (1.6ms)
+Rendered girls/_vote.html.erb (6.3ms)
+Rendered layouts/_header.html.erb (1.2ms)
+Rendered layouts/_footer.html.erb (0.3ms)
+Rendered girls/index.html.erb within layouts/application (19.7ms)
+Completed 200 OK in 34ms (Views: 25.1ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/" for 127.0.0.1 at Thu Sep 29 17:11:32 -0600 2011
+  Processing by GirlsController#index as HTML
+  [1m[36mGirl Load (4.9ms)[0m  [1mSELECT "girls".* FROM "girls" ORDER BY RANDOM() LIMIT 2[0m
+Rendered layouts/_menwomen.html.erb (1.1ms)
+Rendered girls/_vote.html.erb (5.9ms)
+Rendered layouts/_header.html.erb (1.5ms)
+Rendered layouts/_footer.html.erb (0.3ms)
+Rendered girls/index.html.erb within layouts/application (21.2ms)
+Completed 200 OK in 140ms (Views: 28.1ms | ActiveRecord: 4.9ms)
+
+
+Started GET "/" for 127.0.0.1 at Thu Sep 29 17:11:45 -0600 2011
+  Processing by GirlsController#index as HTML
+  [1m[35mGirl Load (4.6ms)[0m  SELECT "girls".* FROM "girls" ORDER BY RANDOM() LIMIT 2
+Rendered layouts/_menwomen.html.erb (2.5ms)
+Rendered girls/_vote.html.erb (5.8ms)
+Rendered layouts/_header.html.erb (1.9ms)
+Rendered layouts/_footer.html.erb (0.4ms)
+Rendered girls/index.html.erb within layouts/application (21.4ms)
+Completed 200 OK in 39ms (Views: 28.5ms | ActiveRecord: 4.6ms)
+
+
+Started GET "/" for 127.0.0.1 at Thu Sep 29 17:13:11 -0600 2011
+  Processing by GirlsController#index as HTML
+  [1m[36mGirl Load (3.8ms)[0m  [1mSELECT "girls".* FROM "girls" ORDER BY RANDOM() LIMIT 2[0m
+Rendered layouts/_menwomen.html.erb (0.9ms)
+Rendered girls/_vote.html.erb (5.7ms)
+Rendered layouts/_header.html.erb (1.7ms)
+Rendered layouts/_footer.html.erb (0.3ms)
+Rendered girls/index.html.erb within layouts/application (18.7ms)
+Completed 200 OK in 33ms (Views: 24.1ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/tmp/stylesheets/screen.css" for 127.0.0.1 at Thu Sep 29 17:13:12 -0600 2011
+
+ActionController::RoutingError (No route matches "/tmp/stylesheets/screen.css"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at Thu Sep 29 17:13:31 -0600 2011
+  Processing by GirlsController#index as HTML
+  [1m[35mGirl Load (3.9ms)[0m  SELECT "girls".* FROM "girls" ORDER BY RANDOM() LIMIT 2
+Rendered layouts/_menwomen.html.erb (1.0ms)
+Rendered girls/_vote.html.erb (6.2ms)
+Rendered layouts/_header.html.erb (1.2ms)
+Rendered layouts/_footer.html.erb (0.3ms)
+Rendered girls/index.html.erb within layouts/application (18.2ms)
+Completed 200 OK in 33ms (Views: 23.8ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/tmp/stylesheets/screen.css" for 127.0.0.1 at Thu Sep 29 17:13:31 -0600 2011
+
+ActionController::RoutingError (No route matches "/tmp/stylesheets/screen.css"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/tmp/stylesheets/screen.css" for 127.0.0.1 at Thu Sep 29 17:13:54 -0600 2011
+
+ActionController::RoutingError (No route matches "/tmp/stylesheets/screen.css"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/tmp/" for 127.0.0.1 at Thu Sep 29 17:13:59 -0600 2011
+
+ActionController::RoutingError (No route matches "/tmp"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (8.4ms)
+
+
+Started GET "/tmp/" for 127.0.0.1 at Thu Sep 29 17:14:55 -0600 2011
+
+ActionController::RoutingError (No route matches "/tmp"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at Thu Sep 29 17:15:28 -0600 2011
+  Processing by GirlsController#index as HTML
+  [1m[36mGirl Load (3.8ms)[0m  [1mSELECT "girls".* FROM "girls" ORDER BY RANDOM() LIMIT 2[0m
+Rendered layouts/_menwomen.html.erb (0.9ms)
+Rendered girls/_vote.html.erb (5.9ms)
+Rendered layouts/_header.html.erb (1.3ms)
+Rendered layouts/_footer.html.erb (0.6ms)
+Rendered girls/index.html.erb within layouts/application (20.5ms)
+Completed 200 OK in 35ms (Views: 26.3ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/tmp/stylesheets/screen.css" for 127.0.0.1 at Thu Sep 29 17:15:28 -0600 2011
+
+ActionController::RoutingError (No route matches "/tmp/stylesheets/screen.css"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at Thu Sep 29 17:15:49 -0600 2011
+  Processing by GirlsController#index as HTML
+  [1m[35mGirl Load (3.8ms)[0m  SELECT "girls".* FROM "girls" ORDER BY RANDOM() LIMIT 2
+Rendered layouts/_menwomen.html.erb (0.9ms)
+Rendered girls/_vote.html.erb (5.7ms)
+Rendered layouts/_header.html.erb (1.9ms)
+Rendered layouts/_footer.html.erb (0.3ms)
+Rendered girls/index.html.erb within layouts/application (20.0ms)
+Completed 200 OK in 34ms (Views: 25.6ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/~/tmp/stylesheets/screen.css" for 127.0.0.1 at Thu Sep 29 17:15:49 -0600 2011
+
+ActionController::RoutingError (No route matches "/~/tmp/stylesheets/screen.css"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/" for 127.0.0.1 at Thu Sep 29 17:15:58 -0600 2011
+  Processing by GirlsController#index as HTML
+  [1m[36mGirl Load (4.0ms)[0m  [1mSELECT "girls".* FROM "girls" ORDER BY RANDOM() LIMIT 2[0m
+Rendered layouts/_menwomen.html.erb (1.8ms)
+Rendered girls/_vote.html.erb (9.5ms)
+Rendered layouts/_header.html.erb (1.6ms)
+Rendered layouts/_footer.html.erb (0.3ms)
+Rendered girls/index.html.erb within layouts/application (24.5ms)
+Completed 200 OK in 41ms (Views: 31.8ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/tmp/stylesheets/screen.css" for 127.0.0.1 at Thu Sep 29 17:15:58 -0600 2011
+
+ActionController::RoutingError (No route matches "/tmp/stylesheets/screen.css"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/" for 127.0.0.1 at Thu Sep 29 17:16:31 -0600 2011
+  Processing by GirlsController#index as HTML
+  [1m[35mGirl Load (3.9ms)[0m  SELECT "girls".* FROM "girls" ORDER BY RANDOM() LIMIT 2
+Rendered layouts/_menwomen.html.erb (0.9ms)
+Rendered girls/_vote.html.erb (6.6ms)
+Rendered layouts/_header.html.erb (1.2ms)
+Rendered layouts/_footer.html.erb (0.2ms)
+Rendered girls/index.html.erb within layouts/application (18.8ms)
+Completed 200 OK in 33ms (Views: 24.7ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/tmp/stylesheets/screen.css" for 127.0.0.1 at Thu Sep 29 17:16:31 -0600 2011
+
+ActionController::RoutingError (No route matches "/tmp/stylesheets/screen.css"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/guys" for 127.0.0.1 at Thu Sep 29 17:16:35 -0600 2011
+  Processing by GuysController#index as HTML
+  [1m[36mGuys Load (2.9ms)[0m  [1mSELECT "guys".* FROM "guys" ORDER BY RANDOM() LIMIT 2[0m
+Rendered layouts/_menwomen.html.erb (1.0ms)
+Rendered guys/_vote.html.erb (6.0ms)
+Rendered layouts/_header.html.erb (1.4ms)
+Rendered layouts/_footer.html.erb (0.9ms)
+Rendered guys/index.html.erb within layouts/application (20.9ms)
+Completed 200 OK in 37ms (Views: 26.7ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/tmp/stylesheets/screen.css" for 127.0.0.1 at Thu Sep 29 17:16:35 -0600 2011
+
+ActionController::RoutingError (No route matches "/tmp/stylesheets/screen.css"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.5ms)
+
+
+Started POST "/guys" for 127.0.0.1 at Thu Sep 29 17:16:55 -0600 2011
+  Processing by GuysController#index as HTML
+  Parameters: {"authenticity_token"=>"YHGjQuSTIV2X2JML4TRT7UN9trrWp+qPXtic45TVHS4="}
+  [1m[35mGuys Load (2.8ms)[0m  SELECT "guys".* FROM "guys" ORDER BY RANDOM() LIMIT 2
+Rendered layouts/_menwomen.html.erb (0.9ms)
+Rendered guys/_vote.html.erb (6.1ms)
+Rendered layouts/_header.html.erb (1.2ms)
+Rendered layouts/_footer.html.erb (0.3ms)
+Rendered guys/index.html.erb within layouts/application (20.3ms)
+Completed 200 OK in 34ms (Views: 26.0ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/tmp/stylesheets/screen.css" for 127.0.0.1 at Thu Sep 29 17:16:55 -0600 2011
+
+ActionController::RoutingError (No route matches "/tmp/stylesheets/screen.css"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started POST "/guys" for 127.0.0.1 at Thu Sep 29 17:16:56 -0600 2011
+  Processing by GuysController#index as HTML
+  Parameters: {"authenticity_token"=>"YHGjQuSTIV2X2JML4TRT7UN9trrWp+qPXtic45TVHS4="}
+  [1m[36mGuys Load (4.5ms)[0m  [1mSELECT "guys".* FROM "guys" ORDER BY RANDOM() LIMIT 2[0m
+Rendered layouts/_menwomen.html.erb (1.1ms)
+Rendered guys/_vote.html.erb (6.2ms)
+Rendered layouts/_header.html.erb (1.5ms)
+Rendered layouts/_footer.html.erb (0.4ms)
+Rendered guys/index.html.erb within layouts/application (19.1ms)
+Completed 200 OK in 34ms (Views: 24.6ms | ActiveRecord: 4.5ms)
+
+
+Started GET "/tmp/stylesheets/screen.css" for 127.0.0.1 at Thu Sep 29 17:16:56 -0600 2011
+
+ActionController::RoutingError (No route matches "/tmp/stylesheets/screen.css"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/" for 127.0.0.1 at Thu Sep 29 17:16:58 -0600 2011
+  Processing by GirlsController#index as HTML
+  [1m[35mGirl Load (3.8ms)[0m  SELECT "girls".* FROM "girls" ORDER BY RANDOM() LIMIT 2
+Rendered layouts/_menwomen.html.erb (1.2ms)
+Rendered girls/_vote.html.erb (5.9ms)
+Rendered layouts/_header.html.erb (1.2ms)
+Rendered layouts/_footer.html.erb (0.2ms)
+Rendered girls/index.html.erb within layouts/application (117.0ms)
+Completed 200 OK in 135ms (Views: 126.7ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/tmp/stylesheets/screen.css" for 127.0.0.1 at Thu Sep 29 17:16:58 -0600 2011
+
+ActionController::RoutingError (No route matches "/tmp/stylesheets/screen.css"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/guys" for 127.0.0.1 at Thu Sep 29 17:16:59 -0600 2011
+  Processing by GuysController#index as HTML
+  [1m[36mGuys Load (2.9ms)[0m  [1mSELECT "guys".* FROM "guys" ORDER BY RANDOM() LIMIT 2[0m
+Rendered layouts/_menwomen.html.erb (1.1ms)
+Rendered guys/_vote.html.erb (5.9ms)
+Rendered layouts/_header.html.erb (1.2ms)
+Rendered layouts/_footer.html.erb (0.3ms)
+Rendered guys/index.html.erb within layouts/application (18.4ms)
+Completed 200 OK in 33ms (Views: 25.7ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/tmp/stylesheets/screen.css" for 127.0.0.1 at Thu Sep 29 17:17:00 -0600 2011
+
+ActionController::RoutingError (No route matches "/tmp/stylesheets/screen.css"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.1ms)
+
+
+Started POST "/guys" for 127.0.0.1 at Thu Sep 29 17:17:01 -0600 2011
+  Processing by GuysController#index as HTML
+  Parameters: {"authenticity_token"=>"YHGjQuSTIV2X2JML4TRT7UN9trrWp+qPXtic45TVHS4="}
+  [1m[35mGuys Load (2.8ms)[0m  SELECT "guys".* FROM "guys" ORDER BY RANDOM() LIMIT 2
+Rendered layouts/_menwomen.html.erb (1.0ms)
+Rendered guys/_vote.html.erb (7.5ms)
+Rendered layouts/_header.html.erb (1.2ms)
+Rendered layouts/_footer.html.erb (0.3ms)
+Rendered guys/index.html.erb within layouts/application (19.8ms)
+Completed 200 OK in 33ms (Views: 25.3ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/tmp/stylesheets/screen.css" for 127.0.0.1 at Thu Sep 29 17:17:01 -0600 2011
+
+ActionController::RoutingError (No route matches "/tmp/stylesheets/screen.css"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started POST "/guys" for 127.0.0.1 at Thu Sep 29 17:17:02 -0600 2011
+  Processing by GuysController#index as HTML
+  Parameters: {"authenticity_token"=>"YHGjQuSTIV2X2JML4TRT7UN9trrWp+qPXtic45TVHS4="}
+  [1m[36mGuys Load (2.9ms)[0m  [1mSELECT "guys".* FROM "guys" ORDER BY RANDOM() LIMIT 2[0m
+Rendered layouts/_menwomen.html.erb (1.3ms)
+Rendered guys/_vote.html.erb (5.9ms)
+Rendered layouts/_header.html.erb (1.2ms)
+Rendered layouts/_footer.html.erb (0.3ms)
+Rendered guys/index.html.erb within layouts/application (18.9ms)
+Completed 200 OK in 33ms (Views: 25.5ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/tmp/stylesheets/screen.css" for 127.0.0.1 at Thu Sep 29 17:17:02 -0600 2011
+
+ActionController::RoutingError (No route matches "/tmp/stylesheets/screen.css"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started POST "/guys" for 127.0.0.1 at Thu Sep 29 17:17:03 -0600 2011
+  Processing by GuysController#index as HTML
+  Parameters: {"authenticity_token"=>"YHGjQuSTIV2X2JML4TRT7UN9trrWp+qPXtic45TVHS4="}
+  [1m[35mGuys Load (3.5ms)[0m  SELECT "guys".* FROM "guys" ORDER BY RANDOM() LIMIT 2
+Rendered layouts/_menwomen.html.erb (1.3ms)
+Rendered guys/_vote.html.erb (8.9ms)
+Rendered layouts/_header.html.erb (2.7ms)
+Rendered layouts/_footer.html.erb (0.3ms)
+Rendered guys/index.html.erb within layouts/application (24.7ms)
+Completed 200 OK in 42ms (Views: 32.0ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/tmp/stylesheets/screen.css" for 127.0.0.1 at Thu Sep 29 17:17:03 -0600 2011
+
+ActionController::RoutingError (No route matches "/tmp/stylesheets/screen.css"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started POST "/guys" for 127.0.0.1 at Thu Sep 29 17:17:04 -0600 2011
+  Processing by GuysController#index as HTML
+  Parameters: {"authenticity_token"=>"YHGjQuSTIV2X2JML4TRT7UN9trrWp+qPXtic45TVHS4="}
+  [1m[36mGuys Load (2.9ms)[0m  [1mSELECT "guys".* FROM "guys" ORDER BY RANDOM() LIMIT 2[0m
+Rendered layouts/_menwomen.html.erb (0.9ms)
+Rendered guys/_vote.html.erb (103.6ms)
+Rendered layouts/_header.html.erb (1.3ms)
+Rendered layouts/_footer.html.erb (0.3ms)
+Rendered guys/index.html.erb within layouts/application (115.7ms)
+Completed 200 OK in 130ms (Views: 121.8ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/tmp/stylesheets/screen.css" for 127.0.0.1 at Thu Sep 29 17:17:04 -0600 2011
+
+ActionController::RoutingError (No route matches "/tmp/stylesheets/screen.css"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started POST "/guys" for 127.0.0.1 at Thu Sep 29 17:17:33 -0600 2011
+  Processing by GuysController#index as HTML
+  Parameters: {"authenticity_token"=>"YHGjQuSTIV2X2JML4TRT7UN9trrWp+qPXtic45TVHS4="}
+  [1m[35mGuys Load (3.3ms)[0m  SELECT "guys".* FROM "guys" ORDER BY RANDOM() LIMIT 2
+Rendered layouts/_menwomen.html.erb (1.2ms)
+Rendered guys/_vote.html.erb (6.5ms)
+Rendered layouts/_header.html.erb (1.1ms)
+Rendered layouts/_footer.html.erb (0.2ms)
+Rendered guys/index.html.erb within layouts/application (20.8ms)
+Completed 200 OK in 36ms (Views: 26.9ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/tmp/stylesheets/screen.css" for 127.0.0.1 at Thu Sep 29 17:17:33 -0600 2011
+
+ActionController::RoutingError (No route matches "/tmp/stylesheets/screen.css"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started POST "/guys" for 127.0.0.1 at Thu Sep 29 17:18:03 -0600 2011
+  Processing by GuysController#index as HTML
+  Parameters: {"authenticity_token"=>"YHGjQuSTIV2X2JML4TRT7UN9trrWp+qPXtic45TVHS4="}
+  [1m[36mGuys Load (2.9ms)[0m  [1mSELECT "guys".* FROM "guys" ORDER BY RANDOM() LIMIT 2[0m
+Rendered layouts/_menwomen.html.erb (1.1ms)
+Rendered guys/_vote.html.erb (6.4ms)
+Rendered layouts/_header.html.erb (1.2ms)
+Rendered layouts/_footer.html.erb (0.2ms)
+Rendered guys/index.html.erb within layouts/application (18.8ms)
+Completed 200 OK in 36ms (Views: 26.9ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/tmp/stylesheets/screen.css" for 127.0.0.1 at Thu Sep 29 17:18:03 -0600 2011
+
+ActionController::RoutingError (No route matches "/tmp/stylesheets/screen.css"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started POST "/guys" for 127.0.0.1 at Thu Sep 29 17:18:05 -0600 2011
+  Processing by GuysController#index as HTML
+  Parameters: {"authenticity_token"=>"YHGjQuSTIV2X2JML4TRT7UN9trrWp+qPXtic45TVHS4="}
+  [1m[35mGuys Load (3.3ms)[0m  SELECT "guys".* FROM "guys" ORDER BY RANDOM() LIMIT 2
+Rendered layouts/_menwomen.html.erb (1.1ms)
+Rendered guys/_vote.html.erb (6.3ms)
+Rendered layouts/_header.html.erb (1.3ms)
+Rendered layouts/_footer.html.erb (0.2ms)
+Rendered guys/index.html.erb within layouts/application (19.4ms)
+Completed 200 OK in 35ms (Views: 26.6ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/tmp/stylesheets/screen.css" for 127.0.0.1 at Thu Sep 29 17:18:05 -0600 2011
+
+ActionController::RoutingError (No route matches "/tmp/stylesheets/screen.css"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started POST "/guys" for 127.0.0.1 at Thu Sep 29 17:18:06 -0600 2011
+  Processing by GuysController#index as HTML
+  Parameters: {"authenticity_token"=>"YHGjQuSTIV2X2JML4TRT7UN9trrWp+qPXtic45TVHS4="}
+  [1m[36mGuys Load (2.9ms)[0m  [1mSELECT "guys".* FROM "guys" ORDER BY RANDOM() LIMIT 2[0m
+Rendered layouts/_menwomen.html.erb (1.0ms)
+Rendered guys/_vote.html.erb (9.6ms)
+Rendered layouts/_header.html.erb (1.5ms)
+Rendered layouts/_footer.html.erb (0.3ms)
+Rendered guys/index.html.erb within layouts/application (22.6ms)
+Completed 200 OK in 38ms (Views: 28.3ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/tmp/stylesheets/screen.css" for 127.0.0.1 at Thu Sep 29 17:18:06 -0600 2011
+
+ActionController::RoutingError (No route matches "/tmp/stylesheets/screen.css"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started POST "/guys" for 127.0.0.1 at Thu Sep 29 17:18:07 -0600 2011
+  Processing by GuysController#index as HTML
+  Parameters: {"authenticity_token"=>"YHGjQuSTIV2X2JML4TRT7UN9trrWp+qPXtic45TVHS4="}
+  [1m[35mGuys Load (3.1ms)[0m  SELECT "guys".* FROM "guys" ORDER BY RANDOM() LIMIT 2
+Rendered layouts/_menwomen.html.erb (0.9ms)
+Rendered guys/_vote.html.erb (5.8ms)
+Rendered layouts/_header.html.erb (1.4ms)
+Rendered layouts/_footer.html.erb (0.3ms)
+Rendered guys/index.html.erb within layouts/application (116.2ms)
+Completed 200 OK in 129ms (Views: 121.6ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/tmp/stylesheets/screen.css" for 127.0.0.1 at Thu Sep 29 17:18:08 -0600 2011
+
+ActionController::RoutingError (No route matches "/tmp/stylesheets/screen.css"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started POST "/guys" for 127.0.0.1 at Thu Sep 29 17:18:08 -0600 2011
+  Processing by GuysController#index as HTML
+  Parameters: {"authenticity_token"=>"YHGjQuSTIV2X2JML4TRT7UN9trrWp+qPXtic45TVHS4="}
+  [1m[36mGuys Load (3.6ms)[0m  [1mSELECT "guys".* FROM "guys" ORDER BY RANDOM() LIMIT 2[0m
+Rendered layouts/_menwomen.html.erb (1.2ms)
+Rendered guys/_vote.html.erb (8.4ms)
+Rendered layouts/_header.html.erb (2.1ms)
+Rendered layouts/_footer.html.erb (0.6ms)
+Rendered guys/index.html.erb within layouts/application (24.1ms)
+Completed 200 OK in 40ms (Views: 31.0ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/tmp/stylesheets/screen.css" for 127.0.0.1 at Thu Sep 29 17:18:09 -0600 2011
+
+ActionController::RoutingError (No route matches "/tmp/stylesheets/screen.css"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started POST "/guys" for 127.0.0.1 at Thu Sep 29 17:18:10 -0600 2011
+  Processing by GuysController#index as HTML
+  Parameters: {"authenticity_token"=>"YHGjQuSTIV2X2JML4TRT7UN9trrWp+qPXtic45TVHS4="}
+  [1m[35mGuys Load (3.9ms)[0m  SELECT "guys".* FROM "guys" ORDER BY RANDOM() LIMIT 2
+Rendered layouts/_menwomen.html.erb (0.9ms)
+Rendered guys/_vote.html.erb (5.9ms)
+Rendered layouts/_header.html.erb (1.5ms)
+Rendered layouts/_footer.html.erb (0.2ms)
+Rendered guys/index.html.erb within layouts/application (17.9ms)
+Completed 200 OK in 36ms (Views: 24.7ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/tmp/stylesheets/screen.css" for 127.0.0.1 at Thu Sep 29 17:18:10 -0600 2011
+
+ActionController::RoutingError (No route matches "/tmp/stylesheets/screen.css"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.1ms)
+
+
+Started POST "/guys" for 127.0.0.1 at Thu Sep 29 17:18:11 -0600 2011
+  Processing by GuysController#index as HTML
+  Parameters: {"authenticity_token"=>"YHGjQuSTIV2X2JML4TRT7UN9trrWp+qPXtic45TVHS4="}
+  [1m[36mGuys Load (2.9ms)[0m  [1mSELECT "guys".* FROM "guys" ORDER BY RANDOM() LIMIT 2[0m
+Rendered layouts/_menwomen.html.erb (1.0ms)
+Rendered guys/_vote.html.erb (6.7ms)
+Rendered layouts/_header.html.erb (1.3ms)
+Rendered layouts/_footer.html.erb (0.9ms)
+Rendered guys/index.html.erb within layouts/application (19.7ms)
+Completed 200 OK in 33ms (Views: 25.1ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/tmp/stylesheets/screen.css" for 127.0.0.1 at Thu Sep 29 17:18:11 -0600 2011
+
+ActionController::RoutingError (No route matches "/tmp/stylesheets/screen.css"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started POST "/guys" for 127.0.0.1 at Thu Sep 29 17:18:12 -0600 2011
+  Processing by GuysController#index as HTML
+  Parameters: {"authenticity_token"=>"YHGjQuSTIV2X2JML4TRT7UN9trrWp+qPXtic45TVHS4="}
+  [1m[35mGuys Load (2.9ms)[0m  SELECT "guys".* FROM "guys" ORDER BY RANDOM() LIMIT 2
+Rendered layouts/_menwomen.html.erb (2.4ms)
+Rendered guys/_vote.html.erb (6.1ms)
+Rendered layouts/_header.html.erb (93.7ms)
+Rendered layouts/_footer.html.erb (0.4ms)
+Rendered guys/index.html.erb within layouts/application (113.1ms)
+Completed 200 OK in 128ms (Views: 119.7ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/tmp/stylesheets/screen.css" for 127.0.0.1 at Thu Sep 29 17:18:12 -0600 2011
+
+ActionController::RoutingError (No route matches "/tmp/stylesheets/screen.css"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started POST "/guys" for 127.0.0.1 at Thu Sep 29 17:18:13 -0600 2011
+  Processing by GuysController#index as HTML
+  Parameters: {"authenticity_token"=>"YHGjQuSTIV2X2JML4TRT7UN9trrWp+qPXtic45TVHS4="}
+  [1m[36mGuys Load (4.6ms)[0m  [1mSELECT "guys".* FROM "guys" ORDER BY RANDOM() LIMIT 2[0m
+Rendered layouts/_menwomen.html.erb (1.1ms)
+Rendered guys/_vote.html.erb (6.1ms)
+Rendered layouts/_header.html.erb (1.4ms)
+Rendered layouts/_footer.html.erb (0.4ms)
+Rendered guys/index.html.erb within layouts/application (19.8ms)
+Completed 200 OK in 38ms (Views: 26.5ms | ActiveRecord: 4.6ms)
+
+
+Started GET "/tmp/stylesheets/screen.css" for 127.0.0.1 at Thu Sep 29 17:18:13 -0600 2011
+
+ActionController::RoutingError (No route matches "/tmp/stylesheets/screen.css"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started POST "/guys" for 127.0.0.1 at Thu Sep 29 17:18:14 -0600 2011
+  Processing by GuysController#index as HTML
+  Parameters: {"authenticity_token"=>"YHGjQuSTIV2X2JML4TRT7UN9trrWp+qPXtic45TVHS4="}
+  [1m[35mGuys Load (2.8ms)[0m  SELECT "guys".* FROM "guys" ORDER BY RANDOM() LIMIT 2
+Rendered layouts/_menwomen.html.erb (0.9ms)
+Rendered guys/_vote.html.erb (7.3ms)
+Rendered layouts/_header.html.erb (1.3ms)
+Rendered layouts/_footer.html.erb (0.4ms)
+Rendered guys/index.html.erb within layouts/application (19.6ms)
+Completed 200 OK in 34ms (Views: 25.1ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/tmp/stylesheets/screen.css" for 127.0.0.1 at Thu Sep 29 17:18:14 -0600 2011
+
+ActionController::RoutingError (No route matches "/tmp/stylesheets/screen.css"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started POST "/guys" for 127.0.0.1 at Thu Sep 29 17:18:15 -0600 2011
+  Processing by GuysController#index as HTML
+  Parameters: {"authenticity_token"=>"YHGjQuSTIV2X2JML4TRT7UN9trrWp+qPXtic45TVHS4="}
+  [1m[36mGuys Load (2.8ms)[0m  [1mSELECT "guys".* FROM "guys" ORDER BY RANDOM() LIMIT 2[0m
+Rendered layouts/_menwomen.html.erb (1.1ms)
+Rendered guys/_vote.html.erb (6.1ms)
+Rendered layouts/_header.html.erb (1.2ms)
+Rendered layouts/_footer.html.erb (0.2ms)
+Rendered guys/index.html.erb within layouts/application (18.0ms)
+Completed 200 OK in 36ms (Views: 23.4ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/tmp/stylesheets/screen.css" for 127.0.0.1 at Thu Sep 29 17:18:15 -0600 2011
+
+ActionController::RoutingError (No route matches "/tmp/stylesheets/screen.css"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started POST "/guys" for 127.0.0.1 at Thu Sep 29 17:18:17 -0600 2011
+  Processing by GuysController#index as HTML
+  Parameters: {"authenticity_token"=>"YHGjQuSTIV2X2JML4TRT7UN9trrWp+qPXtic45TVHS4="}
+  [1m[35mGuys Load (2.9ms)[0m  SELECT "guys".* FROM "guys" ORDER BY RANDOM() LIMIT 2
+Rendered layouts/_menwomen.html.erb (1.0ms)
+Rendered guys/_vote.html.erb (6.4ms)
+Rendered layouts/_header.html.erb (1.2ms)
+Rendered layouts/_footer.html.erb (0.3ms)
+Rendered guys/index.html.erb within layouts/application (19.0ms)
+Completed 200 OK in 129ms (Views: 24.6ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/tmp/stylesheets/screen.css" for 127.0.0.1 at Thu Sep 29 17:18:17 -0600 2011
+
+ActionController::RoutingError (No route matches "/tmp/stylesheets/screen.css"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.3ms)
+
+
+Started PUT "/guys/update/631/111" for 127.0.0.1 at Thu Sep 29 17:18:19 -0600 2011
+  Processing by GuysController#update as JS
+  Parameters: {"lose"=>"111", "win"=>"631"}
+  [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mGuys Load (0.2ms)[0m  SELECT "guys".* FROM "guys" WHERE ("guys"."id" = 631) LIMIT 1
+  [1m[36mGuys Load (0.2ms)[0m  [1mSELECT "guys".* FROM "guys" WHERE ("guys"."id" = 111) LIMIT 1[0m
+  [1m[35mAREL (0.4ms)[0m  UPDATE "guys" SET "score" = 1363, "updated_at" = '2011-09-29 23:18:19.125843' WHERE ("guys"."id" = 631)
+  [1m[36mAREL (0.4ms)[0m  [1mUPDATE "guys" SET "score" = 1368, "updated_at" = '2011-09-29 23:18:19.136582' WHERE ("guys"."id" = 111)[0m
+  [1m[35mGuys Load (2.6ms)[0m  SELECT "guys".* FROM "guys" ORDER BY RANDOM() LIMIT 2
+Rendered guys/_vote.html.erb (2.4ms)
+Rendered guys/update.js.erb (8.1ms)
+Completed 200 OK in 59ms (Views: 30.1ms | ActiveRecord: 4.2ms)
+
+
+Started POST "/guys" for 127.0.0.1 at Thu Sep 29 17:18:24 -0600 2011
+  Processing by GuysController#index as HTML
+  Parameters: {"authenticity_token"=>"YHGjQuSTIV2X2JML4TRT7UN9trrWp+qPXtic45TVHS4="}
+  [1m[36mGuys Load (2.8ms)[0m  [1mSELECT "guys".* FROM "guys" ORDER BY RANDOM() LIMIT 2[0m
+Rendered layouts/_menwomen.html.erb (1.1ms)
+Rendered guys/_vote.html.erb (6.0ms)
+Rendered layouts/_header.html.erb (1.1ms)
+Rendered layouts/_footer.html.erb (0.3ms)
+Rendered guys/index.html.erb within layouts/application (18.5ms)
+Completed 200 OK in 32ms (Views: 24.0ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/tmp/stylesheets/screen.css" for 127.0.0.1 at Thu Sep 29 17:18:24 -0600 2011
+
+ActionController::RoutingError (No route matches "/tmp/stylesheets/screen.css"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.7ms)
+
+
+Started POST "/guys/update/43/143" for 127.0.0.1 at Thu Sep 29 17:18:33 -0600 2011
+  Processing by GuysController#update as JS
+  Parameters: {"lose"=>"143", "win"=>"43"}
+  [1m[35mGuys Load (0.2ms)[0m  SELECT "guys".* FROM "guys" WHERE ("guys"."id" = 43) LIMIT 1
+  [1m[36mGuys Load (0.2ms)[0m  [1mSELECT "guys".* FROM "guys" WHERE ("guys"."id" = 143) LIMIT 1[0m
+  [1m[35mAREL (0.3ms)[0m  UPDATE "guys" SET "score" = 1425, "updated_at" = '2011-09-29 23:18:33.373546' WHERE ("guys"."id" = 43)
+  [1m[36mAREL (0.4ms)[0m  [1mUPDATE "guys" SET "score" = 1374, "updated_at" = '2011-09-29 23:18:33.378993' WHERE ("guys"."id" = 143)[0m
+  [1m[35mGuys Load (2.7ms)[0m  SELECT "guys".* FROM "guys" ORDER BY RANDOM() LIMIT 2
+Rendered guys/_vote.html.erb (2.3ms)
+Rendered guys/update.js.erb (7.8ms)
+Completed 200 OK in 40ms (Views: 15.9ms | ActiveRecord: 3.7ms)
+
+
+Started POST "/guys/update/236/757" for 127.0.0.1 at Thu Sep 29 17:18:34 -0600 2011
+  Processing by GuysController#update as JS
+  Parameters: {"lose"=>"757", "win"=>"236"}
+  [1m[36mGuys Load (0.2ms)[0m  [1mSELECT "guys".* FROM "guys" WHERE ("guys"."id" = 236) LIMIT 1[0m
+  [1m[35mGuys Load (0.1ms)[0m  SELECT "guys".* FROM "guys" WHERE ("guys"."id" = 757) LIMIT 1
+  [1m[36mAREL (0.3ms)[0m  [1mUPDATE "guys" SET "score" = 1427, "updated_at" = '2011-09-29 23:18:34.864161' WHERE ("guys"."id" = 236)[0m
+  [1m[35mAREL (0.3ms)[0m  UPDATE "guys" SET "score" = 1397, "updated_at" = '2011-09-29 23:18:34.869840' WHERE ("guys"."id" = 757)
+  [1m[36mGuys Load (2.6ms)[0m  [1mSELECT "guys".* FROM "guys" ORDER BY RANDOM() LIMIT 2[0m
+Rendered guys/_vote.html.erb (2.1ms)
+Rendered guys/update.js.erb (7.4ms)
+Completed 200 OK in 39ms (Views: 15.2ms | ActiveRecord: 3.6ms)
+
+
+Started POST "/guys/update/293/366" for 127.0.0.1 at Thu Sep 29 17:18:36 -0600 2011
+  Processing by GuysController#update as JS
+  Parameters: {"lose"=>"366", "win"=>"293"}
+  [1m[35mGuys Load (0.2ms)[0m  SELECT "guys".* FROM "guys" WHERE ("guys"."id" = 293) LIMIT 1
+  [1m[36mGuys Load (0.2ms)[0m  [1mSELECT "guys".* FROM "guys" WHERE ("guys"."id" = 366) LIMIT 1[0m
+  [1m[35mAREL (0.5ms)[0m  UPDATE "guys" SET "score" = 1425, "updated_at" = '2011-09-29 23:18:36.520597' WHERE ("guys"."id" = 293)
+  [1m[36mAREL (0.4ms)[0m  [1mUPDATE "guys" SET "score" = 1374, "updated_at" = '2011-09-29 23:18:36.527925' WHERE ("guys"."id" = 366)[0m
+  [1m[35mGuys Load (3.8ms)[0m  SELECT "guys".* FROM "guys" ORDER BY RANDOM() LIMIT 2
+Rendered guys/_vote.html.erb (2.8ms)
+Rendered guys/update.js.erb (10.5ms)
+Completed 200 OK in 114ms (Views: 18.9ms | ActiveRecord: 5.1ms)
+
+
+Started POST "/guys/update/277/29" for 127.0.0.1 at Thu Sep 29 17:18:38 -0600 2011
+  Processing by GuysController#update as JS
+  Parameters: {"lose"=>"29", "win"=>"277"}
+  [1m[36mGuys Load (0.2ms)[0m  [1mSELECT "guys".* FROM "guys" WHERE ("guys"."id" = 277) LIMIT 1[0m
+  [1m[35mGuys Load (0.2ms)[0m  SELECT "guys".* FROM "guys" WHERE ("guys"."id" = 29) LIMIT 1
+  [1m[36mAREL (0.4ms)[0m  [1mUPDATE "guys" SET "updated_at" = '2011-09-29 23:18:38.264055', "score" = 1425 WHERE ("guys"."id" = 277)[0m
+  [1m[35mAREL (0.4ms)[0m  UPDATE "guys" SET "updated_at" = '2011-09-29 23:18:38.270141', "score" = 1374 WHERE ("guys"."id" = 29)
+  [1m[36mGuys Load (2.6ms)[0m  [1mSELECT "guys".* FROM "guys" ORDER BY RANDOM() LIMIT 2[0m
+Rendered guys/_vote.html.erb (2.1ms)
+Rendered guys/update.js.erb (7.5ms)
+Completed 200 OK in 41ms (Views: 16.1ms | ActiveRecord: 3.8ms)
+
+
+Started POST "/guys/update/646/681" for 127.0.0.1 at Thu Sep 29 17:18:41 -0600 2011
+  Processing by GuysController#update as JS
+  Parameters: {"lose"=>"681", "win"=>"646"}
+  [1m[35mGuys Load (0.2ms)[0m  SELECT "guys".* FROM "guys" WHERE ("guys"."id" = 646) LIMIT 1
+  [1m[36mGuys Load (0.1ms)[0m  [1mSELECT "guys".* FROM "guys" WHERE ("guys"."id" = 681) LIMIT 1[0m
+  [1m[35mAREL (0.3ms)[0m  UPDATE "guys" SET "score" = 1402, "updated_at" = '2011-09-29 23:18:41.318343' WHERE ("guys"."id" = 646)
+  [1m[36mAREL (0.4ms)[0m  [1mUPDATE "guys" SET "score" = 1372, "updated_at" = '2011-09-29 23:18:41.323920' WHERE ("guys"."id" = 681)[0m
+  [1m[35mGuys Load (2.7ms)[0m  SELECT "guys".* FROM "guys" ORDER BY RANDOM() LIMIT 2
+Rendered guys/_vote.html.erb (2.2ms)
+Rendered guys/update.js.erb (7.6ms)
+Completed 200 OK in 39ms (Views: 15.5ms | ActiveRecord: 3.7ms)
+
+
+Started POST "/guys/update/559/319" for 127.0.0.1 at Thu Sep 29 17:18:42 -0600 2011
+  Processing by GuysController#update as JS
+  Parameters: {"lose"=>"319", "win"=>"559"}
+  [1m[36mGuys Load (0.2ms)[0m  [1mSELECT "guys".* FROM "guys" WHERE ("guys"."id" = 559) LIMIT 1[0m
+  [1m[35mGuys Load (0.2ms)[0m  SELECT "guys".* FROM "guys" WHERE ("guys"."id" = 319) LIMIT 1
+  [1m[36mAREL (0.4ms)[0m  [1mUPDATE "guys" SET "score" = 1427, "updated_at" = '2011-09-29 23:18:42.547617' WHERE ("guys"."id" = 559)[0m
+  [1m[35mAREL (0.4ms)[0m  UPDATE "guys" SET "score" = 1397, "updated_at" = '2011-09-29 23:18:42.553868' WHERE ("guys"."id" = 319)
+  [1m[36mGuys Load (3.5ms)[0m  [1mSELECT "guys".* FROM "guys" ORDER BY RANDOM() LIMIT 2[0m
+Rendered guys/_vote.html.erb (3.3ms)
+Rendered guys/update.js.erb (10.2ms)
+Completed 200 OK in 49ms (Views: 19.5ms | ActiveRecord: 4.8ms)
+
+
+Started POST "/guys/update/27/642" for 127.0.0.1 at Thu Sep 29 17:18:44 -0600 2011
+  Processing by GuysController#update as JS
+  Parameters: {"lose"=>"642", "win"=>"27"}
+  [1m[35mGuys Load (0.2ms)[0m  SELECT "guys".* FROM "guys" WHERE ("guys"."id" = 27) LIMIT 1
+  [1m[36mGuys Load (0.1ms)[0m  [1mSELECT "guys".* FROM "guys" WHERE ("guys"."id" = 642) LIMIT 1[0m
+  [1m[35mAREL (0.3ms)[0m  UPDATE "guys" SET "updated_at" = '2011-09-29 23:18:44.971250', "score" = 1425 WHERE ("guys"."id" = 27)
+  [1m[36mAREL (0.3ms)[0m  [1mUPDATE "guys" SET "updated_at" = '2011-09-29 23:18:44.976233', "score" = 1374 WHERE ("guys"."id" = 642)[0m
+  [1m[35mGuys Load (2.6ms)[0m  SELECT "guys".* FROM "guys" ORDER BY RANDOM() LIMIT 2
+Rendered guys/_vote.html.erb (2.2ms)
+Rendered guys/update.js.erb (7.7ms)
+Completed 200 OK in 39ms (Views: 16.5ms | ActiveRecord: 3.5ms)
+
+
+Started POST "/guys/update/784/565" for 127.0.0.1 at Thu Sep 29 17:18:46 -0600 2011
+  Processing by GuysController#update as JS
+  Parameters: {"lose"=>"565", "win"=>"784"}
+  [1m[36mGuys Load (0.2ms)[0m  [1mSELECT "guys".* FROM "guys" WHERE ("guys"."id" = 784) LIMIT 1[0m
+  [1m[35mGuys Load (0.2ms)[0m  SELECT "guys".* FROM "guys" WHERE ("guys"."id" = 565) LIMIT 1
+  [1m[36mAREL (0.4ms)[0m  [1mUPDATE "guys" SET "score" = 1445, "updated_at" = '2011-09-29 23:18:46.397395' WHERE ("guys"."id" = 784)[0m
+  [1m[35mAREL (0.4ms)[0m  UPDATE "guys" SET "score" = 1376, "updated_at" = '2011-09-29 23:18:46.403210' WHERE ("guys"."id" = 565)
+  [1m[36mGuys Load (2.7ms)[0m  [1mSELECT "guys".* FROM "guys" ORDER BY RANDOM() LIMIT 2[0m
+Rendered guys/_vote.html.erb (2.4ms)
+Rendered guys/update.js.erb (119.9ms)
+Completed 200 OK in 159ms (Views: 129.3ms | ActiveRecord: 3.9ms)
+
+
+Started POST "/guys/update/519/464" for 127.0.0.1 at Thu Sep 29 17:18:48 -0600 2011
+  Processing by GuysController#update as JS
+  Parameters: {"lose"=>"464", "win"=>"519"}
+  [1m[35mGuys Load (0.2ms)[0m  SELECT "guys".* FROM "guys" WHERE ("guys"."id" = 519) LIMIT 1
+  [1m[36mGuys Load (0.1ms)[0m  [1mSELECT "guys".* FROM "guys" WHERE ("guys"."id" = 464) LIMIT 1[0m
+  [1m[35mAREL (1.6ms)[0m  UPDATE "guys" SET "updated_at" = '2011-09-29 23:18:48.270121', "score" = 1425 WHERE ("guys"."id" = 519)
+  [1m[36mAREL (0.3ms)[0m  [1mUPDATE "guys" SET "updated_at" = '2011-09-29 23:18:48.277536', "score" = 1374 WHERE ("guys"."id" = 464)[0m
+  [1m[35mGuys Load (2.9ms)[0m  SELECT "guys".* FROM "guys" ORDER BY RANDOM() LIMIT 2
+Rendered guys/_vote.html.erb (2.2ms)
+Rendered guys/update.js.erb (8.2ms)
+Completed 200 OK in 42ms (Views: 16.7ms | ActiveRecord: 5.1ms)
+
+
+Started POST "/guys/update/65/701" for 127.0.0.1 at Thu Sep 29 17:18:50 -0600 2011
+  Processing by GuysController#update as JS
+  Parameters: {"lose"=>"701", "win"=>"65"}
+  [1m[36mGuys Load (0.2ms)[0m  [1mSELECT "guys".* FROM "guys" WHERE ("guys"."id" = 65) LIMIT 1[0m
+  [1m[35mGuys Load (0.2ms)[0m  SELECT "guys".* FROM "guys" WHERE ("guys"."id" = 701) LIMIT 1
+  [1m[36mAREL (0.4ms)[0m  [1mUPDATE "guys" SET "score" = 1425, "updated_at" = '2011-09-29 23:18:50.877881' WHERE ("guys"."id" = 65)[0m
+  [1m[35mAREL (0.4ms)[0m  UPDATE "guys" SET "score" = 1374, "updated_at" = '2011-09-29 23:18:50.883726' WHERE ("guys"."id" = 701)
+  [1m[36mGuys Load (2.6ms)[0m  [1mSELECT "guys".* FROM "guys" ORDER BY RANDOM() LIMIT 2[0m
+Rendered guys/_vote.html.erb (2.2ms)
+Rendered guys/update.js.erb (7.7ms)
+Completed 200 OK in 39ms (Views: 15.3ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/" for 127.0.0.1 at Thu Sep 29 17:20:01 -0600 2011
+  Processing by GirlsController#index as HTML
+  [1m[35mGirl Load (3.9ms)[0m  SELECT "girls".* FROM "girls" ORDER BY RANDOM() LIMIT 2
+Rendered layouts/_menwomen.html.erb (1.4ms)
+Rendered girls/_vote.html.erb (5.9ms)
+Rendered layouts/_header.html.erb (1.2ms)
+Rendered layouts/_footer.html.erb (0.5ms)
+Rendered girls/index.html.erb within layouts/application (19.1ms)
+Completed 200 OK in 37ms (Views: 27.4ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/tmp/stylesheets/screen.css" for 127.0.0.1 at Thu Sep 29 17:20:02 -0600 2011
+
+ActionController::RoutingError (No route matches "/tmp/stylesheets/screen.css"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.5ms)
+
+
+Started GET "/guys" for 127.0.0.1 at Thu Sep 29 17:20:03 -0600 2011
+  Processing by GuysController#index as HTML
+  [1m[36mGuys Load (2.9ms)[0m  [1mSELECT "guys".* FROM "guys" ORDER BY RANDOM() LIMIT 2[0m
+Rendered layouts/_menwomen.html.erb (98.3ms)
+Rendered guys/_vote.html.erb (6.3ms)
+Rendered layouts/_header.html.erb (1.2ms)
+Rendered layouts/_footer.html.erb (0.3ms)
+Rendered guys/index.html.erb within layouts/application (115.3ms)
+Completed 200 OK in 128ms (Views: 120.7ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/tmp/stylesheets/screen.css" for 127.0.0.1 at Thu Sep 29 17:20:03 -0600 2011
+
+ActionController::RoutingError (No route matches "/tmp/stylesheets/screen.css"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/guys" for 127.0.0.1 at Thu Sep 29 17:20:34 -0600 2011
+  Processing by GuysController#index as HTML
+  [1m[35mGuys Load (2.8ms)[0m  SELECT "guys".* FROM "guys" ORDER BY RANDOM() LIMIT 2
+Rendered layouts/_menwomen.html.erb (1.5ms)
+Rendered guys/_vote.html.erb (8.7ms)
+Rendered layouts/_header.html.erb (1.5ms)
+Rendered layouts/_footer.html.erb (0.3ms)
+Rendered guys/index.html.erb within layouts/application (22.6ms)
+Completed 200 OK in 36ms (Views: 28.7ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/tmp/stylesheets/screen.css" for 127.0.0.1 at Thu Sep 29 17:20:34 -0600 2011
+
+ActionController::RoutingError (No route matches "/tmp/stylesheets/screen.css"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/guys" for 127.0.0.1 at Thu Sep 29 17:20:51 -0600 2011
+  Processing by GuysController#index as HTML
+  [1m[36mGuys Load (2.8ms)[0m  [1mSELECT "guys".* FROM "guys" ORDER BY RANDOM() LIMIT 2[0m
+Rendered layouts/_menwomen.html.erb (1.4ms)
+Rendered guys/_vote.html.erb (6.2ms)
+Rendered layouts/_header.html.erb (1.7ms)
+Rendered layouts/_footer.html.erb (0.3ms)
+Rendered guys/index.html.erb within layouts/application (20.4ms)
+Completed 200 OK in 35ms (Views: 26.6ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/tmp/stylesheets/screen.css" for 127.0.0.1 at Thu Sep 29 17:20:51 -0600 2011
+
+ActionController::RoutingError (No route matches "/tmp/stylesheets/screen.css"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/guys" for 127.0.0.1 at Thu Sep 29 17:22:24 -0600 2011
+  Processing by GuysController#index as HTML
+  [1m[35mGuys Load (2.9ms)[0m  SELECT "guys".* FROM "guys" ORDER BY RANDOM() LIMIT 2
+Rendered layouts/_menwomen.html.erb (1.4ms)
+Rendered guys/_vote.html.erb (6.0ms)
+Rendered layouts/_header.html.erb (1.1ms)
+Rendered layouts/_footer.html.erb (0.6ms)
+Rendered guys/index.html.erb within layouts/application (20.3ms)
+Completed 200 OK in 36ms (Views: 26.3ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/tmp/stylesheets/screen.css" for 127.0.0.1 at Thu Sep 29 17:22:25 -0600 2011
+
+ActionController::RoutingError (No route matches "/tmp/stylesheets/screen.css"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.2ms)
+
+
+Started GET "/guys" for 127.0.0.1 at Thu Sep 29 17:23:00 -0600 2011
+  Processing by GuysController#index as HTML
+  [1m[36mGuys Load (3.1ms)[0m  [1mSELECT "guys".* FROM "guys" ORDER BY RANDOM() LIMIT 2[0m
+Rendered layouts/_menwomen.html.erb (0.9ms)
+Rendered guys/_vote.html.erb (5.8ms)
+Rendered layouts/_header.html.erb (1.5ms)
+Rendered layouts/_footer.html.erb (0.2ms)
+Rendered guys/index.html.erb within layouts/application (17.8ms)
+Completed 200 OK in 32ms (Views: 23.2ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/tmp/stylesheets/screen.css" for 127.0.0.1 at Thu Sep 29 17:23:01 -0600 2011
+
+ActionController::RoutingError (No route matches "/tmp/stylesheets/screen.css"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.4ms)
+
+
+Started GET "/" for 127.0.0.1 at Thu Sep 29 17:23:25 -0600 2011
+  Processing by GirlsController#index as HTML
+  [1m[35mGirl Load (4.5ms)[0m  SELECT "girls".* FROM "girls" ORDER BY RANDOM() LIMIT 2
+Rendered layouts/_menwomen.html.erb (1.4ms)
+Rendered girls/_vote.html.erb (139.1ms)
+Rendered layouts/_header.html.erb (1.9ms)
+Rendered layouts/_footer.html.erb (0.4ms)
+Rendered girls/index.html.erb within layouts/application (158.8ms)
+Completed 200 OK in 177ms (Views: 165.7ms | ActiveRecord: 4.5ms)
+
+
+Started GET "/" for 127.0.0.1 at Thu Sep 29 17:23:25 -0600 2011
+  Processing by GirlsController#index as HTML
+  [1m[36mGirl Load (4.3ms)[0m  [1mSELECT "girls".* FROM "girls" ORDER BY RANDOM() LIMIT 2[0m
+Rendered layouts/_menwomen.html.erb (1.3ms)
+Rendered girls/_vote.html.erb (7.2ms)
+Rendered layouts/_header.html.erb (1.5ms)
+Rendered layouts/_footer.html.erb (0.4ms)
+Rendered girls/index.html.erb within layouts/application (23.8ms)
+Completed 200 OK in 42ms (Views: 30.6ms | ActiveRecord: 4.3ms)
+
+
+Started GET "/" for 127.0.0.1 at Thu Sep 29 17:23:25 -0600 2011
+  Processing by GirlsController#index as HTML
+  [1m[35mGirl Load (4.6ms)[0m  SELECT "girls".* FROM "girls" ORDER BY RANDOM() LIMIT 2
+Rendered layouts/_menwomen.html.erb (1.3ms)
+Rendered girls/_vote.html.erb (8.5ms)
+Rendered layouts/_header.html.erb (1.6ms)
+Rendered layouts/_footer.html.erb (0.4ms)
+Rendered girls/index.html.erb within layouts/application (24.4ms)
+Completed 200 OK in 44ms (Views: 31.9ms | ActiveRecord: 4.6ms)
+
+
+Started GET "/" for 127.0.0.1 at Thu Sep 29 17:23:26 -0600 2011
+  Processing by GirlsController#index as HTML
+  [1m[36mGirl Load (5.7ms)[0m  [1mSELECT "girls".* FROM "girls" ORDER BY RANDOM() LIMIT 2[0m
+Rendered layouts/_menwomen.html.erb (1.5ms)
+Rendered girls/_vote.html.erb (141.4ms)
+Rendered layouts/_header.html.erb (1.8ms)
+Rendered layouts/_footer.html.erb (0.5ms)
+Rendered girls/index.html.erb within layouts/application (162.6ms)
+Completed 200 OK in 188ms (Views: 174.9ms | ActiveRecord: 5.7ms)
+
+
+Started GET "/" for 127.0.0.1 at Thu Sep 29 17:23:26 -0600 2011
+  Processing by GirlsController#index as HTML
+  [1m[35mGirl Load (4.3ms)[0m  SELECT "girls".* FROM "girls" ORDER BY RANDOM() LIMIT 2
+Rendered layouts/_menwomen.html.erb (1.1ms)
+Rendered girls/_vote.html.erb (6.6ms)
+Rendered layouts/_header.html.erb (1.5ms)
+Rendered layouts/_footer.html.erb (0.3ms)
+Rendered girls/index.html.erb within layouts/application (20.4ms)
+Completed 200 OK in 37ms (Views: 26.8ms | ActiveRecord: 4.3ms)
+
+
+Started GET "/" for 127.0.0.1 at Thu Sep 29 17:23:26 -0600 2011
+  Processing by GirlsController#index as HTML
+  [1m[36mGirl Load (4.1ms)[0m  [1mSELECT "girls".* FROM "girls" ORDER BY RANDOM() LIMIT 2[0m
+Rendered layouts/_menwomen.html.erb (1.2ms)
+Rendered girls/_vote.html.erb (5.5ms)
+Rendered layouts/_header.html.erb (1.1ms)
+Rendered layouts/_footer.html.erb (0.2ms)
+Rendered girls/index.html.erb within layouts/application (19.1ms)
+Completed 200 OK in 35ms (Views: 26.1ms | ActiveRecord: 4.1ms)
+
+
+Started GET "/tmp/stylesheets/screen.css" for 127.0.0.1 at Thu Sep 29 17:23:26 -0600 2011
+
+ActionController::RoutingError (No route matches "/tmp/stylesheets/screen.css"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/" for 127.0.0.1 at Thu Sep 29 17:24:00 -0600 2011
+  Processing by GirlsController#index as HTML
+  [1m[35mGirl Load (3.8ms)[0m  SELECT "girls".* FROM "girls" ORDER BY RANDOM() LIMIT 2
+Rendered layouts/_menwomen.html.erb (0.9ms)
+Rendered girls/_vote.html.erb (5.5ms)
+Rendered layouts/_header.html.erb (1.1ms)
+Rendered layouts/_footer.html.erb (0.3ms)
+Rendered girls/index.html.erb within layouts/application (17.2ms)
+Completed 200 OK in 32ms (Views: 23.3ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/tmp/stylesheets/screen.css" for 127.0.0.1 at Thu Sep 29 17:24:00 -0600 2011
+
+ActionController::RoutingError (No route matches "/tmp/stylesheets/screen.css"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/guys" for 127.0.0.1 at Thu Sep 29 17:24:22 -0600 2011
+  Processing by GuysController#index as HTML
+  [1m[36mGuys Load (2.9ms)[0m  [1mSELECT "guys".* FROM "guys" ORDER BY RANDOM() LIMIT 2[0m
+Rendered layouts/_menwomen.html.erb (1.1ms)
+Rendered guys/_vote.html.erb (6.6ms)
+Rendered layouts/_header.html.erb (1.6ms)
+Rendered layouts/_footer.html.erb (0.3ms)
+Rendered guys/index.html.erb within layouts/application (20.6ms)
+Completed 200 OK in 34ms (Views: 26.4ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/tmp/stylesheets/screen.css" for 127.0.0.1 at Thu Sep 29 17:24:22 -0600 2011
+
+ActionController::RoutingError (No route matches "/tmp/stylesheets/screen.css"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Thu Sep 29 17:24:41 -0600 2011
+  Processing by GirlsController#index as HTML
+  [1m[35mGirl Load (3.8ms)[0m  SELECT "girls".* FROM "girls" ORDER BY RANDOM() LIMIT 2
+Rendered layouts/_menwomen.html.erb (1.0ms)
+Rendered girls/_vote.html.erb (5.6ms)
+Rendered layouts/_header.html.erb (1.2ms)
+Rendered layouts/_footer.html.erb (0.3ms)
+Rendered girls/index.html.erb within layouts/application (17.4ms)
+Completed 200 OK in 125ms (Views: 22.7ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/tmp/stylesheets/screen.css" for 127.0.0.1 at Thu Sep 29 17:24:42 -0600 2011
+
+ActionController::RoutingError (No route matches "/tmp/stylesheets/screen.css"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/guys" for 127.0.0.1 at Thu Sep 29 17:24:45 -0600 2011
+  Processing by GuysController#index as HTML
+  [1m[36mGuys Load (3.3ms)[0m  [1mSELECT "guys".* FROM "guys" ORDER BY RANDOM() LIMIT 2[0m
+Rendered layouts/_menwomen.html.erb (1.1ms)
+Rendered guys/_vote.html.erb (6.1ms)
+Rendered layouts/_header.html.erb (1.2ms)
+Rendered layouts/_footer.html.erb (0.3ms)
+Rendered guys/index.html.erb within layouts/application (18.1ms)
+Completed 200 OK in 33ms (Views: 23.7ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/tmp/stylesheets/screen.css" for 127.0.0.1 at Thu Sep 29 17:24:45 -0600 2011
+
+ActionController::RoutingError (No route matches "/tmp/stylesheets/screen.css"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at Thu Sep 29 17:24:57 -0600 2011
+  Processing by GirlsController#index as HTML
+  [1m[35mGirl Load (3.8ms)[0m  SELECT "girls".* FROM "girls" ORDER BY RANDOM() LIMIT 2
+Rendered layouts/_menwomen.html.erb (0.9ms)
+Rendered girls/_vote.html.erb (5.5ms)
+Rendered layouts/_header.html.erb (1.1ms)
+Rendered layouts/_footer.html.erb (0.2ms)
+Rendered girls/index.html.erb within layouts/application (17.0ms)
+Completed 200 OK in 31ms (Views: 22.4ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/tmp/stylesheets/screen.css" for 127.0.0.1 at Thu Sep 29 17:24:58 -0600 2011
+
+ActionController::RoutingError (No route matches "/tmp/stylesheets/screen.css"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/guys" for 127.0.0.1 at Thu Sep 29 17:25:15 -0600 2011
+  Processing by GuysController#index as HTML
+  [1m[36mGuys Load (3.0ms)[0m  [1mSELECT "guys".* FROM "guys" ORDER BY RANDOM() LIMIT 2[0m
+Rendered layouts/_menwomen.html.erb (1.0ms)
+Rendered guys/_vote.html.erb (7.5ms)
+Rendered layouts/_header.html.erb (1.8ms)
+Rendered layouts/_footer.html.erb (0.5ms)
+Rendered guys/index.html.erb within layouts/application (23.4ms)
+Completed 200 OK in 39ms (Views: 28.8ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/tmp/stylesheets/screen.css" for 127.0.0.1 at Thu Sep 29 17:25:15 -0600 2011
+
+ActionController::RoutingError (No route matches "/tmp/stylesheets/screen.css"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.5ms)
+
+
+Started POST "/guys" for 127.0.0.1 at Thu Sep 29 17:25:34 -0600 2011
+  Processing by GuysController#index as HTML
+  Parameters: {"authenticity_token"=>"oN5aL/m1M2S8OMltdbdkciw+z1LKGXgwf61cob/iK3g="}
+  [1m[35mGuys Load (2.9ms)[0m  SELECT "guys".* FROM "guys" ORDER BY RANDOM() LIMIT 2
+Rendered layouts/_menwomen.html.erb (0.9ms)
+Rendered guys/_vote.html.erb (6.2ms)
+Rendered layouts/_header.html.erb (1.2ms)
+Rendered layouts/_footer.html.erb (0.3ms)
+Rendered guys/index.html.erb within layouts/application (17.8ms)
+Completed 200 OK in 31ms (Views: 23.3ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/tmp/stylesheets/screen.css" for 127.0.0.1 at Thu Sep 29 17:25:35 -0600 2011
+
+ActionController::RoutingError (No route matches "/tmp/stylesheets/screen.css"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started POST "/guys" for 127.0.0.1 at Thu Sep 29 17:25:35 -0600 2011
+  Processing by GuysController#index as HTML
+  Parameters: {"authenticity_token"=>"oN5aL/m1M2S8OMltdbdkciw+z1LKGXgwf61cob/iK3g="}
+  [1m[36mGuys Load (3.2ms)[0m  [1mSELECT "guys".* FROM "guys" ORDER BY RANDOM() LIMIT 2[0m
+Rendered layouts/_menwomen.html.erb (1.0ms)
+Rendered guys/_vote.html.erb (7.4ms)
+Rendered layouts/_header.html.erb (1.3ms)
+Rendered layouts/_footer.html.erb (0.3ms)
+Rendered guys/index.html.erb within layouts/application (21.9ms)
+Completed 200 OK in 44ms (Views: 33.2ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/tmp/stylesheets/screen.css" for 127.0.0.1 at Thu Sep 29 17:25:36 -0600 2011
+
+ActionController::RoutingError (No route matches "/tmp/stylesheets/screen.css"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.7ms)
+
+
+Started POST "/guys" for 127.0.0.1 at Thu Sep 29 17:25:36 -0600 2011
+  Processing by GuysController#index as HTML
+  Parameters: {"authenticity_token"=>"oN5aL/m1M2S8OMltdbdkciw+z1LKGXgwf61cob/iK3g="}
+  [1m[35mGuys Load (2.9ms)[0m  SELECT "guys".* FROM "guys" ORDER BY RANDOM() LIMIT 2
+Rendered layouts/_menwomen.html.erb (0.9ms)
+Rendered guys/_vote.html.erb (6.2ms)
+Rendered layouts/_header.html.erb (1.5ms)
+Rendered layouts/_footer.html.erb (0.3ms)
+Rendered guys/index.html.erb within layouts/application (19.0ms)
+Completed 200 OK in 32ms (Views: 24.5ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/tmp/stylesheets/screen.css" for 127.0.0.1 at Thu Sep 29 17:25:37 -0600 2011
+
+ActionController::RoutingError (No route matches "/tmp/stylesheets/screen.css"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started POST "/guys" for 127.0.0.1 at Thu Sep 29 17:26:01 -0600 2011
+  Processing by GuysController#index as HTML
+  Parameters: {"authenticity_token"=>"YHGjQuSTIV2X2JML4TRT7UN9trrWp+qPXtic45TVHS4="}
+  [1m[36mGuys Load (2.8ms)[0m  [1mSELECT "guys".* FROM "guys" ORDER BY RANDOM() LIMIT 2[0m
+Rendered layouts/_menwomen.html.erb (1.1ms)
+Rendered guys/_vote.html.erb (8.0ms)
+Rendered layouts/_header.html.erb (1.3ms)
+Rendered layouts/_footer.html.erb (0.2ms)
+Rendered guys/index.html.erb within layouts/application (20.9ms)
+Completed 200 OK in 34ms (Views: 26.3ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/tmp/stylesheets/screen.css" for 127.0.0.1 at Thu Sep 29 17:26:01 -0600 2011
+
+ActionController::RoutingError (No route matches "/tmp/stylesheets/screen.css"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started POST "/guys" for 127.0.0.1 at Thu Sep 29 17:26:03 -0600 2011
+  Processing by GuysController#index as HTML
+  Parameters: {"authenticity_token"=>"YHGjQuSTIV2X2JML4TRT7UN9trrWp+qPXtic45TVHS4="}
+  [1m[35mGuys Load (3.1ms)[0m  SELECT "guys".* FROM "guys" ORDER BY RANDOM() LIMIT 2
+Rendered layouts/_menwomen.html.erb (0.9ms)
+Rendered guys/_vote.html.erb (6.3ms)
+Rendered layouts/_header.html.erb (1.2ms)
+Rendered layouts/_footer.html.erb (0.3ms)
+Rendered guys/index.html.erb within layouts/application (18.1ms)
+Completed 200 OK in 34ms (Views: 23.8ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/tmp/stylesheets/screen.css" for 127.0.0.1 at Thu Sep 29 17:26:03 -0600 2011
+
+ActionController::RoutingError (No route matches "/tmp/stylesheets/screen.css"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started POST "/guys" for 127.0.0.1 at Thu Sep 29 17:26:05 -0600 2011
+  Processing by GuysController#index as HTML
+  Parameters: {"authenticity_token"=>"YHGjQuSTIV2X2JML4TRT7UN9trrWp+qPXtic45TVHS4="}
+  [1m[36mGuys Load (2.8ms)[0m  [1mSELECT "guys".* FROM "guys" ORDER BY RANDOM() LIMIT 2[0m
+Rendered layouts/_menwomen.html.erb (1.0ms)
+Rendered guys/_vote.html.erb (6.8ms)
+Rendered layouts/_header.html.erb (1.6ms)
+Rendered layouts/_footer.html.erb (0.4ms)
+Rendered guys/index.html.erb within layouts/application (21.0ms)
+Completed 200 OK in 35ms (Views: 26.6ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/tmp/stylesheets/screen.css" for 127.0.0.1 at Thu Sep 29 17:26:06 -0600 2011
+
+ActionController::RoutingError (No route matches "/tmp/stylesheets/screen.css"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started POST "/guys" for 127.0.0.1 at Thu Sep 29 17:26:07 -0600 2011
+  Processing by GuysController#index as HTML
+  Parameters: {"authenticity_token"=>"YHGjQuSTIV2X2JML4TRT7UN9trrWp+qPXtic45TVHS4="}
+  [1m[35mGuys Load (2.9ms)[0m  SELECT "guys".* FROM "guys" ORDER BY RANDOM() LIMIT 2
+Rendered layouts/_menwomen.html.erb (0.9ms)
+Rendered guys/_vote.html.erb (105.9ms)
+Rendered layouts/_header.html.erb (1.3ms)
+Rendered layouts/_footer.html.erb (0.3ms)
+Rendered guys/index.html.erb within layouts/application (118.5ms)
+Completed 200 OK in 132ms (Views: 123.8ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/tmp/stylesheets/screen.css" for 127.0.0.1 at Thu Sep 29 17:26:08 -0600 2011
+
+ActionController::RoutingError (No route matches "/tmp/stylesheets/screen.css"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started POST "/guys" for 127.0.0.1 at Thu Sep 29 17:27:24 -0600 2011
+  Processing by GuysController#index as HTML
+  Parameters: {"authenticity_token"=>"YHGjQuSTIV2X2JML4TRT7UN9trrWp+qPXtic45TVHS4="}
+  [1m[36mGuys Load (3.3ms)[0m  [1mSELECT "guys".* FROM "guys" ORDER BY RANDOM() LIMIT 2[0m
+Rendered layouts/_menwomen.html.erb (1.5ms)
+Rendered guys/_vote.html.erb (7.7ms)
+Rendered layouts/_header.html.erb (1.8ms)
+Rendered layouts/_footer.html.erb (0.3ms)
+Rendered guys/index.html.erb within layouts/application (24.4ms)
+Completed 200 OK in 44ms (Views: 32.0ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/tmp/stylesheets/screen.css" for 127.0.0.1 at Thu Sep 29 17:27:24 -0600 2011
+
+ActionController::RoutingError (No route matches "/tmp/stylesheets/screen.css"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started POST "/guys" for 127.0.0.1 at Thu Sep 29 17:28:01 -0600 2011
+  Processing by GuysController#index as HTML
+  Parameters: {"authenticity_token"=>"YHGjQuSTIV2X2JML4TRT7UN9trrWp+qPXtic45TVHS4="}
+  [1m[35mGuys Load (2.9ms)[0m  SELECT "guys".* FROM "guys" ORDER BY RANDOM() LIMIT 2
+Rendered layouts/_menwomen.html.erb (1.3ms)
+Rendered guys/_vote.html.erb (6.4ms)
+Rendered layouts/_header.html.erb (1.7ms)
+Rendered layouts/_footer.html.erb (0.3ms)
+Rendered guys/index.html.erb within layouts/application (21.0ms)
+Completed 200 OK in 35ms (Views: 26.9ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/tmp/stylesheets/screen.css" for 127.0.0.1 at Thu Sep 29 17:28:01 -0600 2011
+
+ActionController::RoutingError (No route matches "/tmp/stylesheets/screen.css"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at Thu Sep 29 17:28:08 -0600 2011
+  Processing by GirlsController#index as HTML
+  [1m[36mGirl Load (3.8ms)[0m  [1mSELECT "girls".* FROM "girls" ORDER BY RANDOM() LIMIT 2[0m
+Rendered layouts/_menwomen.html.erb (1.4ms)
+Rendered girls/_vote.html.erb (5.5ms)
+Rendered layouts/_header.html.erb (1.5ms)
+Rendered layouts/_footer.html.erb (0.3ms)
+Rendered girls/index.html.erb within layouts/application (18.1ms)
+Completed 200 OK in 33ms (Views: 24.2ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/tmp/stylesheets/screen.css" for 127.0.0.1 at Thu Sep 29 17:28:09 -0600 2011
+
+ActionController::RoutingError (No route matches "/tmp/stylesheets/screen.css"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started POST "/guys" for 127.0.0.1 at Thu Sep 29 17:28:13 -0600 2011
+  Processing by GuysController#index as HTML
+  Parameters: {"authenticity_token"=>"YHGjQuSTIV2X2JML4TRT7UN9trrWp+qPXtic45TVHS4="}
+  [1m[35mGuys Load (2.9ms)[0m  SELECT "guys".* FROM "guys" ORDER BY RANDOM() LIMIT 2
+Rendered layouts/_menwomen.html.erb (1.3ms)
+Rendered guys/_vote.html.erb (7.2ms)
+Rendered layouts/_header.html.erb (1.5ms)
+Rendered layouts/_footer.html.erb (0.3ms)
+Rendered guys/index.html.erb within layouts/application (20.0ms)
+Completed 200 OK in 33ms (Views: 25.4ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/tmp/stylesheets/screen.css" for 127.0.0.1 at Thu Sep 29 17:28:13 -0600 2011
+
+ActionController::RoutingError (No route matches "/tmp/stylesheets/screen.css"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started POST "/guys" for 127.0.0.1 at Thu Sep 29 17:28:15 -0600 2011
+  Processing by GuysController#index as HTML
+  Parameters: {"authenticity_token"=>"YHGjQuSTIV2X2JML4TRT7UN9trrWp+qPXtic45TVHS4="}
+  [1m[36mGuys Load (2.8ms)[0m  [1mSELECT "guys".* FROM "guys" ORDER BY RANDOM() LIMIT 2[0m
+Rendered layouts/_menwomen.html.erb (1.3ms)
+Rendered guys/_vote.html.erb (5.9ms)
+Rendered layouts/_header.html.erb (2.1ms)
+Rendered layouts/_footer.html.erb (0.5ms)
+Rendered guys/index.html.erb within layouts/application (21.9ms)
+Completed 200 OK in 35ms (Views: 27.4ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/tmp/stylesheets/screen.css" for 127.0.0.1 at Thu Sep 29 17:28:15 -0600 2011
+
+ActionController::RoutingError (No route matches "/tmp/stylesheets/screen.css"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started POST "/guys" for 127.0.0.1 at Thu Sep 29 17:28:19 -0600 2011
+  Processing by GuysController#index as HTML
+  Parameters: {"authenticity_token"=>"YHGjQuSTIV2X2JML4TRT7UN9trrWp+qPXtic45TVHS4="}
+  [1m[35mGuys Load (3.3ms)[0m  SELECT "guys".* FROM "guys" ORDER BY RANDOM() LIMIT 2
+Rendered layouts/_menwomen.html.erb (1.4ms)
+Rendered guys/_vote.html.erb (5.9ms)
+Rendered layouts/_header.html.erb (1.3ms)
+Rendered layouts/_footer.html.erb (0.3ms)
+Rendered guys/index.html.erb within layouts/application (18.9ms)
+Completed 200 OK in 34ms (Views: 24.4ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/tmp/stylesheets/screen.css" for 127.0.0.1 at Thu Sep 29 17:28:19 -0600 2011
+
+ActionController::RoutingError (No route matches "/tmp/stylesheets/screen.css"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started POST "/guys" for 127.0.0.1 at Thu Sep 29 17:28:20 -0600 2011
+  Processing by GuysController#index as HTML
+  Parameters: {"authenticity_token"=>"YHGjQuSTIV2X2JML4TRT7UN9trrWp+qPXtic45TVHS4="}
+  [1m[36mGuys Load (2.9ms)[0m  [1mSELECT "guys".* FROM "guys" ORDER BY RANDOM() LIMIT 2[0m
+Rendered layouts/_menwomen.html.erb (1.6ms)
+Rendered guys/_vote.html.erb (6.2ms)
+Rendered layouts/_header.html.erb (1.3ms)
+Rendered layouts/_footer.html.erb (0.3ms)
+Rendered guys/index.html.erb within layouts/application (19.9ms)
+Completed 200 OK in 34ms (Views: 26.0ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/tmp/stylesheets/screen.css" for 127.0.0.1 at Thu Sep 29 17:28:21 -0600 2011
+
+ActionController::RoutingError (No route matches "/tmp/stylesheets/screen.css"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.3ms)
+
+
+Started POST "/guys" for 127.0.0.1 at Thu Sep 29 17:28:22 -0600 2011
+  Processing by GuysController#index as HTML
+  Parameters: {"authenticity_token"=>"YHGjQuSTIV2X2JML4TRT7UN9trrWp+qPXtic45TVHS4="}
+  [1m[35mGuys Load (2.8ms)[0m  SELECT "guys".* FROM "guys" ORDER BY RANDOM() LIMIT 2
+Rendered layouts/_menwomen.html.erb (1.3ms)
+Rendered guys/_vote.html.erb (6.1ms)
+Rendered layouts/_header.html.erb (1.6ms)
+Rendered layouts/_footer.html.erb (0.3ms)
+Rendered guys/index.html.erb within layouts/application (19.9ms)
+Completed 200 OK in 34ms (Views: 25.4ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/tmp/stylesheets/screen.css" for 127.0.0.1 at Thu Sep 29 17:28:22 -0600 2011
+
+ActionController::RoutingError (No route matches "/tmp/stylesheets/screen.css"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started POST "/guys" for 127.0.0.1 at Thu Sep 29 17:28:25 -0600 2011
+  Processing by GuysController#index as HTML
+  Parameters: {"authenticity_token"=>"YHGjQuSTIV2X2JML4TRT7UN9trrWp+qPXtic45TVHS4="}
+  [1m[36mGuys Load (3.5ms)[0m  [1mSELECT "guys".* FROM "guys" ORDER BY RANDOM() LIMIT 2[0m
+Rendered layouts/_menwomen.html.erb (1.3ms)
+Rendered guys/_vote.html.erb (5.6ms)
+Rendered layouts/_header.html.erb (1.5ms)
+Rendered layouts/_footer.html.erb (0.2ms)
+Rendered guys/index.html.erb within layouts/application (19.0ms)
+Completed 200 OK in 33ms (Views: 24.5ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/tmp/stylesheets/screen.css" for 127.0.0.1 at Thu Sep 29 17:28:25 -0600 2011
+
+ActionController::RoutingError (No route matches "/tmp/stylesheets/screen.css"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started POST "/guys" for 127.0.0.1 at Thu Sep 29 17:28:26 -0600 2011
+  Processing by GuysController#index as HTML
+  Parameters: {"authenticity_token"=>"YHGjQuSTIV2X2JML4TRT7UN9trrWp+qPXtic45TVHS4="}
+  [1m[35mGuys Load (2.8ms)[0m  SELECT "guys".* FROM "guys" ORDER BY RANDOM() LIMIT 2
+Rendered layouts/_menwomen.html.erb (1.3ms)
+Rendered guys/_vote.html.erb (5.7ms)
+Rendered layouts/_header.html.erb (1.8ms)
+Rendered layouts/_footer.html.erb (1.8ms)
+Rendered guys/index.html.erb within layouts/application (21.4ms)
+Completed 200 OK in 35ms (Views: 26.8ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/tmp/stylesheets/screen.css" for 127.0.0.1 at Thu Sep 29 17:28:26 -0600 2011
+
+ActionController::RoutingError (No route matches "/tmp/stylesheets/screen.css"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started POST "/guys" for 127.0.0.1 at Thu Sep 29 17:28:27 -0600 2011
+  Processing by GuysController#index as HTML
+  Parameters: {"authenticity_token"=>"YHGjQuSTIV2X2JML4TRT7UN9trrWp+qPXtic45TVHS4="}
+  [1m[36mGuys Load (2.9ms)[0m  [1mSELECT "guys".* FROM "guys" ORDER BY RANDOM() LIMIT 2[0m
+Rendered layouts/_menwomen.html.erb (1.4ms)
+Rendered guys/_vote.html.erb (5.6ms)
+Rendered layouts/_header.html.erb (1.4ms)
+Rendered layouts/_footer.html.erb (0.5ms)
+Rendered guys/index.html.erb within layouts/application (19.9ms)
+Completed 200 OK in 34ms (Views: 25.5ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/tmp/stylesheets/screen.css" for 127.0.0.1 at Thu Sep 29 17:28:28 -0600 2011
+
+ActionController::RoutingError (No route matches "/tmp/stylesheets/screen.css"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started POST "/guys" for 127.0.0.1 at Thu Sep 29 17:28:29 -0600 2011
+  Processing by GuysController#index as HTML
+  Parameters: {"authenticity_token"=>"YHGjQuSTIV2X2JML4TRT7UN9trrWp+qPXtic45TVHS4="}
+  [1m[35mGuys Load (2.9ms)[0m  SELECT "guys".* FROM "guys" ORDER BY RANDOM() LIMIT 2
+Rendered layouts/_menwomen.html.erb (2.5ms)
+Rendered guys/_vote.html.erb (6.9ms)
+Rendered layouts/_header.html.erb (1.5ms)
+Rendered layouts/_footer.html.erb (0.3ms)
+Rendered guys/index.html.erb within layouts/application (115.6ms)
+Completed 200 OK in 129ms (Views: 121.2ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/tmp/stylesheets/screen.css" for 127.0.0.1 at Thu Sep 29 17:28:30 -0600 2011
+
+ActionController::RoutingError (No route matches "/tmp/stylesheets/screen.css"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started POST "/guys" for 127.0.0.1 at Thu Sep 29 17:28:31 -0600 2011
+  Processing by GuysController#index as HTML
+  Parameters: {"authenticity_token"=>"YHGjQuSTIV2X2JML4TRT7UN9trrWp+qPXtic45TVHS4="}
+  [1m[36mGuys Load (2.8ms)[0m  [1mSELECT "guys".* FROM "guys" ORDER BY RANDOM() LIMIT 2[0m
+Rendered layouts/_menwomen.html.erb (1.3ms)
+Rendered guys/_vote.html.erb (6.1ms)
+Rendered layouts/_header.html.erb (1.4ms)
+Rendered layouts/_footer.html.erb (0.3ms)
+Rendered guys/index.html.erb within layouts/application (19.5ms)
+Completed 200 OK in 34ms (Views: 25.2ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/tmp/stylesheets/screen.css" for 127.0.0.1 at Thu Sep 29 17:28:31 -0600 2011
+
+ActionController::RoutingError (No route matches "/tmp/stylesheets/screen.css"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.3ms)
+
+
+Started POST "/guys" for 127.0.0.1 at Thu Sep 29 17:28:33 -0600 2011
+  Processing by GuysController#index as HTML
+  Parameters: {"authenticity_token"=>"YHGjQuSTIV2X2JML4TRT7UN9trrWp+qPXtic45TVHS4="}
+  [1m[35mGuys Load (2.9ms)[0m  SELECT "guys".* FROM "guys" ORDER BY RANDOM() LIMIT 2
+Rendered layouts/_menwomen.html.erb (1.5ms)
+Rendered guys/_vote.html.erb (6.3ms)
+Rendered layouts/_header.html.erb (1.2ms)
+Rendered layouts/_footer.html.erb (0.5ms)
+Rendered guys/index.html.erb within layouts/application (19.3ms)
+Completed 200 OK in 33ms (Views: 24.9ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/tmp/stylesheets/screen.css" for 127.0.0.1 at Thu Sep 29 17:28:33 -0600 2011
+
+ActionController::RoutingError (No route matches "/tmp/stylesheets/screen.css"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started PUT "/guys/update/790/111" for 127.0.0.1 at Thu Sep 29 17:28:36 -0600 2011
+  Processing by GuysController#update as JS
+  Parameters: {"lose"=>"111", "win"=>"790"}
+  [1m[36mGuys Load (0.2ms)[0m  [1mSELECT "guys".* FROM "guys" WHERE ("guys"."id" = 790) LIMIT 1[0m
+  [1m[35mGuys Load (0.1ms)[0m  SELECT "guys".* FROM "guys" WHERE ("guys"."id" = 111) LIMIT 1
+  [1m[36mAREL (20.1ms)[0m  [1mUPDATE "guys" SET "updated_at" = '2011-09-29 23:28:36.998847', "score" = 1422 WHERE ("guys"."id" = 790)[0m
+  [1m[35mAREL (0.3ms)[0m  UPDATE "guys" SET "updated_at" = '2011-09-29 23:28:37.022622', "score" = 1344 WHERE ("guys"."id" = 111)
+  [1m[36mGuys Load (2.6ms)[0m  [1mSELECT "guys".* FROM "guys" ORDER BY RANDOM() LIMIT 2[0m
+Rendered guys/_vote.html.erb (1.8ms)
+Rendered guys/update.js.erb (7.2ms)
+Completed 200 OK in 58ms (Views: 15.5ms | ActiveRecord: 23.3ms)
+
+
+Started PUT "/guys/update/403/450" for 127.0.0.1 at Thu Sep 29 17:28:38 -0600 2011
+  Processing by GuysController#update as JS
+  Parameters: {"lose"=>"450", "win"=>"403"}
+  [1m[35mGuys Load (0.2ms)[0m  SELECT "guys".* FROM "guys" WHERE ("guys"."id" = 403) LIMIT 1
+  [1m[36mGuys Load (0.1ms)[0m  [1mSELECT "guys".* FROM "guys" WHERE ("guys"."id" = 450) LIMIT 1[0m
+  [1m[35mAREL (0.3ms)[0m  UPDATE "guys" SET "score" = 1425, "updated_at" = '2011-09-29 23:28:38.738979' WHERE ("guys"."id" = 403)
+  [1m[36mAREL (0.4ms)[0m  [1mUPDATE "guys" SET "score" = 1374, "updated_at" = '2011-09-29 23:28:38.744205' WHERE ("guys"."id" = 450)[0m
+  [1m[35mGuys Load (2.7ms)[0m  SELECT "guys".* FROM "guys" ORDER BY RANDOM() LIMIT 2
+Rendered guys/_vote.html.erb (1.7ms)
+Rendered guys/update.js.erb (7.8ms)
+Completed 200 OK in 38ms (Views: 15.3ms | ActiveRecord: 3.7ms)
+
+
+Started POST "/guys" for 127.0.0.1 at Thu Sep 29 17:29:35 -0600 2011
+  Processing by GuysController#index as HTML
+  Parameters: {"authenticity_token"=>"YHGjQuSTIV2X2JML4TRT7UN9trrWp+qPXtic45TVHS4="}
+  [1m[36mGuys Load (3.0ms)[0m  [1mSELECT "guys".* FROM "guys" ORDER BY RANDOM() LIMIT 2[0m
+Rendered layouts/_menwomen.html.erb (101.1ms)
+Rendered guys/_vote.html.erb (6.0ms)
+Rendered layouts/_header.html.erb (1.7ms)
+Rendered layouts/_footer.html.erb (0.3ms)
+Rendered guys/index.html.erb within layouts/application (119.5ms)
+Completed 200 OK in 133ms (Views: 125.3ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/tmp/stylesheets/screen.css" for 127.0.0.1 at Thu Sep 29 17:29:35 -0600 2011
+
+ActionController::RoutingError (No route matches "/tmp/stylesheets/screen.css"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started POST "/guys" for 127.0.0.1 at Thu Sep 29 17:29:43 -0600 2011
+  Processing by GuysController#index as HTML
+  Parameters: {"authenticity_token"=>"YHGjQuSTIV2X2JML4TRT7UN9trrWp+qPXtic45TVHS4="}
+  [1m[35mGuys Load (5.5ms)[0m  SELECT "guys".* FROM "guys" ORDER BY RANDOM() LIMIT 2
+Rendered layouts/_menwomen.html.erb (1.6ms)
+Rendered guys/_vote.html.erb (5.4ms)
+Rendered layouts/_header.html.erb (1.5ms)
+Rendered layouts/_footer.html.erb (0.3ms)
+Rendered guys/index.html.erb within layouts/application (18.1ms)
+Completed 200 OK in 34ms (Views: 23.5ms | ActiveRecord: 5.5ms)
+
+
+Started GET "/tmp/stylesheets/screen.css" for 127.0.0.1 at Thu Sep 29 17:29:43 -0600 2011
+
+ActionController::RoutingError (No route matches "/tmp/stylesheets/screen.css"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started POST "/guys" for 127.0.0.1 at Thu Sep 29 17:29:45 -0600 2011
+  Processing by GuysController#index as HTML
+  Parameters: {"authenticity_token"=>"YHGjQuSTIV2X2JML4TRT7UN9trrWp+qPXtic45TVHS4="}
+  [1m[36mGuys Load (2.8ms)[0m  [1mSELECT "guys".* FROM "guys" ORDER BY RANDOM() LIMIT 2[0m
+Rendered layouts/_menwomen.html.erb (1.6ms)
+Rendered guys/_vote.html.erb (5.8ms)
+Rendered layouts/_header.html.erb (1.6ms)
+Rendered layouts/_footer.html.erb (0.3ms)
+Rendered guys/index.html.erb within layouts/application (19.2ms)
+Completed 200 OK in 33ms (Views: 24.8ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/tmp/stylesheets/screen.css" for 127.0.0.1 at Thu Sep 29 17:29:45 -0600 2011
+
+ActionController::RoutingError (No route matches "/tmp/stylesheets/screen.css"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started POST "/guys" for 127.0.0.1 at Thu Sep 29 17:30:35 -0600 2011
+  Processing by GuysController#index as HTML
+  Parameters: {"authenticity_token"=>"YHGjQuSTIV2X2JML4TRT7UN9trrWp+qPXtic45TVHS4="}
+  [1m[35mGuys Load (2.8ms)[0m  SELECT "guys".* FROM "guys" ORDER BY RANDOM() LIMIT 2
+Rendered layouts/_menwomen.html.erb (1.6ms)
+Rendered guys/_vote.html.erb (5.7ms)
+Rendered layouts/_header.html.erb (2.1ms)
+Rendered layouts/_footer.html.erb (0.4ms)
+Rendered guys/index.html.erb within layouts/application (20.5ms)
+Completed 200 OK in 34ms (Views: 26.0ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/tmp/stylesheets/screen.css" for 127.0.0.1 at Thu Sep 29 17:30:35 -0600 2011
+
+ActionController::RoutingError (No route matches "/tmp/stylesheets/screen.css"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at Thu Sep 29 17:30:42 -0600 2011
+  Processing by GirlsController#index as HTML
+  [1m[36mGirl Load (3.8ms)[0m  [1mSELECT "girls".* FROM "girls" ORDER BY RANDOM() LIMIT 2[0m
+Rendered layouts/_menwomen.html.erb (1.4ms)
+Rendered girls/_vote.html.erb (5.6ms)
+Rendered layouts/_header.html.erb (1.2ms)
+Rendered layouts/_footer.html.erb (0.3ms)
+Rendered girls/index.html.erb within layouts/application (18.1ms)
+Completed 200 OK in 125ms (Views: 23.5ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/tmp/stylesheets/screen.css" for 127.0.0.1 at Thu Sep 29 17:30:42 -0600 2011
+
+ActionController::RoutingError (No route matches "/tmp/stylesheets/screen.css"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started POST "/guys" for 127.0.0.1 at Thu Sep 29 17:30:55 -0600 2011
+  Processing by GuysController#index as HTML
+  Parameters: {"authenticity_token"=>"8n8d/gCKiYpYZBnLPBU0gpG+CSNVTJj9O1yqU6+XOiQ="}
+  [1m[35mGuys Load (2.8ms)[0m  SELECT "guys".* FROM "guys" ORDER BY RANDOM() LIMIT 2
+Rendered layouts/_menwomen.html.erb (1.3ms)
+Rendered guys/_vote.html.erb (5.9ms)
+Rendered layouts/_header.html.erb (1.1ms)
+Rendered layouts/_footer.html.erb (0.2ms)
+Rendered guys/index.html.erb within layouts/application (17.9ms)
+Completed 200 OK in 31ms (Views: 23.3ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/tmp/stylesheets/screen.css" for 127.0.0.1 at Thu Sep 29 17:30:55 -0600 2011
+
+ActionController::RoutingError (No route matches "/tmp/stylesheets/screen.css"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started POST "/guys" for 127.0.0.1 at Thu Sep 29 17:30:56 -0600 2011
+  Processing by GuysController#index as HTML
+  Parameters: {"authenticity_token"=>"8n8d/gCKiYpYZBnLPBU0gpG+CSNVTJj9O1yqU6+XOiQ="}
+  [1m[36mGuys Load (2.8ms)[0m  [1mSELECT "guys".* FROM "guys" ORDER BY RANDOM() LIMIT 2[0m
+Rendered layouts/_menwomen.html.erb (1.4ms)
+Rendered guys/_vote.html.erb (104.1ms)
+Rendered layouts/_header.html.erb (1.3ms)
+Rendered layouts/_footer.html.erb (0.3ms)
+Rendered guys/index.html.erb within layouts/application (116.8ms)
+Completed 200 OK in 130ms (Views: 122.4ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/tmp/stylesheets/screen.css" for 127.0.0.1 at Thu Sep 29 17:30:56 -0600 2011
+
+ActionController::RoutingError (No route matches "/tmp/stylesheets/screen.css"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (4.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Thu Sep 29 17:31:21 -0600 2011
+  Processing by GirlsController#index as HTML
+  [1m[35mGirl Load (4.4ms)[0m  SELECT "girls".* FROM "girls" ORDER BY RANDOM() LIMIT 2
+Rendered layouts/_menwomen.html.erb (1.3ms)
+Rendered girls/_vote.html.erb (6.7ms)
+Rendered layouts/_header.html.erb (2.3ms)
+Rendered layouts/_footer.html.erb (0.6ms)
+Rendered girls/index.html.erb within layouts/application (21.2ms)
+Completed 200 OK in 44ms (Views: 32.1ms | ActiveRecord: 4.4ms)
+
+
+Started GET "/tmp/stylesheets/screen.css" for 127.0.0.1 at Thu Sep 29 17:31:21 -0600 2011
+
+ActionController::RoutingError (No route matches "/tmp/stylesheets/screen.css"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.4ms)
+
+
+Started POST "/guys" for 127.0.0.1 at Thu Sep 29 17:31:22 -0600 2011
+  Processing by GuysController#index as HTML
+  Parameters: {"authenticity_token"=>"YHGjQuSTIV2X2JML4TRT7UN9trrWp+qPXtic45TVHS4="}
+  [1m[36mGuys Load (2.9ms)[0m  [1mSELECT "guys".* FROM "guys" ORDER BY RANDOM() LIMIT 2[0m
+Rendered layouts/_menwomen.html.erb (1.6ms)
+Rendered guys/_vote.html.erb (6.1ms)
+Rendered layouts/_header.html.erb (1.2ms)
+Rendered layouts/_footer.html.erb (0.5ms)
+Rendered guys/index.html.erb within layouts/application (19.8ms)
+Completed 200 OK in 35ms (Views: 26.6ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/tmp/stylesheets/screen.css" for 127.0.0.1 at Thu Sep 29 17:31:23 -0600 2011
+
+ActionController::RoutingError (No route matches "/tmp/stylesheets/screen.css"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started POST "/guys" for 127.0.0.1 at Thu Sep 29 17:31:25 -0600 2011
+  Processing by GuysController#index as HTML
+  Parameters: {"authenticity_token"=>"YHGjQuSTIV2X2JML4TRT7UN9trrWp+qPXtic45TVHS4="}
+  [1m[35mGuys Load (2.9ms)[0m  SELECT "guys".* FROM "guys" ORDER BY RANDOM() LIMIT 2
+Rendered layouts/_menwomen.html.erb (1.6ms)
+Rendered guys/_vote.html.erb (6.8ms)
+Rendered layouts/_header.html.erb (2.6ms)
+Rendered layouts/_footer.html.erb (0.4ms)
+Rendered guys/index.html.erb within layouts/application (22.8ms)
+Completed 200 OK in 133ms (Views: 28.5ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/tmp/stylesheets/screen.css" for 127.0.0.1 at Thu Sep 29 17:31:26 -0600 2011
+
+ActionController::RoutingError (No route matches "/tmp/stylesheets/screen.css"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started POST "/guys" for 127.0.0.1 at Thu Sep 29 17:32:23 -0600 2011
+  Processing by GuysController#index as HTML
+  Parameters: {"authenticity_token"=>"YHGjQuSTIV2X2JML4TRT7UN9trrWp+qPXtic45TVHS4="}
+  [1m[36mGuys Load (2.8ms)[0m  [1mSELECT "guys".* FROM "guys" ORDER BY RANDOM() LIMIT 2[0m
+Rendered layouts/_menwomen.html.erb (1.5ms)
+Rendered guys/_vote.html.erb (5.5ms)
+Rendered layouts/_header.html.erb (1.2ms)
+Rendered layouts/_footer.html.erb (0.3ms)
+Rendered guys/index.html.erb within layouts/application (18.2ms)
+Completed 200 OK in 34ms (Views: 24.1ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/tmp/stylesheets/screen.css" for 127.0.0.1 at Thu Sep 29 17:32:23 -0600 2011
+
+ActionController::RoutingError (No route matches "/tmp/stylesheets/screen.css"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Thu Sep 29 17:32:31 -0600 2011
+  Processing by GirlsController#index as HTML
+  [1m[35mGirl Load (5.3ms)[0m  SELECT "girls".* FROM "girls" ORDER BY RANDOM() LIMIT 2
+Rendered layouts/_menwomen.html.erb (2.6ms)
+Rendered girls/_vote.html.erb (6.8ms)
+Rendered layouts/_header.html.erb (1.2ms)
+Rendered layouts/_footer.html.erb (0.2ms)
+Rendered girls/index.html.erb within layouts/application (21.5ms)
+Completed 200 OK in 41ms (Views: 27.7ms | ActiveRecord: 5.3ms)
+
+
+Started GET "/tmp/stylesheets/screen.css" for 127.0.0.1 at Thu Sep 29 17:32:31 -0600 2011
+
+ActionController::RoutingError (No route matches "/tmp/stylesheets/screen.css"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/" for 127.0.0.1 at Thu Sep 29 17:33:14 -0600 2011
+  Processing by GirlsController#index as HTML
+  [1m[36mGirl Load (3.8ms)[0m  [1mSELECT "girls".* FROM "girls" ORDER BY RANDOM() LIMIT 2[0m
+Rendered layouts/_menwomen.html.erb (1.4ms)
+Rendered girls/_vote.html.erb (5.9ms)
+Rendered layouts/_header.html.erb (1.3ms)
+Rendered layouts/_footer.html.erb (0.3ms)
+Rendered girls/index.html.erb within layouts/application (18.3ms)
+Completed 200 OK in 34ms (Views: 23.7ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/tmp/stylesheets/screen.css" for 127.0.0.1 at Thu Sep 29 17:33:14 -0600 2011
+
+ActionController::RoutingError (No route matches "/tmp/stylesheets/screen.css"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started POST "/girls" for 127.0.0.1 at Thu Sep 29 17:33:16 -0600 2011
+  Processing by GirlsController#index as HTML
+  Parameters: {"authenticity_token"=>"YHGjQuSTIV2X2JML4TRT7UN9trrWp+qPXtic45TVHS4="}
+  [1m[35mGirl Load (4.0ms)[0m  SELECT "girls".* FROM "girls" ORDER BY RANDOM() LIMIT 2
+Rendered layouts/_menwomen.html.erb (1.6ms)
+Rendered girls/_vote.html.erb (5.8ms)
+Rendered layouts/_header.html.erb (1.2ms)
+Rendered layouts/_footer.html.erb (0.3ms)
+Rendered girls/index.html.erb within layouts/application (18.4ms)
+Completed 200 OK in 33ms (Views: 23.8ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/tmp/stylesheets/screen.css" for 127.0.0.1 at Thu Sep 29 17:33:16 -0600 2011
+
+ActionController::RoutingError (No route matches "/tmp/stylesheets/screen.css"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started POST "/girls" for 127.0.0.1 at Thu Sep 29 17:33:17 -0600 2011
+  Processing by GirlsController#index as HTML
+  Parameters: {"authenticity_token"=>"YHGjQuSTIV2X2JML4TRT7UN9trrWp+qPXtic45TVHS4="}
+  [1m[36mGirl Load (3.8ms)[0m  [1mSELECT "girls".* FROM "girls" ORDER BY RANDOM() LIMIT 2[0m
+Rendered layouts/_menwomen.html.erb (1.5ms)
+Rendered girls/_vote.html.erb (5.5ms)
+Rendered layouts/_header.html.erb (99.8ms)
+Rendered layouts/_footer.html.erb (0.4ms)
+Rendered girls/index.html.erb within layouts/application (116.7ms)
+Completed 200 OK in 131ms (Views: 122.4ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/tmp/stylesheets/screen.css" for 127.0.0.1 at Thu Sep 29 17:33:17 -0600 2011
+
+ActionController::RoutingError (No route matches "/tmp/stylesheets/screen.css"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.5ms)
+
+
+Started POST "/girls" for 127.0.0.1 at Thu Sep 29 17:33:27 -0600 2011
+  Processing by GirlsController#index as HTML
+  Parameters: {"authenticity_token"=>"YHGjQuSTIV2X2JML4TRT7UN9trrWp+qPXtic45TVHS4="}
+  [1m[35mGirl Load (5.6ms)[0m  SELECT "girls".* FROM "girls" ORDER BY RANDOM() LIMIT 2
+Rendered layouts/_menwomen.html.erb (2.1ms)
+Rendered girls/_vote.html.erb (5.8ms)
+Rendered layouts/_header.html.erb (2.0ms)
+Rendered layouts/_footer.html.erb (0.4ms)
+Rendered girls/index.html.erb within layouts/application (22.9ms)
+Completed 200 OK in 42ms (Views: 29.7ms | ActiveRecord: 5.6ms)
+
+
+Started GET "/tmp/stylesheets/screen.css" for 127.0.0.1 at Thu Sep 29 17:33:27 -0600 2011
+
+ActionController::RoutingError (No route matches "/tmp/stylesheets/screen.css"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.1ms)
+
+
+Started GET "/guys" for 127.0.0.1 at Thu Sep 29 17:33:29 -0600 2011
+  Processing by GuysController#index as HTML
+  [1m[36mGuys Load (3.3ms)[0m  [1mSELECT "guys".* FROM "guys" ORDER BY RANDOM() LIMIT 2[0m
+Rendered layouts/_menwomen.html.erb (1.5ms)
+Rendered guys/_vote.html.erb (7.5ms)
+Rendered layouts/_header.html.erb (1.4ms)
+Rendered layouts/_footer.html.erb (0.3ms)
+Rendered guys/index.html.erb within layouts/application (22.2ms)
+Completed 200 OK in 56ms (Views: 46.0ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/tmp/stylesheets/screen.css" for 127.0.0.1 at Thu Sep 29 17:33:29 -0600 2011
+
+ActionController::RoutingError (No route matches "/tmp/stylesheets/screen.css"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started POST "/guys" for 127.0.0.1 at Thu Sep 29 17:33:31 -0600 2011
+  Processing by GuysController#index as HTML
+  Parameters: {"authenticity_token"=>"YHGjQuSTIV2X2JML4TRT7UN9trrWp+qPXtic45TVHS4="}
+  [1m[35mGuys Load (2.8ms)[0m  SELECT "guys".* FROM "guys" ORDER BY RANDOM() LIMIT 2
+Rendered layouts/_menwomen.html.erb (1.6ms)
+Rendered guys/_vote.html.erb (5.9ms)
+Rendered layouts/_header.html.erb (1.2ms)
+Rendered layouts/_footer.html.erb (0.3ms)
+Rendered guys/index.html.erb within layouts/application (18.6ms)
+Completed 200 OK in 32ms (Views: 24.1ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/tmp/stylesheets/screen.css" for 127.0.0.1 at Thu Sep 29 17:33:31 -0600 2011
+
+ActionController::RoutingError (No route matches "/tmp/stylesheets/screen.css"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started POST "/guys" for 127.0.0.1 at Thu Sep 29 17:33:31 -0600 2011
+  Processing by GuysController#index as HTML
+  Parameters: {"authenticity_token"=>"YHGjQuSTIV2X2JML4TRT7UN9trrWp+qPXtic45TVHS4="}
+  [1m[36mGuys Load (2.9ms)[0m  [1mSELECT "guys".* FROM "guys" ORDER BY RANDOM() LIMIT 2[0m
+Rendered layouts/_menwomen.html.erb (1.5ms)
+Rendered guys/_vote.html.erb (5.7ms)
+Rendered layouts/_header.html.erb (1.2ms)
+Rendered layouts/_footer.html.erb (0.2ms)
+Rendered guys/index.html.erb within layouts/application (18.1ms)
+Completed 200 OK in 32ms (Views: 23.7ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/tmp/stylesheets/screen.css" for 127.0.0.1 at Thu Sep 29 17:33:32 -0600 2011
+
+ActionController::RoutingError (No route matches "/tmp/stylesheets/screen.css"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Thu Sep 29 17:33:32 -0600 2011
+  Processing by GirlsController#index as HTML
+  [1m[35mGirl Load (4.5ms)[0m  SELECT "girls".* FROM "girls" ORDER BY RANDOM() LIMIT 2
+Rendered layouts/_menwomen.html.erb (1.5ms)
+Rendered girls/_vote.html.erb (5.8ms)
+Rendered layouts/_header.html.erb (2.2ms)
+Rendered layouts/_footer.html.erb (0.3ms)
+Rendered girls/index.html.erb within layouts/application (19.2ms)
+Completed 200 OK in 35ms (Views: 24.6ms | ActiveRecord: 4.5ms)
+
+
+Started GET "/tmp/stylesheets/screen.css" for 127.0.0.1 at Thu Sep 29 17:33:33 -0600 2011
+
+ActionController::RoutingError (No route matches "/tmp/stylesheets/screen.css"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started POST "/" for 127.0.0.1 at Thu Sep 29 17:33:33 -0600 2011
+  Processing by GirlsController#index as HTML
+  Parameters: {"authenticity_token"=>"YHGjQuSTIV2X2JML4TRT7UN9trrWp+qPXtic45TVHS4="}
+  [1m[36mGirl Load (3.9ms)[0m  [1mSELECT "girls".* FROM "girls" ORDER BY RANDOM() LIMIT 2[0m
+Rendered layouts/_menwomen.html.erb (1.6ms)
+Rendered girls/_vote.html.erb (11.0ms)
+Rendered layouts/_header.html.erb (1.2ms)
+Rendered layouts/_footer.html.erb (0.2ms)
+Rendered girls/index.html.erb within layouts/application (24.2ms)
+Completed 200 OK in 40ms (Views: 30.1ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/tmp/stylesheets/screen.css" for 127.0.0.1 at Thu Sep 29 17:33:34 -0600 2011
+
+ActionController::RoutingError (No route matches "/tmp/stylesheets/screen.css"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started POST "/" for 127.0.0.1 at Thu Sep 29 17:33:34 -0600 2011
+  Processing by GirlsController#index as HTML
+  Parameters: {"authenticity_token"=>"YHGjQuSTIV2X2JML4TRT7UN9trrWp+qPXtic45TVHS4="}
+  [1m[35mGirl Load (3.8ms)[0m  SELECT "girls".* FROM "girls" ORDER BY RANDOM() LIMIT 2
+Rendered layouts/_menwomen.html.erb (1.7ms)
+Rendered girls/_vote.html.erb (5.7ms)
+Rendered layouts/_header.html.erb (1.3ms)
+Rendered layouts/_footer.html.erb (0.3ms)
+Rendered girls/index.html.erb within layouts/application (18.4ms)
+Completed 200 OK in 133ms (Views: 123.6ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/tmp/stylesheets/screen.css" for 127.0.0.1 at Thu Sep 29 17:33:35 -0600 2011
+
+ActionController::RoutingError (No route matches "/tmp/stylesheets/screen.css"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started POST "/" for 127.0.0.1 at Thu Sep 29 17:33:36 -0600 2011
+  Processing by GirlsController#index as HTML
+  Parameters: {"authenticity_token"=>"YHGjQuSTIV2X2JML4TRT7UN9trrWp+qPXtic45TVHS4="}
+  [1m[36mGirl Load (3.8ms)[0m  [1mSELECT "girls".* FROM "girls" ORDER BY RANDOM() LIMIT 2[0m
+Rendered layouts/_menwomen.html.erb (1.4ms)
+Rendered girls/_vote.html.erb (5.8ms)
+Rendered layouts/_header.html.erb (1.2ms)
+Rendered layouts/_footer.html.erb (0.3ms)
+Rendered girls/index.html.erb within layouts/application (18.4ms)
+Completed 200 OK in 32ms (Views: 23.8ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/tmp/stylesheets/screen.css" for 127.0.0.1 at Thu Sep 29 17:33:36 -0600 2011
+
+ActionController::RoutingError (No route matches "/tmp/stylesheets/screen.css"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.4ms)
+
+
+Started POST "/" for 127.0.0.1 at Thu Sep 29 17:33:37 -0600 2011
+  Processing by GirlsController#index as HTML
+  Parameters: {"authenticity_token"=>"YHGjQuSTIV2X2JML4TRT7UN9trrWp+qPXtic45TVHS4="}
+  [1m[35mGirl Load (3.8ms)[0m  SELECT "girls".* FROM "girls" ORDER BY RANDOM() LIMIT 2
+Rendered layouts/_menwomen.html.erb (1.4ms)
+Rendered girls/_vote.html.erb (5.9ms)
+Rendered layouts/_header.html.erb (2.7ms)
+Rendered layouts/_footer.html.erb (0.3ms)
+Rendered girls/index.html.erb within layouts/application (20.5ms)
+Completed 200 OK in 37ms (Views: 26.4ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/tmp/stylesheets/screen.css" for 127.0.0.1 at Thu Sep 29 17:33:37 -0600 2011
+
+ActionController::RoutingError (No route matches "/tmp/stylesheets/screen.css"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/guys" for 127.0.0.1 at Thu Sep 29 17:33:39 -0600 2011
+  Processing by GuysController#index as HTML
+  [1m[36mGuys Load (3.0ms)[0m  [1mSELECT "guys".* FROM "guys" ORDER BY RANDOM() LIMIT 2[0m
+Rendered layouts/_menwomen.html.erb (1.8ms)
+Rendered guys/_vote.html.erb (6.2ms)
+Rendered layouts/_header.html.erb (2.1ms)
+Rendered layouts/_footer.html.erb (0.3ms)
+Rendered guys/index.html.erb within layouts/application (22.2ms)
+Completed 200 OK in 37ms (Views: 29.0ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/tmp/stylesheets/screen.css" for 127.0.0.1 at Thu Sep 29 17:33:39 -0600 2011
+
+ActionController::RoutingError (No route matches "/tmp/stylesheets/screen.css"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started POST "/guys/update/334/422" for 127.0.0.1 at Thu Sep 29 17:33:41 -0600 2011
+  Processing by GuysController#update as JS
+  Parameters: {"lose"=>"422", "win"=>"334"}
+  [1m[35mGuys Load (0.2ms)[0m  SELECT "guys".* FROM "guys" WHERE ("guys"."id" = 334) LIMIT 1
+  [1m[36mGuys Load (0.2ms)[0m  [1mSELECT "guys".* FROM "guys" WHERE ("guys"."id" = 422) LIMIT 1[0m
+  [1m[35mAREL (35.1ms)[0m  UPDATE "guys" SET "updated_at" = '2011-09-29 23:33:41.399607', "score" = 1425 WHERE ("guys"."id" = 334)
+  [1m[36mAREL (0.3ms)[0m  [1mUPDATE "guys" SET "updated_at" = '2011-09-29 23:33:41.438448', "score" = 1374 WHERE ("guys"."id" = 422)[0m
+  [1m[35mGuys Load (2.7ms)[0m  SELECT "guys".* FROM "guys" ORDER BY RANDOM() LIMIT 2
+Rendered guys/_vote.html.erb (1.9ms)
+Rendered guys/update.js.erb (7.5ms)
+Completed 200 OK in 72ms (Views: 14.8ms | ActiveRecord: 38.5ms)
+
+
+Started GET "/winners" for 127.0.0.1 at Thu Sep 29 17:33:42 -0600 2011
+  Processing by WinnersController#index as HTML
+  [1m[36mGirl Load (3.9ms)[0m  [1mSELECT "girls".* FROM "girls" ORDER BY score DESC LIMIT 5 OFFSET 0[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT COUNT(*) FROM "girls"
+  [1m[36mGuys Load (2.7ms)[0m  [1mSELECT "guys".* FROM "guys" ORDER BY score DESC LIMIT 5 OFFSET 0[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT COUNT(*) FROM "guys"
+Rendered layouts/_header.html.erb (1.3ms)
+Rendered layouts/_footer.html.erb (0.3ms)
+Rendered winners/index.html.erb within layouts/application (97.0ms)
+Completed 200 OK in 147ms (Views: 123.8ms | ActiveRecord: 6.8ms)
+
+
+Started GET "/tmp/stylesheets/screen.css" for 127.0.0.1 at Thu Sep 29 17:33:43 -0600 2011
+
+ActionController::RoutingError (No route matches "/tmp/stylesheets/screen.css"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/girls/1325" for 127.0.0.1 at Thu Sep 29 17:33:46 -0600 2011
+  Processing by GirlsController#show as HTML
+  Parameters: {"id"=>"1325"}
+  [1m[36mGirl Load (0.2ms)[0m  [1mSELECT "girls".* FROM "girls" WHERE ("girls"."id" = 1325) LIMIT 1[0m
+Rendered layouts/_header.html.erb (1.3ms)
+Rendered layouts/_footer.html.erb (0.3ms)
+Rendered girls/show.html.erb within layouts/application (15.3ms)
+Completed 200 OK in 50ms (Views: 42.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/girls/tmp/stylesheets/screen.css" for 127.0.0.1 at Thu Sep 29 17:33:46 -0600 2011
+
+ActionController::RoutingError (No route matches "/girls/tmp/stylesheets/screen.css"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/girls/1325" for 127.0.0.1 at Thu Sep 29 17:35:19 -0600 2011
+  Processing by GirlsController#show as HTML
+  Parameters: {"id"=>"1325"}
+  [1m[35mGirl Load (0.2ms)[0m  SELECT "girls".* FROM "girls" WHERE ("girls"."id" = 1325) LIMIT 1
+Rendered layouts/_header.html.erb (1.4ms)
+Rendered layouts/_footer.html.erb (0.3ms)
+Rendered girls/show.html.erb within layouts/application (12.6ms)
+Completed 200 OK in 25ms (Views: 18.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/girls/tmp/stylesheets/screen.css" for 127.0.0.1 at Thu Sep 29 17:35:19 -0600 2011
+
+ActionController::RoutingError (No route matches "/girls/tmp/stylesheets/screen.css"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at Thu Sep 29 17:35:24 -0600 2011
+  Processing by GirlsController#index as HTML
+  [1m[36mGirl Load (3.8ms)[0m  [1mSELECT "girls".* FROM "girls" ORDER BY RANDOM() LIMIT 2[0m
+Rendered layouts/_menwomen.html.erb (1.6ms)
+Rendered girls/_vote.html.erb (6.0ms)
+Rendered layouts/_header.html.erb (1.1ms)
+Rendered layouts/_footer.html.erb (0.3ms)
+Rendered girls/index.html.erb within layouts/application (18.5ms)
+Completed 200 OK in 33ms (Views: 24.2ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/tmp/stylesheets/screen.css" for 127.0.0.1 at Thu Sep 29 17:35:24 -0600 2011
+
+ActionController::RoutingError (No route matches "/tmp/stylesheets/screen.css"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/winners" for 127.0.0.1 at Thu Sep 29 17:35:26 -0600 2011
+  Processing by WinnersController#index as HTML
+  [1m[35mGirl Load (3.9ms)[0m  SELECT "girls".* FROM "girls" ORDER BY score DESC LIMIT 5 OFFSET 0
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT COUNT(*) FROM "girls"[0m
+  [1m[35mGuys Load (2.6ms)[0m  SELECT "guys".* FROM "guys" ORDER BY score DESC LIMIT 5 OFFSET 0
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) FROM "guys"[0m
+Rendered layouts/_header.html.erb (1.2ms)
+Rendered layouts/_footer.html.erb (0.2ms)
+Rendered winners/index.html.erb within layouts/application (42.5ms)
+Completed 200 OK in 62ms (Views: 45.0ms | ActiveRecord: 6.7ms)
+
+
+Started GET "/tmp/stylesheets/screen.css" for 127.0.0.1 at Thu Sep 29 17:35:26 -0600 2011
+
+ActionController::RoutingError (No route matches "/tmp/stylesheets/screen.css"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (7.0ms)
+
+
+Started GET "/girls/1325" for 127.0.0.1 at Thu Sep 29 17:35:28 -0600 2011
+  Processing by GirlsController#show as HTML
+  Parameters: {"id"=>"1325"}
+  [1m[35mGirl Load (0.2ms)[0m  SELECT "girls".* FROM "girls" WHERE ("girls"."id" = 1325) LIMIT 1
+Rendered layouts/_header.html.erb (1.6ms)
+Rendered layouts/_footer.html.erb (0.4ms)
+Rendered girls/show.html.erb within layouts/application (150.4ms)
+Completed 200 OK in 166ms (Views: 158.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/girls/tmp/stylesheets/screen.css" for 127.0.0.1 at Thu Sep 29 17:35:28 -0600 2011
+
+ActionController::RoutingError (No route matches "/girls/tmp/stylesheets/screen.css"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/check" for 127.0.0.1 at Thu Sep 29 17:35:34 -0600 2011
+  Processing by CheckController#index as HTML
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_check_index_html_erb__1253703573_2197552940_0 at /Users/Jordan/Desktop/tester/app/views/check/index.html.erb:11)
+Rendered layouts/_header.html.erb (1.9ms)
+Rendered layouts/_footer.html.erb (0.4ms)
+Rendered check/index.html.erb within layouts/application (12.3ms)
+Completed 200 OK in 19ms (Views: 18.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tmp/stylesheets/screen.css" for 127.0.0.1 at Thu Sep 29 17:35:34 -0600 2011
+
+ActionController::RoutingError (No route matches "/tmp/stylesheets/screen.css"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/winners" for 127.0.0.1 at Thu Sep 29 17:35:40 -0600 2011
+  Processing by WinnersController#index as HTML
+  [1m[36mGirl Load (3.7ms)[0m  [1mSELECT "girls".* FROM "girls" ORDER BY score DESC LIMIT 5 OFFSET 0[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT COUNT(*) FROM "girls"
+  [1m[36mGuys Load (2.9ms)[0m  [1mSELECT "guys".* FROM "guys" ORDER BY score DESC LIMIT 5 OFFSET 0[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT COUNT(*) FROM "guys"
+Rendered layouts/_header.html.erb (1.5ms)
+Rendered layouts/_footer.html.erb (0.3ms)
+Rendered winners/index.html.erb within layouts/application (40.4ms)
+Completed 200 OK in 56ms (Views: 38.9ms | ActiveRecord: 6.9ms)
+
+
+Started GET "/tmp/stylesheets/screen.css" for 127.0.0.1 at Thu Sep 29 17:35:40 -0600 2011
+
+ActionController::RoutingError (No route matches "/tmp/stylesheets/screen.css"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/guys/714" for 127.0.0.1 at Thu Sep 29 17:35:41 -0600 2011
+  Processing by GuysController#show as HTML
+  Parameters: {"id"=>"714"}
+  [1m[36mGuys Load (0.2ms)[0m  [1mSELECT "guys".* FROM "guys" WHERE ("guys"."id" = 714) LIMIT 1[0m
+Rendered layouts/_header.html.erb (1.6ms)
+Rendered layouts/_footer.html.erb (0.3ms)
+Rendered guys/show.html.erb within layouts/application (111.1ms)
+Completed 200 OK in 164ms (Views: 157.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/guys/tmp/stylesheets/screen.css" for 127.0.0.1 at Thu Sep 29 17:35:42 -0600 2011
+
+ActionController::RoutingError (No route matches "/guys/tmp/stylesheets/screen.css"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.4ms)
+
+
+Started GET "/check" for 127.0.0.1 at Thu Sep 29 17:35:44 -0600 2011
+  Processing by CheckController#index as HTML
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_check_index_html_erb__1253703573_2197374320_0 at /Users/Jordan/Desktop/tester/app/views/check/index.html.erb:11)
+Rendered layouts/_header.html.erb (1.3ms)
+Rendered layouts/_footer.html.erb (0.7ms)
+Rendered check/index.html.erb within layouts/application (12.1ms)
+Completed 200 OK in 21ms (Views: 19.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tmp/stylesheets/screen.css" for 127.0.0.1 at Thu Sep 29 17:35:44 -0600 2011
+
+ActionController::RoutingError (No route matches "/tmp/stylesheets/screen.css"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/check" for 127.0.0.1 at Thu Sep 29 17:36:36 -0600 2011
+  Processing by CheckController#index as HTML
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_check_index_html_erb__1253703573_2197739920_0 at /Users/Jordan/Desktop/tester/app/views/check/index.html.erb:11)
+Rendered layouts/_header.html.erb (1.3ms)
+Rendered layouts/_footer.html.erb (0.3ms)
+Rendered check/index.html.erb within layouts/application (9.5ms)
+Completed 200 OK in 16ms (Views: 15.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tmp/stylesheets/screen.css" for 127.0.0.1 at Thu Sep 29 17:36:36 -0600 2011
+
+ActionController::RoutingError (No route matches "/tmp/stylesheets/screen.css"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/check" for 127.0.0.1 at Thu Sep 29 17:36:39 -0600 2011
+  Processing by CheckController#index as HTML
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_check_index_html_erb__1253703573_2196583820_0 at /Users/Jordan/Desktop/tester/app/views/check/index.html.erb:11)
+Rendered layouts/_header.html.erb (1.9ms)
+Rendered layouts/_footer.html.erb (0.3ms)
+Rendered check/index.html.erb within layouts/application (117.8ms)
+Completed 200 OK in 124ms (Views: 123.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tmp/stylesheets/screen.css" for 127.0.0.1 at Thu Sep 29 17:36:39 -0600 2011
+
+ActionController::RoutingError (No route matches "/tmp/stylesheets/screen.css"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/winners" for 127.0.0.1 at Thu Sep 29 17:36:45 -0600 2011
+  Processing by WinnersController#index as HTML
+  [1m[35mGirl Load (4.1ms)[0m  SELECT "girls".* FROM "girls" ORDER BY score DESC LIMIT 5 OFFSET 0
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT COUNT(*) FROM "girls"[0m
+  [1m[35mGuys Load (3.2ms)[0m  SELECT "guys".* FROM "guys" ORDER BY score DESC LIMIT 5 OFFSET 0
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT COUNT(*) FROM "guys"[0m
+Rendered layouts/_header.html.erb (1.5ms)
+Rendered layouts/_footer.html.erb (0.4ms)
+Rendered winners/index.html.erb within layouts/application (52.2ms)
+Completed 200 OK in 71ms (Views: 51.2ms | ActiveRecord: 7.9ms)
+
+
+Started GET "/winners" for 127.0.0.1 at Thu Sep 29 17:36:45 -0600 2011
+  Processing by WinnersController#index as HTML
+  [1m[35mGirl Load (3.7ms)[0m  SELECT "girls".* FROM "girls" ORDER BY score DESC LIMIT 5 OFFSET 0
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT COUNT(*) FROM "girls"[0m
+  [1m[35mGuys Load (2.6ms)[0m  SELECT "guys".* FROM "guys" ORDER BY score DESC LIMIT 5 OFFSET 0
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT COUNT(*) FROM "guys"[0m
+Rendered layouts/_header.html.erb (1.4ms)
+Rendered layouts/_footer.html.erb (0.3ms)
+Rendered winners/index.html.erb within layouts/application (41.0ms)
+Completed 200 OK in 55ms (Views: 39.8ms | ActiveRecord: 6.6ms)
+
+
+Started GET "/tmp/stylesheets/screen.css" for 127.0.0.1 at Thu Sep 29 17:36:46 -0600 2011
+
+ActionController::RoutingError (No route matches "/tmp/stylesheets/screen.css"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/girls/1325" for 127.0.0.1 at Thu Sep 29 17:36:47 -0600 2011
+  Processing by GirlsController#show as HTML
+  Parameters: {"id"=>"1325"}
+  [1m[35mGirl Load (0.2ms)[0m  SELECT "girls".* FROM "girls" WHERE ("girls"."id" = 1325) LIMIT 1
+Rendered layouts/_header.html.erb (1.4ms)
+Rendered layouts/_footer.html.erb (0.3ms)
+Rendered girls/show.html.erb within layouts/application (12.1ms)
+Completed 200 OK in 136ms (Views: 17.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/girls/tmp/stylesheets/screen.css" for 127.0.0.1 at Thu Sep 29 17:36:47 -0600 2011
+
+ActionController::RoutingError (No route matches "/girls/tmp/stylesheets/screen.css"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/check" for 127.0.0.1 at Thu Sep 29 17:37:09 -0600 2011
+  Processing by CheckController#index as HTML
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_check_index_html_erb__1253703573_2197112100_0 at /Users/Jordan/Desktop/tester/app/views/check/index.html.erb:11)
+Rendered layouts/_header.html.erb (1.3ms)
+Rendered layouts/_footer.html.erb (0.2ms)
+Rendered check/index.html.erb within layouts/application (9.8ms)
+Completed 200 OK in 16ms (Views: 15.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tmp/stylesheets/screen.css" for 127.0.0.1 at Thu Sep 29 17:37:09 -0600 2011
+
+ActionController::RoutingError (No route matches "/tmp/stylesheets/screen.css"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.6ms)
+
+
+Started GET "/check" for 127.0.0.1 at Thu Sep 29 17:37:31 -0600 2011
+  Processing by CheckController#index as HTML
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_check_index_html_erb__1253703573_2197797040_0 at /Users/Jordan/Desktop/tester/app/views/check/index.html.erb:11)
+Rendered layouts/_header.html.erb (1.3ms)
+Rendered layouts/_footer.html.erb (0.3ms)
+Rendered check/index.html.erb within layouts/application (13.4ms)
+Completed 200 OK in 20ms (Views: 19.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tmp/stylesheets/screen.css" for 127.0.0.1 at Thu Sep 29 17:37:31 -0600 2011
+
+ActionController::RoutingError (No route matches "/tmp/stylesheets/screen.css"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/check" for 127.0.0.1 at Thu Sep 29 17:38:08 -0600 2011
+  Processing by CheckController#index as HTML
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_check_index_html_erb__1253703573_2197073800_0 at /Users/Jordan/Desktop/tester/app/views/check/index.html.erb:11)
+Rendered layouts/_header.html.erb (1.7ms)
+Rendered layouts/_footer.html.erb (0.3ms)
+Rendered check/index.html.erb within layouts/application (11.1ms)
+Completed 200 OK in 111ms (Views: 110.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tmp/stylesheets/screen.css" for 127.0.0.1 at Thu Sep 29 17:38:08 -0600 2011
+
+ActionController::RoutingError (No route matches "/tmp/stylesheets/screen.css"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/check" for 127.0.0.1 at Thu Sep 29 17:39:47 -0600 2011
+  Processing by CheckController#index as HTML
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_check_index_html_erb__1253703573_2197216580_0 at /Users/Jordan/Desktop/tester/app/views/check/index.html.erb:11)
+Rendered layouts/_header.html.erb (1.3ms)
+Rendered layouts/_footer.html.erb (0.2ms)
+Rendered check/index.html.erb within layouts/application (9.2ms)
+Completed 200 OK in 15ms (Views: 15.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tmp/stylesheets/screen.css" for 127.0.0.1 at Thu Sep 29 17:39:47 -0600 2011
+
+ActionController::RoutingError (No route matches "/tmp/stylesheets/screen.css"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/check" for 127.0.0.1 at Thu Sep 29 17:39:54 -0600 2011
+  Processing by CheckController#index as HTML
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_check_index_html_erb__1253703573_2197803980_0 at /Users/Jordan/Desktop/tester/app/views/check/index.html.erb:11)
+Rendered layouts/_header.html.erb (1.3ms)
+Rendered layouts/_footer.html.erb (0.3ms)
+Rendered check/index.html.erb within layouts/application (9.6ms)
+Completed 200 OK in 16ms (Views: 15.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tmp/stylesheets/screen.css" for 127.0.0.1 at Thu Sep 29 17:39:54 -0600 2011
+
+ActionController::RoutingError (No route matches "/tmp/stylesheets/screen.css"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started POST "/check/test" for 127.0.0.1 at Thu Sep 29 17:40:06 -0600 2011
+  Processing by CheckController#test as HTML
+  Parameters: {"commit"=>"Check", "authenticity_token"=>"YHGjQuSTIV2X2JML4TRT7UN9trrWp+qPXtic45TVHS4=", "utf8"=>"✓", "facebook"=>"http://www.facebook.com/profile.php?id=1663350002"}
+  [1m[36mGirl Load (1.8ms)[0m  [1mSELECT "girls".* FROM "girls" WHERE ("girls"."username" = '1663350002') LIMIT 1[0m
+  [1m[35mGuys Load (0.4ms)[0m  SELECT "guys".* FROM "guys" WHERE ("guys"."username" = '1663350002') LIMIT 1
+  [1m[36mAREL (21.5ms)[0m  [1mINSERT INTO "removals" ("updated_at", "created_at", "fb_id") VALUES ('2011-09-29 23:40:06.679821', '2011-09-29 23:40:06.679821', '1663350002')[0m
+Rendered layouts/_header.html.erb (1.4ms)
+Rendered layouts/_footer.html.erb (0.4ms)
+Rendered check/results.html.erb within layouts/application (67.0ms)
+Completed 200 OK in 314ms (Views: 52.6ms | ActiveRecord: 23.7ms)
+
+
+Started GET "/check/tmp/stylesheets/screen.css" for 127.0.0.1 at Thu Sep 29 17:40:06 -0600 2011
+
+ActionController::RoutingError (No route matches "/check/tmp/stylesheets/screen.css"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (4.5ms)

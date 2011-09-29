@@ -85,39 +85,43 @@ html {
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   font-weight: 300; }
 
-/* line 8, ../../app/stylesheets/partials/_main.sass */
+/* line 7, ../../app/stylesheets/partials/_main.sass */
 #container {
   background-color: white;
   width: 960px;
   margin: 0 auto; }
 
-/* line 28, ../../app/stylesheets/partials/_main.sass */
+/* line 27, ../../app/stylesheets/partials/_main.sass */
 h1, h2, h3, h4, h5, h6 {
   font-weight: normal; }
 
-/* line 30, ../../app/stylesheets/partials/_main.sass */
+/* line 29, ../../app/stylesheets/partials/_main.sass */
 h1 {
   font-size: 197%; }
 
-/* line 32, ../../app/stylesheets/partials/_main.sass */
+/* line 31, ../../app/stylesheets/partials/_main.sass */
 h2 {
   font-size: 153%; }
 
-/* line 34, ../../app/stylesheets/partials/_main.sass */
+/* line 33, ../../app/stylesheets/partials/_main.sass */
 h3 {
   font-size: 138.5%; }
 
-/* line 36, ../../app/stylesheets/partials/_main.sass */
+/* line 35, ../../app/stylesheets/partials/_main.sass */
 h4 {
   font-size: 116%; }
 
-/* line 39, ../../app/stylesheets/partials/_main.sass */
+/* line 38, ../../app/stylesheets/partials/_main.sass */
 strong, th {
   font-weight: bold; }
 
-/* line 42, ../../app/stylesheets/partials/_main.sass */
+/* line 41, ../../app/stylesheets/partials/_main.sass */
 small {
   font-size: 93%; }
+
+/* line 1, ../../app/stylesheets/partials/_home.sass */
+.button_to {
+  align: center; }
 
 /* line 3, ../../app/stylesheets/partials/_home.sass */
 .top {
@@ -152,7 +156,7 @@ small {
   float: left;
   margin-right: 0;
   width: 830px;
-  margin-top: 10px;
+  margin-top: 1px;
   text-align: center; }
   /* line 147, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.11.5/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
   * html #message {
@@ -242,22 +246,23 @@ small {
   font-size: 0.5em; }
 
 /* line 69, ../../app/stylesheets/partials/_home.sass */
-#show-girl {
-  position: absolute;
+#show-girl, #check {
   display: inline;
   float: left;
   margin-right: 10px;
-  width: 430px;
-  margin-top: 100px; }
+  width: 950px;
+  padding-left: 40px;
+  text-align: center;
+  margin-top: 3em; }
   /* line 147, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.11.5/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
-  * html #show-girl {
+  * html #show-girl, * html #check {
     overflow-x: hidden; }
 
-/* line 74, ../../app/stylesheets/partials/_home.sass */
+/* line 76, ../../app/stylesheets/partials/_home.sass */
 .both-sex {
   position: relative;
   text-align: center; }
-  /* line 77, ../../app/stylesheets/partials/_home.sass */
+  /* line 79, ../../app/stylesheets/partials/_home.sass */
   .both-sex #top-girls {
     display: inline;
     float: left;
@@ -268,7 +273,7 @@ small {
     /* line 147, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.11.5/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
     * html .both-sex #top-girls {
       overflow-x: hidden; }
-  /* line 82, ../../app/stylesheets/partials/_home.sass */
+  /* line 84, ../../app/stylesheets/partials/_home.sass */
   .both-sex #top-boys {
     display: inline;
     float: left;
@@ -279,7 +284,7 @@ small {
     * html .both-sex #top-boys {
       overflow-x: hidden; }
 
-/* line 86, ../../app/stylesheets/partials/_home.sass */
+/* line 88, ../../app/stylesheets/partials/_home.sass */
 .check {
   position: absolute;
   display: inline;
@@ -291,7 +296,7 @@ small {
   * html .check {
     overflow-x: hidden; }
 
-/* line 91, ../../app/stylesheets/partials/_home.sass */
+/* line 93, ../../app/stylesheets/partials/_home.sass */
 a {
   text-decoration: none;
   color: #00512f; }

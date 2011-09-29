@@ -1,5 +1,5 @@
-
-
+.button_to
+  align: center
 .top
   position: relative
   +column(24, true)
@@ -20,7 +20,7 @@
     right: 20px
 #message
   +column(21, true)
-  margin-top: 10px
+  margin-top: 1px
   text-align: center
 
 
@@ -66,10 +66,12 @@
   bottom: 2em
   font-size: .5em
 
-#show-girl
-  position: absolute
-  +column(11)
-  margin-top: 100px
+#show-girl, #check
+  +column(24)
+  +prepend(1)
+  text-align: center
+  margin-top: 3em
+  //position: absolute
 
 .both-sex
   position: relative
