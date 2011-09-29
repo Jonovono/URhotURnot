@@ -17,8 +17,8 @@ gem 'will_paginate', '~> 3.0.0'
 
 #gem 'capistrano'        # Deployment manager
 
-#gem 'haml', '~> 3.1'    # Haml (html/erb replacement)
-#gem 'sass', '~> 3.1'    # Sass (css replacement)
+gem 'haml', '~> 3.1'    # Haml (html/erb replacement)
+gem 'sass', '~> 3.1'    # Sass (css replacement)
 #gem 'haml-rails'        # Haml generators for Rails 3
 
 # HTML/CSS framework and boilerplate
