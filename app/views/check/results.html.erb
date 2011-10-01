@@ -24,6 +24,7 @@ $(function() {
 		<%= button_to('Click here if you would like to remove yourself', 'index',
 						:method => Removal.create(:fb_id => URI.decode(@girl.username)), :remote => true,
 															:id => 'remove-button') %>
+															sdfsd
 	
 	<% elsif @boy != nil %>
 		Welcome <%= @boy.name %><br />
@@ -34,6 +35,7 @@ $(function() {
 		<%= button_to('Click here if you would like to remove yourself', 'index',
 					:method => Removal.create(:fb_id => URI.decode(@boy.username)), :remote=> true,
 																:id => 'remove-button')%>
+																
 	
 	
 	

@@ -42,5 +42,7 @@ class CheckController < ApplicationController
     flash[:notice] = "You will be added!"
     redirect_to check_path
   end
+  
+
 
 end

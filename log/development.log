@@ -4265,3 +4265,878 @@ ActionController::RoutingError (No route matches "/check/tmp/stylesheets/screen.
 
 
 Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (4.5ms)
+
+
+Started GET "/" for 127.0.0.1 at Fri Sep 30 22:14:38 -0600 2011
+  Processing by GirlsController#index as HTML
+  [1m[36mGirl Load (25.4ms)[0m  [1mSELECT "girls".* FROM "girls" ORDER BY RANDOM() LIMIT 2[0m
+Rendered layouts/_menwomen.html.erb (2.7ms)
+Rendered girls/_vote.html.erb (7.9ms)
+Rendered layouts/_header.html.erb (1.9ms)
+Rendered layouts/_footer.html.erb (0.5ms)
+Rendered girls/index.html.erb within layouts/application (96.6ms)
+Completed 200 OK in 178ms (Views: 138.6ms | ActiveRecord: 25.4ms)
+
+
+Started GET "/tmp/stylesheets/screen.css" for 127.0.0.1 at Fri Sep 30 22:14:40 -0600 2011
+
+ActionController::RoutingError (No route matches "/tmp/stylesheets/screen.css"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.3ms)
+  [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (22.9ms)[0m  SELECT COUNT(*) FROM "removals"
+  [1m[36mAREL (2.8ms)[0m  [1mDELETE FROM "removals" WHERE 1=1[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT COUNT(*) FROM "removals"
+
+
+Started GET "/check" for 127.0.0.1 at Fri Sep 30 22:16:02 -0600 2011
+  Processing by CheckController#index as HTML
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_check_index_html_erb__1253703573_2179846020_0 at /Users/Jordan/Desktop/tester/app/views/check/index.html.erb:11)
+Rendered layouts/_header.html.erb (1.2ms)
+Rendered layouts/_footer.html.erb (0.3ms)
+Rendered check/index.html.erb within layouts/application (10.6ms)
+Completed 200 OK in 31ms (Views: 30.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tmp/stylesheets/screen.css" for 127.0.0.1 at Fri Sep 30 22:16:02 -0600 2011
+
+ActionController::RoutingError (No route matches "/tmp/stylesheets/screen.css"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started POST "/check/test" for 127.0.0.1 at Fri Sep 30 22:16:04 -0600 2011
+  Processing by CheckController#test as HTML
+  Parameters: {"commit"=>"Check", "authenticity_token"=>"RNBxB1Ejes3Qiewu6JwNjcrYYBB8NMNL9LoJJY8V9hE=", "utf8"=>"✓", "facebook"=>"http://www.facebook.com/profile.php?id=1663350002"}
+  [1m[35mSQL (0.4ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+
+  [1m[36mGirl Load (1.2ms)[0m  [1mSELECT "girls".* FROM "girls" WHERE ("girls"."username" = '1663350002') LIMIT 1[0m
+  [1m[35mGuys Load (21.9ms)[0m  SELECT "guys".* FROM "guys" WHERE ("guys"."username" = '1663350002') LIMIT 1
+  [1m[36mAREL (0.5ms)[0m  [1mINSERT INTO "removals" ("created_at", "fb_id", "updated_at") VALUES ('2011-10-01 04:16:04.808699', '1663350002', '2011-10-01 04:16:04.808699')[0m
+Rendered layouts/_header.html.erb (1.4ms)
+Rendered layouts/_footer.html.erb (0.5ms)
+Rendered check/results.html.erb within layouts/application (54.5ms)
+Completed 200 OK in 215ms (Views: 74.0ms | ActiveRecord: 24.0ms)
+
+
+Started GET "/check/tmp/stylesheets/screen.css" for 127.0.0.1 at Fri Sep 30 22:16:04 -0600 2011
+
+ActionController::RoutingError (No route matches "/check/tmp/stylesheets/screen.css"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT COUNT(*) FROM "removals"[0m
+  [1m[35mRemoval Load (0.3ms)[0m  SELECT "removals".* FROM "removals" ORDER BY removals.id DESC LIMIT 1
+
+
+Started GET "/check" for 127.0.0.1 at Fri Sep 30 22:16:21 -0600 2011
+  Processing by CheckController#index as HTML
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_check_index_html_erb__1253703573_2176565960_0 at /Users/Jordan/Desktop/tester/app/views/check/index.html.erb:11)
+Rendered layouts/_header.html.erb (79.1ms)
+Rendered layouts/_footer.html.erb (0.3ms)
+Rendered check/index.html.erb within layouts/application (87.3ms)
+Completed 200 OK in 93ms (Views: 92.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tmp/stylesheets/screen.css" for 127.0.0.1 at Fri Sep 30 22:16:21 -0600 2011
+
+ActionController::RoutingError (No route matches "/tmp/stylesheets/screen.css"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT COUNT(*) FROM "addtions"
+  [1m[36mAREL (2.9ms)[0m  [1mDELETE FROM "addtions" WHERE 1=1[0m
+
+
+Started POST "/check/test" for 127.0.0.1 at Fri Sep 30 22:16:33 -0600 2011
+  Processing by CheckController#test as HTML
+  Parameters: {"commit"=>"Check", "authenticity_token"=>"RNBxB1Ejes3Qiewu6JwNjcrYYBB8NMNL9LoJJY8V9hE=", "utf8"=>"✓", "facebook"=>"234234"}
+  [1m[35mGirl Load (0.8ms)[0m  SELECT "girls".* FROM "girls" WHERE ("girls"."username" = '234234') LIMIT 1
+  [1m[36mGuys Load (7.2ms)[0m  [1mSELECT "guys".* FROM "guys" WHERE ("guys"."username" = '234234') LIMIT 1[0m
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO "addtions" ("updated_at", "created_at", "fb_id") VALUES ('2011-10-01 04:16:33.224370', '2011-10-01 04:16:33.224370', '234234')
+Rendered layouts/_header.html.erb (1.3ms)
+Rendered layouts/_footer.html.erb (0.3ms)
+Rendered check/results.html.erb within layouts/application (21.9ms)
+Completed 200 OK in 47ms (Views: 26.8ms | ActiveRecord: 8.3ms)
+
+
+Started GET "/check/tmp/stylesheets/screen.css" for 127.0.0.1 at Fri Sep 30 22:16:33 -0600 2011
+
+ActionController::RoutingError (No route matches "/check/tmp/stylesheets/screen.css"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+  [1m[35mSQL (0.3ms)[0m  SELECT COUNT(*) FROM "addtions"
+  [1m[36mAddtion Load (0.3ms)[0m  [1mSELECT "addtions".* FROM "addtions" ORDER BY addtions.id DESC LIMIT 1[0m
+
+
+Started GET "/check" for 127.0.0.1 at Fri Sep 30 22:18:56 -0600 2011
+  Processing by CheckController#index as HTML
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_check_index_html_erb__1253703573_2178081120_0 at /Users/Jordan/Desktop/tester/app/views/check/index.html.erb:11)
+Rendered layouts/_header.html.erb (2.0ms)
+Rendered layouts/_footer.html.erb (0.5ms)
+Rendered check/index.html.erb within layouts/application (13.2ms)
+Completed 200 OK in 21ms (Views: 20.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tmp/stylesheets/screen.css" for 127.0.0.1 at Fri Sep 30 22:18:56 -0600 2011
+
+ActionController::RoutingError (No route matches "/tmp/stylesheets/screen.css"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.3ms)
+
+
+Started POST "/check/test" for 127.0.0.1 at Fri Sep 30 22:18:59 -0600 2011
+  Processing by CheckController#test as HTML
+  Parameters: {"commit"=>"Check", "authenticity_token"=>"RNBxB1Ejes3Qiewu6JwNjcrYYBB8NMNL9LoJJY8V9hE=", "utf8"=>"✓", "facebook"=>"33333"}
+  [1m[36mGirl Load (0.8ms)[0m  [1mSELECT "girls".* FROM "girls" WHERE ("girls"."username" = '33333') LIMIT 1[0m
+  [1m[35mGuys Load (0.6ms)[0m  SELECT "guys".* FROM "guys" WHERE ("guys"."username" = '33333') LIMIT 1
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "addtions" ("fb_id", "created_at", "updated_at") VALUES ('33333', '2011-10-01 04:18:59.289341', '2011-10-01 04:18:59.289341')[0m
+Rendered layouts/_header.html.erb (1.2ms)
+Rendered layouts/_footer.html.erb (0.3ms)
+Rendered check/results.html.erb within layouts/application (23.5ms)
+Completed 200 OK in 42ms (Views: 28.5ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/check/tmp/stylesheets/screen.css" for 127.0.0.1 at Fri Sep 30 22:18:59 -0600 2011
+
+ActionController::RoutingError (No route matches "/check/tmp/stylesheets/screen.css"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+  [1m[35mAddtion Load (0.4ms)[0m  SELECT "addtions".* FROM "addtions" ORDER BY addtions.id DESC LIMIT 1
+
+
+Started GET "/check" for 127.0.0.1 at Fri Sep 30 22:34:18 -0600 2011
+  Processing by CheckController#index as HTML
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_check_index_html_erb__1253703573_2180118080_0 at /Users/Jordan/Desktop/tester/app/views/check/index.html.erb:11)
+Rendered layouts/_header.html.erb (1.3ms)
+Rendered layouts/_footer.html.erb (0.3ms)
+Rendered check/index.html.erb within layouts/application (9.2ms)
+Completed 200 OK in 15ms (Views: 14.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tmp/stylesheets/screen.css" for 127.0.0.1 at Fri Sep 30 22:34:19 -0600 2011
+
+ActionController::RoutingError (No route matches "/tmp/stylesheets/screen.css"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started POST "/check/test" for 127.0.0.1 at Fri Sep 30 22:34:21 -0600 2011
+  Processing by CheckController#test as HTML
+  Parameters: {"commit"=>"Check", "authenticity_token"=>"RNBxB1Ejes3Qiewu6JwNjcrYYBB8NMNL9LoJJY8V9hE=", "utf8"=>"✓", "facebook"=>"1111"}
+  [1m[35mGirl Load (0.8ms)[0m  SELECT "girls".* FROM "girls" WHERE ("girls"."username" = '1111') LIMIT 1
+  [1m[36mGuys Load (0.6ms)[0m  [1mSELECT "guys".* FROM "guys" WHERE ("guys"."username" = '1111') LIMIT 1[0m
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO "addtions" ("updated_at", "fb_id", "created_at") VALUES ('2011-10-01 04:34:21.634025', '1111', '2011-10-01 04:34:21.634025')
+Rendered layouts/_header.html.erb (1.3ms)
+Rendered layouts/_footer.html.erb (0.3ms)
+Rendered check/results.html.erb within layouts/application (96.9ms)
+Completed 200 OK in 115ms (Views: 102.2ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/check/tmp/stylesheets/screen.css" for 127.0.0.1 at Fri Sep 30 22:34:21 -0600 2011
+
+ActionController::RoutingError (No route matches "/check/tmp/stylesheets/screen.css"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT COUNT(*) FROM "removals"[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT COUNT(*) FROM "addtions"
+  [1m[36mAddtion Load (0.3ms)[0m  [1mSELECT "addtions".* FROM "addtions" ORDER BY addtions.id DESC LIMIT 1[0m
+
+
+Started GET "/check" for 127.0.0.1 at Fri Sep 30 22:35:19 -0600 2011
+  Processing by CheckController#index as HTML
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_check_index_html_erb__1253703573_2176887440_0 at /Users/Jordan/Desktop/tester/app/views/check/index.html.erb:11)
+Rendered layouts/_header.html.erb (1.6ms)
+Rendered layouts/_footer.html.erb (0.4ms)
+Rendered check/index.html.erb within layouts/application (11.9ms)
+Completed 200 OK in 20ms (Views: 18.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tmp/stylesheets/screen.css" for 127.0.0.1 at Fri Sep 30 22:35:19 -0600 2011
+
+ActionController::RoutingError (No route matches "/tmp/stylesheets/screen.css"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started POST "/check/test" for 127.0.0.1 at Fri Sep 30 22:35:21 -0600 2011
+  Processing by CheckController#test as HTML
+  Parameters: {"commit"=>"Check", "authenticity_token"=>"RNBxB1Ejes3Qiewu6JwNjcrYYBB8NMNL9LoJJY8V9hE=", "utf8"=>"✓", "facebook"=>"34534"}
+  [1m[36mGirl Load (0.7ms)[0m  [1mSELECT "girls".* FROM "girls" WHERE ("girls"."username" = '34534') LIMIT 1[0m
+  [1m[35mGuys Load (0.6ms)[0m  SELECT "guys".* FROM "guys" WHERE ("guys"."username" = '34534') LIMIT 1
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "addtions" ("fb_id", "updated_at", "created_at") VALUES ('34534', '2011-10-01 04:35:21.359597', '2011-10-01 04:35:21.359597')[0m
+Rendered layouts/_header.html.erb (1.4ms)
+Rendered layouts/_footer.html.erb (0.4ms)
+Rendered check/results.html.erb within layouts/application (22.8ms)
+Completed 200 OK in 41ms (Views: 27.9ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/check/tmp/stylesheets/screen.css" for 127.0.0.1 at Fri Sep 30 22:35:21 -0600 2011
+
+ActionController::RoutingError (No route matches "/check/tmp/stylesheets/screen.css"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.7ms)
+
+
+Started POST "/check/test" for 127.0.0.1 at Fri Sep 30 22:38:34 -0600 2011
+  Processing by CheckController#test as HTML
+  Parameters: {"commit"=>"Check", "authenticity_token"=>"RNBxB1Ejes3Qiewu6JwNjcrYYBB8NMNL9LoJJY8V9hE=", "utf8"=>"✓", "facebook"=>"34534"}
+  [1m[35mGirl Load (0.8ms)[0m  SELECT "girls".* FROM "girls" WHERE ("girls"."username" = '34534') LIMIT 1
+  [1m[36mGuys Load (0.7ms)[0m  [1mSELECT "guys".* FROM "guys" WHERE ("guys"."username" = '34534') LIMIT 1[0m
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO "addtions" ("created_at", "updated_at", "fb_id") VALUES ('2011-10-01 04:38:34.184361', '2011-10-01 04:38:34.184361', '34534')
+Rendered layouts/_header.html.erb (1.2ms)
+Rendered layouts/_footer.html.erb (0.3ms)
+Rendered check/results.html.erb within layouts/application (23.4ms)
+Completed 200 OK in 42ms (Views: 28.3ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/check/tmp/stylesheets/screen.css" for 127.0.0.1 at Fri Sep 30 22:38:34 -0600 2011
+
+ActionController::RoutingError (No route matches "/check/tmp/stylesheets/screen.css"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.7ms)
+
+
+Started GET "/check" for 127.0.0.1 at Fri Sep 30 22:38:35 -0600 2011
+  Processing by CheckController#index as HTML
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_check_index_html_erb__1253703573_2179736080_0 at /Users/Jordan/Desktop/tester/app/views/check/index.html.erb:11)
+Rendered layouts/_header.html.erb (1.1ms)
+Rendered layouts/_footer.html.erb (0.2ms)
+Rendered check/index.html.erb within layouts/application (8.8ms)
+Completed 200 OK in 14ms (Views: 14.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tmp/stylesheets/screen.css" for 127.0.0.1 at Fri Sep 30 22:38:35 -0600 2011
+
+ActionController::RoutingError (No route matches "/tmp/stylesheets/screen.css"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started POST "/check/test" for 127.0.0.1 at Fri Sep 30 22:38:37 -0600 2011
+  Processing by CheckController#test as HTML
+  Parameters: {"commit"=>"Check", "authenticity_token"=>"RNBxB1Ejes3Qiewu6JwNjcrYYBB8NMNL9LoJJY8V9hE=", "utf8"=>"✓", "facebook"=>"23432"}
+  [1m[36mGirl Load (0.8ms)[0m  [1mSELECT "girls".* FROM "girls" WHERE ("girls"."username" = '23432') LIMIT 1[0m
+  [1m[35mGuys Load (0.6ms)[0m  SELECT "guys".* FROM "guys" WHERE ("guys"."username" = '23432') LIMIT 1
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "addtions" ("created_at", "updated_at", "fb_id") VALUES ('2011-10-01 04:38:37.595693', '2011-10-01 04:38:37.595693', '23432')[0m
+Rendered layouts/_header.html.erb (1.3ms)
+Rendered layouts/_footer.html.erb (0.4ms)
+Rendered check/results.html.erb within layouts/application (25.4ms)
+Completed 200 OK in 139ms (Views: 125.1ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/check/tmp/stylesheets/screen.css" for 127.0.0.1 at Fri Sep 30 22:38:37 -0600 2011
+
+ActionController::RoutingError (No route matches "/check/tmp/stylesheets/screen.css"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.6ms)
+
+
+Started POST "/check/test" for 127.0.0.1 at Fri Sep 30 22:39:11 -0600 2011
+  Processing by CheckController#test as HTML
+  Parameters: {"commit"=>"Check", "authenticity_token"=>"RNBxB1Ejes3Qiewu6JwNjcrYYBB8NMNL9LoJJY8V9hE=", "utf8"=>"✓", "facebook"=>"23432"}
+  [1m[35mGirl Load (0.8ms)[0m  SELECT "girls".* FROM "girls" WHERE ("girls"."username" = '23432') LIMIT 1
+  [1m[36mGuys Load (0.7ms)[0m  [1mSELECT "guys".* FROM "guys" WHERE ("guys"."username" = '23432') LIMIT 1[0m
+  [1m[35mAREL (0.3ms)[0m  INSERT INTO "addtions" ("fb_id", "created_at", "updated_at") VALUES ('23432', '2011-10-01 04:39:11.811161', '2011-10-01 04:39:11.811161')
+Rendered layouts/_header.html.erb (1.3ms)
+Rendered layouts/_footer.html.erb (0.3ms)
+Rendered check/results.html.erb within layouts/application (105.0ms)
+Completed 200 OK in 124ms (Views: 110.0ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/check/tmp/stylesheets/screen.css" for 127.0.0.1 at Fri Sep 30 22:39:11 -0600 2011
+
+ActionController::RoutingError (No route matches "/check/tmp/stylesheets/screen.css"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/" for 127.0.0.1 at Fri Sep 30 22:39:23 -0600 2011
+  Processing by GirlsController#index as HTML
+  [1m[36mGirl Load (4.7ms)[0m  [1mSELECT "girls".* FROM "girls" ORDER BY RANDOM() LIMIT 2[0m
+Rendered layouts/_menwomen.html.erb (1.9ms)
+Rendered girls/_vote.html.erb (7.2ms)
+Rendered layouts/_header.html.erb (1.7ms)
+Rendered layouts/_footer.html.erb (0.4ms)
+Rendered girls/index.html.erb within layouts/application (23.6ms)
+Completed 200 OK in 43ms (Views: 31.5ms | ActiveRecord: 4.7ms)
+
+
+Started GET "/tmp/stylesheets/screen.css" for 127.0.0.1 at Fri Sep 30 22:39:23 -0600 2011
+
+ActionController::RoutingError (No route matches "/tmp/stylesheets/screen.css"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (85.0ms)
+
+
+Started GET "/check" for 127.0.0.1 at Fri Sep 30 22:39:25 -0600 2011
+  Processing by CheckController#index as HTML
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_check_index_html_erb__1253703573_2178702260_0 at /Users/Jordan/Desktop/tester/app/views/check/index.html.erb:11)
+Rendered layouts/_header.html.erb (1.2ms)
+Rendered layouts/_footer.html.erb (0.3ms)
+Rendered check/index.html.erb within layouts/application (9.8ms)
+Completed 200 OK in 16ms (Views: 15.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tmp/stylesheets/screen.css" for 127.0.0.1 at Fri Sep 30 22:39:25 -0600 2011
+
+ActionController::RoutingError (No route matches "/tmp/stylesheets/screen.css"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started POST "/check/test" for 127.0.0.1 at Fri Sep 30 22:39:27 -0600 2011
+  Processing by CheckController#test as HTML
+  Parameters: {"commit"=>"Check", "authenticity_token"=>"RNBxB1Ejes3Qiewu6JwNjcrYYBB8NMNL9LoJJY8V9hE=", "utf8"=>"✓", "facebook"=>"3432"}
+  [1m[35mGirl Load (0.9ms)[0m  SELECT "girls".* FROM "girls" WHERE ("girls"."username" = '3432') LIMIT 1
+  [1m[36mGuys Load (0.7ms)[0m  [1mSELECT "guys".* FROM "guys" WHERE ("guys"."username" = '3432') LIMIT 1[0m
+  [1m[35mAREL (0.6ms)[0m  INSERT INTO "addtions" ("updated_at", "created_at", "fb_id") VALUES ('2011-10-01 04:39:27.959293', '2011-10-01 04:39:27.959293', '3432')
+Rendered layouts/_header.html.erb (1.2ms)
+Rendered layouts/_footer.html.erb (0.3ms)
+Rendered check/results.html.erb within layouts/application (22.2ms)
+Completed 200 OK in 43ms (Views: 27.5ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/check/tmp/stylesheets/screen.css" for 127.0.0.1 at Fri Sep 30 22:39:28 -0600 2011
+
+ActionController::RoutingError (No route matches "/check/tmp/stylesheets/screen.css"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/check" for 127.0.0.1 at Fri Sep 30 22:40:09 -0600 2011
+  Processing by CheckController#index as HTML
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_check_index_html_erb__1253703573_2177501360_0 at /Users/Jordan/Desktop/tester/app/views/check/index.html.erb:11)
+Rendered layouts/_header.html.erb (1.3ms)
+Rendered layouts/_footer.html.erb (0.3ms)
+Rendered check/index.html.erb within layouts/application (10.0ms)
+Completed 200 OK in 17ms (Views: 16.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tmp/stylesheets/screen.css" for 127.0.0.1 at Fri Sep 30 22:40:10 -0600 2011
+
+ActionController::RoutingError (No route matches "/tmp/stylesheets/screen.css"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started POST "/check/test" for 127.0.0.1 at Fri Sep 30 22:40:22 -0600 2011
+  Processing by CheckController#test as HTML
+  Parameters: {"commit"=>"Check", "authenticity_token"=>"RNBxB1Ejes3Qiewu6JwNjcrYYBB8NMNL9LoJJY8V9hE=", "utf8"=>"✓", "facebook"=>"http://www.facebook.com/profile.php?id=1663350002"}
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mGirl Load (0.7ms)[0m  SELECT "girls".* FROM "girls" WHERE ("girls"."username" = '1663350002') LIMIT 1
+  [1m[36mGuys Load (0.3ms)[0m  [1mSELECT "guys".* FROM "guys" WHERE ("guys"."username" = '1663350002') LIMIT 1[0m
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO "removals" ("updated_at", "created_at", "fb_id") VALUES ('2011-10-01 04:40:22.990189', '2011-10-01 04:40:22.990189', '1663350002')
+Rendered layouts/_header.html.erb (1.4ms)
+Rendered layouts/_footer.html.erb (0.4ms)
+Rendered check/results.html.erb within layouts/application (46.4ms)
+Completed 200 OK in 66ms (Views: 51.8ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/check/tmp/stylesheets/screen.css" for 127.0.0.1 at Fri Sep 30 22:40:23 -0600 2011
+
+ActionController::RoutingError (No route matches "/check/tmp/stylesheets/screen.css"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started POST "/check/test" for 127.0.0.1 at Fri Sep 30 22:40:38 -0600 2011
+  Processing by CheckController#test as HTML
+  Parameters: {"commit"=>"Check", "authenticity_token"=>"RNBxB1Ejes3Qiewu6JwNjcrYYBB8NMNL9LoJJY8V9hE=", "utf8"=>"✓", "facebook"=>"http://www.facebook.com/profile.php?id=1663350002"}
+  [1m[36mGirl Load (0.8ms)[0m  [1mSELECT "girls".* FROM "girls" WHERE ("girls"."username" = '1663350002') LIMIT 1[0m
+  [1m[35mGuys Load (0.4ms)[0m  SELECT "guys".* FROM "guys" WHERE ("guys"."username" = '1663350002') LIMIT 1
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "removals" ("fb_id", "updated_at", "created_at") VALUES ('1663350002', '2011-10-01 04:40:38.521017', '2011-10-01 04:40:38.521017')[0m
+Rendered layouts/_header.html.erb (1.1ms)
+Rendered layouts/_footer.html.erb (0.3ms)
+Rendered check/results.html.erb within layouts/application (27.0ms)
+Completed 200 OK in 46ms (Views: 32.9ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/check/tmp/stylesheets/screen.css" for 127.0.0.1 at Fri Sep 30 22:40:38 -0600 2011
+
+ActionController::RoutingError (No route matches "/check/tmp/stylesheets/screen.css"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started POST "/check/test" for 127.0.0.1 at Fri Sep 30 22:40:59 -0600 2011
+  Processing by CheckController#test as HTML
+  Parameters: {"commit"=>"Check", "authenticity_token"=>"RNBxB1Ejes3Qiewu6JwNjcrYYBB8NMNL9LoJJY8V9hE=", "utf8"=>"✓", "facebook"=>"http://www.facebook.com/profile.php?id=1663350002"}
+  [1m[35mGirl Load (0.8ms)[0m  SELECT "girls".* FROM "girls" WHERE ("girls"."username" = '1663350002') LIMIT 1
+  [1m[36mGuys Load (0.4ms)[0m  [1mSELECT "guys".* FROM "guys" WHERE ("guys"."username" = '1663350002') LIMIT 1[0m
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO "removals" ("created_at", "updated_at", "fb_id") VALUES ('2011-10-01 04:40:59.937989', '2011-10-01 04:40:59.937989', '1663350002')
+Rendered layouts/_header.html.erb (1.2ms)
+Rendered layouts/_footer.html.erb (0.3ms)
+Rendered check/results.html.erb within layouts/application (28.5ms)
+Completed 200 OK in 48ms (Views: 34.4ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/check/tmp/stylesheets/screen.css" for 127.0.0.1 at Fri Sep 30 22:40:59 -0600 2011
+
+ActionController::RoutingError (No route matches "/check/tmp/stylesheets/screen.css"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started POST "/check/test" for 127.0.0.1 at Fri Sep 30 22:41:23 -0600 2011
+  Processing by CheckController#test as HTML
+  Parameters: {"commit"=>"Check", "authenticity_token"=>"RNBxB1Ejes3Qiewu6JwNjcrYYBB8NMNL9LoJJY8V9hE=", "utf8"=>"✓", "facebook"=>"http://www.facebook.com/profile.php?id=1663350002"}
+  [1m[36mGirl Load (0.8ms)[0m  [1mSELECT "girls".* FROM "girls" WHERE ("girls"."username" = '1663350002') LIMIT 1[0m
+  [1m[35mGuys Load (0.4ms)[0m  SELECT "guys".* FROM "guys" WHERE ("guys"."username" = '1663350002') LIMIT 1
+  [1m[36mAREL (0.6ms)[0m  [1mINSERT INTO "removals" ("updated_at", "fb_id", "created_at") VALUES ('2011-10-01 04:41:23.208938', '1663350002', '2011-10-01 04:41:23.208938')[0m
+Rendered check/results.html.erb within layouts/application (19.2ms)
+Completed   in 121ms
+
+ActionView::Template::Error (undefined method `username' for nil:NilClass):
+    35: 		<%= button_to('Click here if you would like to remove yourself', 'index',
+    36: 					:method => Removal.create(:fb_id => URI.decode(@boy.username)), :remote=> true,
+    37: 																:id => 'remove-button')%>
+    38: 																<%= link_to "Remove", :controller => "check", :action => "tester" , :id => @girl.username %>												
+    39: 																
+    40: 	
+    41: 	
+  app/views/check/results.html.erb:38:in `_app_views_check_results_html_erb___584100817_2181306220_0'
+  app/controllers/check_controller.rb:27:in `test'
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.7ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (8.4ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (62.5ms)
+
+
+Started POST "/check/test" for 127.0.0.1 at Fri Sep 30 22:42:11 -0600 2011
+  Processing by CheckController#test as HTML
+  Parameters: {"commit"=>"Check", "authenticity_token"=>"RNBxB1Ejes3Qiewu6JwNjcrYYBB8NMNL9LoJJY8V9hE=", "utf8"=>"✓", "facebook"=>"http://www.facebook.com/profile.php?id=1663350002"}
+  [1m[35mGirl Load (0.8ms)[0m  SELECT "girls".* FROM "girls" WHERE ("girls"."username" = '1663350002') LIMIT 1
+  [1m[36mGuys Load (0.4ms)[0m  [1mSELECT "guys".* FROM "guys" WHERE ("guys"."username" = '1663350002') LIMIT 1[0m
+  [1m[35mAREL (0.3ms)[0m  INSERT INTO "removals" ("updated_at", "created_at", "fb_id") VALUES ('2011-10-01 04:42:11.443339', '2011-10-01 04:42:11.443339', '1663350002')
+Rendered check/results.html.erb within layouts/application (18.4ms)
+Completed   in 38ms
+
+ActionView::Template::Error (No route matches {:action=>"tester", :id=>"1663350002", :controller=>"check"}):
+    35: 		<%= button_to('Click here if you would like to remove yourself', 'index',
+    36: 					:method => Removal.create(:fb_id => URI.decode(@boy.username)), :remote=> true,
+    37: 																:id => 'remove-button')%>
+    38: 		<%= link_to "Remove", :controller => "check", :action => "tester" , :id => @boy.username %>												
+    39: 																
+    40: 	
+    41: 	
+  app/views/check/results.html.erb:38:in `_app_views_check_results_html_erb___584100817_2176303500_0'
+  app/controllers/check_controller.rb:27:in `test'
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.5ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (7.4ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (94.5ms)
+
+
+Started POST "/check/test" for 127.0.0.1 at Fri Sep 30 22:43:11 -0600 2011
+
+ArgumentError (missing :action):
+  config/routes.rb:24
+  config/routes.rb:1
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.4ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (10.2ms)
+
+
+Started POST "/check/test" for 127.0.0.1 at Fri Sep 30 22:43:28 -0600 2011
+  Processing by CheckController#test as HTML
+  Parameters: {"commit"=>"Check", "authenticity_token"=>"RNBxB1Ejes3Qiewu6JwNjcrYYBB8NMNL9LoJJY8V9hE=", "utf8"=>"✓", "facebook"=>"http://www.facebook.com/profile.php?id=1663350002"}
+  [1m[36mGirl Load (0.8ms)[0m  [1mSELECT "girls".* FROM "girls" WHERE ("girls"."username" = '1663350002') LIMIT 1[0m
+  [1m[35mGuys Load (0.3ms)[0m  SELECT "guys".* FROM "guys" WHERE ("guys"."username" = '1663350002') LIMIT 1
+Rendered check/results.html.erb within layouts/application (6.6ms)
+Completed   in 24ms
+
+ActionView::Template::Error (No route matches {:action=>"show", :id=>#<Guys id: 233, score: 1400, wins: 0, picture: "1663350002.jpg", name: "Jordan Howlett", fb_id: "1663350002", created_at: "2011-09-24 05:59:21", updated_at: "2011-09-24 19:35:16", username: "1663350002">, :controller=>"guys"}):
+    31: 		FB ID: <%= @boy.fb_id %><br />
+    32: 		Score: <%= @boy.score %><br />
+    33: 		Picture: <%= link_to(image_tag("https://s3.amazonaws.com/sadf/girls/guys/" + @boy.picture,
+    34: 															:height => '150'), @boy) %><br /><br />
+    35: 		<%= button_to('Click here if you would like to remove yourself', 'index',
+    36: 					:method => Removal.create(:fb_id => URI.decode(@boy.username)), :remote=> true,
+    37: 																:id => 'remove-button')%>
+  app/views/check/results.html.erb:34:in `_app_views_check_results_html_erb___584100817_2176468160_0'
+  app/controllers/check_controller.rb:27:in `test'
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (7.0ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (91.7ms)
+
+
+Started POST "/check/test" for 127.0.0.1 at Fri Sep 30 22:43:38 -0600 2011
+
+ArgumentError (missing :action):
+  config/routes.rb:24
+  config/routes.rb:1
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.1ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (8.0ms)
+
+
+Started POST "/check/test" for 127.0.0.1 at Fri Sep 30 22:43:40 -0600 2011
+  Processing by CheckController#test as HTML
+  Parameters: {"commit"=>"Check", "authenticity_token"=>"RNBxB1Ejes3Qiewu6JwNjcrYYBB8NMNL9LoJJY8V9hE=", "utf8"=>"✓", "facebook"=>"http://www.facebook.com/profile.php?id=1663350002"}
+  [1m[36mGirl Load (0.8ms)[0m  [1mSELECT "girls".* FROM "girls" WHERE ("girls"."username" = '1663350002') LIMIT 1[0m
+  [1m[35mGuys Load (0.3ms)[0m  SELECT "guys".* FROM "guys" WHERE ("guys"."username" = '1663350002') LIMIT 1
+Rendered check/results.html.erb within layouts/application (6.1ms)
+Completed   in 24ms
+
+ActionView::Template::Error (No route matches {:action=>"show", :id=>#<Guys id: 233, score: 1400, wins: 0, picture: "1663350002.jpg", name: "Jordan Howlett", fb_id: "1663350002", created_at: "2011-09-24 05:59:21", updated_at: "2011-09-24 19:35:16", username: "1663350002">, :controller=>"guys"}):
+    31: 		FB ID: <%= @boy.fb_id %><br />
+    32: 		Score: <%= @boy.score %><br />
+    33: 		Picture: <%= link_to(image_tag("https://s3.amazonaws.com/sadf/girls/guys/" + @boy.picture,
+    34: 															:height => '150'), @boy) %><br /><br />
+    35: 		<%= button_to('Click here if you would like to remove yourself', 'index',
+    36: 					:method => Removal.create(:fb_id => URI.decode(@boy.username)), :remote=> true,
+    37: 																:id => 'remove-button')%>
+  app/views/check/results.html.erb:34:in `_app_views_check_results_html_erb___584100817_2176690700_0'
+  app/controllers/check_controller.rb:27:in `test'
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (7.1ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (13.0ms)
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) FROM "removals"[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT COUNT(*) FROM "addtions"
+  [1m[36mAddtion Load (3.4ms)[0m  [1mSELECT "addtions".* FROM "addtions"[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT COUNT(*) FROM "addtions"
+  [1m[36mAREL (3.3ms)[0m  [1mDELETE FROM "addtions" WHERE 1=1[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT COUNT(*) FROM "addtions"
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO "girls" ("fb_id", "name", "created_at", "updated_at", "wins", "score", "picture", "username") VALUES ('122201382', 'Jennifer Lyn Squires', '2011-10-01 06:34:49.820487', '2011-10-01 06:34:49.820487', 0, 1400, '122201382.jpg', NULL)
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "girls" ("fb_id", "name", "created_at", "updated_at", "wins", "score", "picture", "username") VALUES ('122201382', 'Jennifer Lyn Squires', '2011-10-01 06:34:53.651001', '2011-10-01 06:34:53.651001', 0, 1400, '122201382.jpg', NULL)[0m
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO "girls" ("fb_id", "name", "created_at", "updated_at", "wins", "score", "picture", "username") VALUES ('1503557491', 'Diane McLean', '2011-10-01 06:34:53.925247', '2011-10-01 06:34:53.925247', 0, 1400, '1503557491.jpg', NULL)
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "girls" ("fb_id", "name", "created_at", "updated_at", "wins", "score", "picture", "username") VALUES ('1663260037', 'Stacey Renee Nauta', '2011-10-01 06:34:54.291689', '2011-10-01 06:34:54.291689', 0, 1400, '1663260037.jpg', NULL)[0m
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO "girls" ("fb_id", "name", "created_at", "updated_at", "wins", "score", "picture", "username") VALUES ('501569422', 'Andrea Quick', '2011-10-01 06:34:54.559839', '2011-10-01 06:34:54.559839', 0, 1400, '501569422.jpg', NULL)
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "girls" ("fb_id", "name", "created_at", "updated_at", "wins", "score", "picture", "username") VALUES ('502458007', 'Ashton Wiebe', '2011-10-01 06:34:54.839627', '2011-10-01 06:34:54.839627', 0, 1400, '502458007.jpg', NULL)[0m
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO "girls" ("fb_id", "name", "created_at", "updated_at", "wins", "score", "picture", "username") VALUES ('512381927', 'Talitha Smadu', '2011-10-01 06:34:55.091756', '2011-10-01 06:34:55.091756', 0, 1400, '512381927.jpg', NULL)
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "girls" ("fb_id", "name", "created_at", "updated_at", "wins", "score", "picture", "username") VALUES ('513055914', 'Haley Gartner', '2011-10-01 06:34:55.348586', '2011-10-01 06:34:55.348586', 0, 1400, '513055914.jpg', NULL)[0m
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO "girls" ("fb_id", "name", "created_at", "updated_at", "wins", "score", "picture", "username") VALUES ('515053455', 'Paula Brinton', '2011-10-01 06:34:55.608344', '2011-10-01 06:34:55.608344', 0, 1400, '515053455.jpg', NULL)
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "girls" ("fb_id", "name", "created_at", "updated_at", "wins", "score", "picture", "username") VALUES ('516577365', 'Sofia Salsi', '2011-10-01 06:34:55.870907', '2011-10-01 06:34:55.870907', 0, 1400, '516577365.jpg', NULL)[0m
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO "girls" ("fb_id", "name", "created_at", "updated_at", "wins", "score", "picture", "username") VALUES ('517020887', 'Brenna Caldwell', '2011-10-01 06:34:56.144143', '2011-10-01 06:34:56.144143', 0, 1400, '517020887.jpg', NULL)
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "girls" ("fb_id", "name", "created_at", "updated_at", "wins", "score", "picture", "username") VALUES ('517504323', 'Andrea Nillson', '2011-10-01 06:34:56.422224', '2011-10-01 06:34:56.422224', 0, 1400, '517504323.jpg', NULL)[0m
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO "girls" ("fb_id", "name", "created_at", "updated_at", "wins", "score", "picture", "username") VALUES ('521820847', 'Chelsea Lyons', '2011-10-01 06:34:56.706177', '2011-10-01 06:34:56.706177', 0, 1400, '521820847.jpg', NULL)
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "girls" ("fb_id", "name", "created_at", "updated_at", "wins", "score", "picture", "username") VALUES ('522020164', 'Melissa Bereti', '2011-10-01 06:34:56.966870', '2011-10-01 06:34:56.966870', 0, 1400, '522020164.jpg', NULL)[0m
+  [1m[35mAREL (0.5ms)[0m  INSERT INTO "girls" ("fb_id", "name", "created_at", "updated_at", "wins", "score", "picture", "username") VALUES ('536756217', 'Sheena Zimmerman', '2011-10-01 06:34:57.222686', '2011-10-01 06:34:57.222686', 0, 1400, '536756217.jpg', NULL)
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "girls" ("fb_id", "name", "created_at", "updated_at", "wins", "score", "picture", "username") VALUES ('554336115', 'Lindsey Fairweather', '2011-10-01 06:34:57.497597', '2011-10-01 06:34:57.497597', 0, 1400, '554336115.jpg', NULL)[0m
+  [1m[35mAREL (0.3ms)[0m  INSERT INTO "girls" ("fb_id", "name", "created_at", "updated_at", "wins", "score", "picture", "username") VALUES ('555855365', 'Brittany Muir', '2011-10-01 06:34:57.869687', '2011-10-01 06:34:57.869687', 0, 1400, '555855365.jpg', NULL)
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "girls" ("fb_id", "name", "created_at", "updated_at", "wins", "score", "picture", "username") VALUES ('565305143', 'Jazzel Foster', '2011-10-01 06:34:58.135319', '2011-10-01 06:34:58.135319', 0, 1400, '565305143.jpg', NULL)[0m
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO "girls" ("fb_id", "name", "created_at", "updated_at", "wins", "score", "picture", "username") VALUES ('570935700', 'Tessica Kruger', '2011-10-01 06:34:58.403750', '2011-10-01 06:34:58.403750', 0, 1400, '570935700.jpg', NULL)
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "girls" ("fb_id", "name", "created_at", "updated_at", "wins", "score", "picture", "username") VALUES ('573765364', 'Carrie Osoup', '2011-10-01 06:34:58.671164', '2011-10-01 06:34:58.671164', 0, 1400, '573765364.jpg', NULL)[0m
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO "girls" ("fb_id", "name", "created_at", "updated_at", "wins", "score", "picture", "username") VALUES ('573900435', 'Mel Westaff', '2011-10-01 06:34:58.933383', '2011-10-01 06:34:58.933383', 0, 1400, '573900435.jpg', NULL)
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "girls" ("fb_id", "name", "created_at", "updated_at", "wins", "score", "picture", "username") VALUES ('578590430', 'Shelbi Becker', '2011-10-01 06:35:00.943633', '2011-10-01 06:35:00.943633', 0, 1400, '578590430.jpg', NULL)[0m
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO "girls" ("fb_id", "name", "created_at", "updated_at", "wins", "score", "picture", "username") VALUES ('578855219', 'Madison Dufault', '2011-10-01 06:35:01.200193', '2011-10-01 06:35:01.200193', 0, 1400, '578855219.jpg', NULL)
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "girls" ("fb_id", "name", "created_at", "updated_at", "wins", "score", "picture", "username") VALUES ('589537396', 'Nicki Chow', '2011-10-01 06:35:01.464199', '2011-10-01 06:35:01.464199', 0, 1400, '589537396.jpg', NULL)[0m
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO "girls" ("fb_id", "name", "created_at", "updated_at", "wins", "score", "picture", "username") VALUES ('610820754', 'Kaila Habing', '2011-10-01 06:35:01.730588', '2011-10-01 06:35:01.730588', 0, 1400, '610820754.jpg', NULL)
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "girls" ("fb_id", "name", "created_at", "updated_at", "wins", "score", "picture", "username") VALUES ('620870576', 'Jenn Bergen', '2011-10-01 06:35:01.994269', '2011-10-01 06:35:01.994269', 0, 1400, '620870576.jpg', NULL)[0m
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO "girls" ("fb_id", "name", "created_at", "updated_at", "wins", "score", "picture", "username") VALUES ('629125160', 'Katie Turnbull', '2011-10-01 06:35:02.290131', '2011-10-01 06:35:02.290131', 0, 1400, '629125160.jpg', NULL)
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "girls" ("fb_id", "name", "created_at", "updated_at", "wins", "score", "picture", "username") VALUES ('669705089', 'Jamie Catherine', '2011-10-01 06:35:02.601387', '2011-10-01 06:35:02.601387', 0, 1400, '669705089.jpg', NULL)[0m
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO "girls" ("fb_id", "name", "created_at", "updated_at", "wins", "score", "picture", "username") VALUES ('672061110', 'Mikaela Wentzell', '2011-10-01 06:35:02.865805', '2011-10-01 06:35:02.865805', 0, 1400, '672061110.jpg', NULL)
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "girls" ("fb_id", "name", "created_at", "updated_at", "wins", "score", "picture", "username") VALUES ('683301006', 'Jeanniene Tazzioli', '2011-10-01 06:35:03.128062', '2011-10-01 06:35:03.128062', 0, 1400, '683301006.jpg', NULL)[0m
+  [1m[35mAREL (0.3ms)[0m  INSERT INTO "girls" ("fb_id", "name", "created_at", "updated_at", "wins", "score", "picture", "username") VALUES ('697000412', 'Kayla Didowycz', '2011-10-01 06:35:04.456539', '2011-10-01 06:35:04.456539', 0, 1400, '697000412.jpg', NULL)
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "girls" ("fb_id", "name", "created_at", "updated_at", "wins", "score", "picture", "username") VALUES ('705636417', 'Jenell Masson', '2011-10-01 06:35:04.846607', '2011-10-01 06:35:04.846607', 0, 1400, '705636417.jpg', NULL)[0m
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO "girls" ("fb_id", "name", "created_at", "updated_at", "wins", "score", "picture", "username") VALUES ('706060121', 'Alana Marie Herperger', '2011-10-01 06:35:05.177728', '2011-10-01 06:35:05.177728', 0, 1400, '706060121.jpg', NULL)
+  [1m[36mAREL (0.5ms)[0m  [1mINSERT INTO "girls" ("fb_id", "name", "created_at", "updated_at", "wins", "score", "picture", "username") VALUES ('720200598', 'Chelsea Walters', '2011-10-01 06:35:05.532574', '2011-10-01 06:35:05.532574', 0, 1400, '720200598.jpg', NULL)[0m
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO "girls" ("fb_id", "name", "created_at", "updated_at", "wins", "score", "picture", "username") VALUES ('734150354', 'Sonja Soubolsky', '2011-10-01 06:35:05.847721', '2011-10-01 06:35:05.847721', 0, 1400, '734150354.jpg', NULL)
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "girls" ("fb_id", "name", "created_at", "updated_at", "wins", "score", "picture", "username") VALUES ('755350499', 'Linda Parisone', '2011-10-01 06:35:06.159073', '2011-10-01 06:35:06.159073', 0, 1400, '755350499.jpg', NULL)[0m
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO "girls" ("fb_id", "name", "created_at", "updated_at", "wins", "score", "picture", "username") VALUES ('763375524', 'Caitlin Anne Bolduc-Whelan', '2011-10-01 06:35:06.486578', '2011-10-01 06:35:06.486578', 0, 1400, '763375524.jpg', NULL)
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "girls" ("fb_id", "name", "created_at", "updated_at", "wins", "score", "picture", "username") VALUES ('786505044', 'Abigail Small', '2011-10-01 06:35:06.825543', '2011-10-01 06:35:06.825543', 0, 1400, '786505044.jpg', NULL)[0m
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO "girls" ("fb_id", "name", "created_at", "updated_at", "wins", "score", "picture", "username") VALUES ('787705293', 'Deanna Patterson', '2011-10-01 06:35:07.127445', '2011-10-01 06:35:07.127445', 0, 1400, '787705293.jpg', NULL)
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "girls" ("fb_id", "name", "created_at", "updated_at", "wins", "score", "picture", "username") VALUES ('811875248', 'Dragana Dzelajlija', '2011-10-01 06:35:07.444176', '2011-10-01 06:35:07.444176', 0, 1400, '811875248.jpg', NULL)[0m
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO "girls" ("fb_id", "name", "created_at", "updated_at", "wins", "score", "picture", "username") VALUES ('836270087', 'Amanda Toth', '2011-10-01 06:35:07.749761', '2011-10-01 06:35:07.749761', 0, 1400, '836270087.jpg', NULL)
+  [1m[36mGirl Load (1.3ms)[0m  [1mSELECT "girls".* FROM "girls" WHERE ("girls"."fb_id" = '1503557491') LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT COUNT(*) FROM "girls"
+
+
+Started GET "/girls" for 127.0.0.1 at Sat Oct 01 09:25:49 -0600 2011
+  Processing by GirlsController#index as HTML
+  [1m[36mGirl Load (4.1ms)[0m  [1mSELECT "girls".* FROM "girls" ORDER BY RANDOM() LIMIT 2[0m
+Rendered layouts/_menwomen.html.erb (1.8ms)
+Rendered girls/_vote.html.erb (10.5ms)
+Rendered layouts/_header.html.erb (2.0ms)
+Rendered layouts/_footer.html.erb (0.6ms)
+Rendered girls/index.html.erb within layouts/application (97.4ms)
+Completed 200 OK in 159ms (Views: 137.7ms | ActiveRecord: 4.1ms)
+
+
+Started GET "/tmp/stylesheets/screen.css" for 127.0.0.1 at Sat Oct 01 09:25:51 -0600 2011
+
+ActionController::RoutingError (No route matches "/tmp/stylesheets/screen.css"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.7ms)
+
+
+Started GET "/girls" for 127.0.0.1 at Sat Oct 01 09:26:18 -0600 2011
+  Processing by GirlsController#index as HTML
+  [1m[35mGirl Load (4.0ms)[0m  SELECT "girls".* FROM "girls" ORDER BY RANDOM() LIMIT 2
+Rendered layouts/_menwomen.html.erb (1.5ms)
+Rendered girls/_vote.html.erb (5.8ms)
+Rendered layouts/_header.html.erb (1.1ms)
+Rendered layouts/_footer.html.erb (0.3ms)
+Rendered girls/index.html.erb within layouts/application (18.5ms)
+Completed 200 OK in 35ms (Views: 25.7ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/tmp/stylesheets/screen.css" for 127.0.0.1 at Sat Oct 01 09:26:18 -0600 2011
+
+ActionController::RoutingError (No route matches "/tmp/stylesheets/screen.css"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/girls" for 127.0.0.1 at Sat Oct 01 09:26:19 -0600 2011
+  Processing by GirlsController#index as HTML
+  [1m[36mGirl Load (3.9ms)[0m  [1mSELECT "girls".* FROM "girls" ORDER BY RANDOM() LIMIT 2[0m
+Rendered layouts/_menwomen.html.erb (1.5ms)
+Rendered girls/_vote.html.erb (6.0ms)
+Rendered layouts/_header.html.erb (1.4ms)
+Rendered layouts/_footer.html.erb (0.3ms)
+Rendered girls/index.html.erb within layouts/application (19.4ms)
+Completed 200 OK in 34ms (Views: 24.5ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/tmp/stylesheets/screen.css" for 127.0.0.1 at Sat Oct 01 09:26:20 -0600 2011
+
+ActionController::RoutingError (No route matches "/tmp/stylesheets/screen.css"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/girls" for 127.0.0.1 at Sat Oct 01 09:26:35 -0600 2011
+  Processing by GirlsController#index as HTML
+  [1m[35mGirl Load (3.9ms)[0m  SELECT "girls".* FROM "girls" ORDER BY RANDOM() LIMIT 2
+Rendered layouts/_menwomen.html.erb (1.6ms)
+Rendered girls/_vote.html.erb (82.8ms)
+Rendered layouts/_header.html.erb (1.3ms)
+Rendered layouts/_footer.html.erb (0.3ms)
+Rendered girls/index.html.erb within layouts/application (96.0ms)
+Completed 200 OK in 111ms (Views: 102.2ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/tmp/stylesheets/screen.css" for 127.0.0.1 at Sat Oct 01 09:26:35 -0600 2011
+
+ActionController::RoutingError (No route matches "/tmp/stylesheets/screen.css"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/girls" for 127.0.0.1 at Sat Oct 01 09:28:14 -0600 2011
+  Processing by GirlsController#index as HTML
+  [1m[36mGirl Load (3.9ms)[0m  [1mSELECT "girls".* FROM "girls" ORDER BY RANDOM() LIMIT 2[0m
+Rendered layouts/_menwomen.html.erb (1.5ms)
+Rendered girls/_vote.html.erb (5.9ms)
+Rendered layouts/_header.html.erb (1.3ms)
+Rendered layouts/_footer.html.erb (0.3ms)
+Rendered girls/index.html.erb within layouts/application (18.4ms)
+Completed 200 OK in 33ms (Views: 24.2ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/tmp/stylesheets/screen.css" for 127.0.0.1 at Sat Oct 01 09:28:14 -0600 2011
+
+ActionController::RoutingError (No route matches "/tmp/stylesheets/screen.css"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started PUT "/girls/update/1794/2246" for 127.0.0.1 at Sat Oct 01 09:29:40 -0600 2011
+  Processing by GirlsController#update as JS
+  Parameters: {"lose"=>"2246", "win"=>"1794"}
+  [1m[35mSQL (0.5ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+
+  [1m[36mGirl Load (0.2ms)[0m  [1mSELECT "girls".* FROM "girls" WHERE ("girls"."id" = 1794) LIMIT 1[0m
+  [1m[35mGirl Load (0.2ms)[0m  SELECT "girls".* FROM "girls" WHERE ("girls"."id" = 2246) LIMIT 1
+  [1m[36mAREL (0.4ms)[0m  [1mUPDATE "girls" SET "updated_at" = '2011-10-01 15:29:40.274704', "score" = 1482 WHERE ("girls"."id" = 1794)[0m
+  [1m[35mAREL (0.4ms)[0m  UPDATE "girls" SET "updated_at" = '2011-10-01 15:29:40.309049', "score" = 1363 WHERE ("girls"."id" = 2246)
+  [1m[36mGirl Load (3.8ms)[0m  [1mSELECT "girls".* FROM "girls" ORDER BY RANDOM() LIMIT 2[0m
+Rendered girls/_vote.html.erb (1.7ms)
+Rendered girls/update.js.erb (8.6ms)
+Completed 200 OK in 107ms (Views: 49.9ms | ActiveRecord: 5.4ms)
+
+
+Started PUT "/girls/update/2404/2074" for 127.0.0.1 at Sat Oct 01 09:29:41 -0600 2011
+  Processing by GirlsController#update as JS
+  Parameters: {"lose"=>"2074", "win"=>"2404"}
+  [1m[35mGirl Load (0.2ms)[0m  SELECT "girls".* FROM "girls" WHERE ("girls"."id" = 2404) LIMIT 1
+  [1m[36mGirl Load (0.1ms)[0m  [1mSELECT "girls".* FROM "girls" WHERE ("girls"."id" = 2074) LIMIT 1[0m
+  [1m[35mAREL (0.4ms)[0m  UPDATE "girls" SET "score" = 1461, "updated_at" = '2011-10-01 15:29:41.928986' WHERE ("girls"."id" = 2404)
+  [1m[36mAREL (0.3ms)[0m  [1mUPDATE "girls" SET "score" = 1421, "updated_at" = '2011-10-01 15:29:41.937253' WHERE ("girls"."id" = 2074)[0m
+  [1m[35mGirl Load (3.7ms)[0m  SELECT "girls".* FROM "girls" ORDER BY RANDOM() LIMIT 2
+Rendered girls/_vote.html.erb (2.0ms)
+Rendered girls/update.js.erb (8.4ms)
+Completed 200 OK in 44ms (Views: 14.8ms | ActiveRecord: 4.8ms)
+
+
+Started GET "/winners" for 127.0.0.1 at Sat Oct 01 09:29:43 -0600 2011
+  Processing by WinnersController#index as HTML
+  [1m[36mGirl Load (3.8ms)[0m  [1mSELECT "girls".* FROM "girls" ORDER BY score DESC LIMIT 5 OFFSET 0[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) FROM "girls"
+  [1m[36mGuys Load (2.6ms)[0m  [1mSELECT "guys".* FROM "guys" ORDER BY score DESC LIMIT 5 OFFSET 0[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) FROM "guys"
+Rendered layouts/_header.html.erb (1.1ms)
+Rendered layouts/_footer.html.erb (0.2ms)
+Rendered winners/index.html.erb within layouts/application (130.0ms)
+Completed 200 OK in 171ms (Views: 136.8ms | ActiveRecord: 6.7ms)
+
+
+Started GET "/tmp/stylesheets/screen.css" for 127.0.0.1 at Sat Oct 01 09:29:44 -0600 2011
+
+ActionController::RoutingError (No route matches "/tmp/stylesheets/screen.css"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/girls" for 127.0.0.1 at Sat Oct 01 09:31:57 -0600 2011
+  Processing by GirlsController#index as HTML
+  [1m[36mGirl Load (3.9ms)[0m  [1mSELECT "girls".* FROM "girls" ORDER BY RANDOM() LIMIT 2[0m
+Rendered layouts/_menwomen.html.erb (1.8ms)
+Rendered girls/_vote.html.erb (5.6ms)
+Rendered layouts/_header.html.erb (1.1ms)
+Rendered layouts/_footer.html.erb (0.2ms)
+Rendered girls/index.html.erb within layouts/application (17.7ms)
+Completed 200 OK in 32ms (Views: 23.1ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/tmp/stylesheets/screen.css" for 127.0.0.1 at Sat Oct 01 09:31:57 -0600 2011
+
+ActionController::RoutingError (No route matches "/tmp/stylesheets/screen.css"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/girls" for 127.0.0.1 at Sat Oct 01 09:32:09 -0600 2011
+  Processing by GirlsController#index as HTML
+  [1m[35mGirl Load (4.2ms)[0m  SELECT "girls".* FROM "girls" ORDER BY RANDOM() LIMIT 2
+Rendered layouts/_menwomen.html.erb (1.5ms)
+Rendered girls/_vote.html.erb (6.1ms)
+Rendered layouts/_header.html.erb (1.1ms)
+Rendered layouts/_footer.html.erb (0.2ms)
+Rendered girls/index.html.erb within layouts/application (18.3ms)
+Completed 200 OK in 36ms (Views: 23.6ms | ActiveRecord: 4.2ms)
+
+
+Started GET "/tmp/stylesheets/screen.css" for 127.0.0.1 at Sat Oct 01 09:32:09 -0600 2011
+
+ActionController::RoutingError (No route matches "/tmp/stylesheets/screen.css"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.7ms)
+
+
+Started GET "/girls" for 127.0.0.1 at Sat Oct 01 09:32:36 -0600 2011
+  Processing by GirlsController#index as HTML
+  [1m[36mGirl Load (3.8ms)[0m  [1mSELECT "girls".* FROM "girls" ORDER BY RANDOM() LIMIT 2[0m
+Rendered layouts/_menwomen.html.erb (1.8ms)
+Rendered girls/_vote.html.erb (6.3ms)
+Rendered layouts/_header.html.erb (1.3ms)
+Rendered layouts/_footer.html.erb (0.3ms)
+Rendered girls/index.html.erb within layouts/application (20.2ms)
+Completed 200 OK in 34ms (Views: 25.8ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/tmp/stylesheets/screen.css" for 127.0.0.1 at Sat Oct 01 09:32:37 -0600 2011
+
+ActionController::RoutingError (No route matches "/tmp/stylesheets/screen.css"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/girls" for 127.0.0.1 at Sat Oct 01 09:32:55 -0600 2011
+  Processing by GirlsController#index as HTML
+  [1m[35mGirl Load (4.0ms)[0m  SELECT "girls".* FROM "girls" ORDER BY RANDOM() LIMIT 2
+Rendered layouts/_menwomen.html.erb (1.6ms)
+Rendered girls/_vote.html.erb (5.8ms)
+Rendered layouts/_header.html.erb (1.8ms)
+Rendered layouts/_footer.html.erb (0.4ms)
+Rendered girls/index.html.erb within layouts/application (19.7ms)
+Completed 200 OK in 112ms (Views: 25.0ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/tmp/stylesheets/screen.css" for 127.0.0.1 at Sat Oct 01 09:32:55 -0600 2011
+
+ActionController::RoutingError (No route matches "/tmp/stylesheets/screen.css"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.2ms)
