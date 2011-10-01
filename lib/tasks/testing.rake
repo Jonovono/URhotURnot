@@ -7,8 +7,8 @@ namespace :data do
      Girl.find_by_username(t.fb_id).delete if Girl.find_by_username
      Guys.find_by_username(t.fb_id).delete if Guys.find_by_username
      
-     puts  Girl.find_by_username(t.fb_id)
-     puts Guys.find_by_username(t.fb_id)
+      Girl.find_by_username(t.fb_id).delete
+     Guys.find_by_username(t.fb_id).delete
    end
    end
 end
