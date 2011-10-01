@@ -5707,3 +5707,43 @@ Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middle
 [0m
   [1m[35mGirl Load (0.9ms)[0m  SELECT "girls".* FROM "girls" WHERE ("girls"."username" = '793805506') LIMIT 1
   [1m[36mGuys Load (0.8ms)[0m  [1mSELECT "guys".* FROM "guys" WHERE ("guys"."username" = '793805506') LIMIT 1[0m
+
+
+Started GET "/girls" for 127.0.0.1 at Sat Oct 01 16:26:55 -0600 2011
+  Processing by GirlsController#index as HTML
+  [1m[36mGirl Load (4.4ms)[0m  [1mSELECT "girls".* FROM "girls" ORDER BY RANDOM() LIMIT 2[0m
+Rendered layouts/_menwomen.html.erb (1.6ms)
+Rendered girls/_vote.html.erb (7.8ms)
+Rendered layouts/_header.html.erb (1.1ms)
+Rendered layouts/_footer.html.erb (0.3ms)
+Rendered girls/index.html.erb within layouts/application (21.4ms)
+Completed 200 OK in 38ms (Views: 27.9ms | ActiveRecord: 4.4ms)
+
+
+Started GET "/tmp/stylesheets/screen.css" for 127.0.0.1 at Sat Oct 01 16:26:56 -0600 2011
+
+ActionController::RoutingError (No route matches "/tmp/stylesheets/screen.css"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/girls" for 127.0.0.1 at Sat Oct 01 16:27:26 -0600 2011
+  Processing by GirlsController#index as HTML
+  [1m[35mGirl Load (3.9ms)[0m  SELECT "girls".* FROM "girls" ORDER BY RANDOM() LIMIT 2
+Rendered layouts/_menwomen.html.erb (1.6ms)
+Rendered girls/_vote.html.erb (6.6ms)
+Rendered layouts/_header.html.erb (1.4ms)
+Rendered layouts/_footer.html.erb (0.3ms)
+Rendered girls/index.html.erb within layouts/application (20.6ms)
+Completed 200 OK in 35ms (Views: 26.3ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/tmp/stylesheets/screen.css" for 127.0.0.1 at Sat Oct 01 16:27:26 -0600 2011
+
+ActionController::RoutingError (No route matches "/tmp/stylesheets/screen.css"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.3ms)
