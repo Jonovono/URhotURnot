@@ -5671,3 +5671,39 @@ ActionController::RoutingError (No route matches "/tmp/stylesheets/screen.css"):
 
 
 Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+  [1m[36mRemoval Load (0.6ms)[0m  [1mSELECT "removals".* FROM "removals"[0m
+  [1m[36mRemoval Load (0.6ms)[0m  [1mSELECT "removals".* FROM "removals"[0m
+  [1m[36mRemoval Load (0.6ms)[0m  [1mSELECT "removals".* FROM "removals"[0m
+  [1m[36mRemoval Load (0.6ms)[0m  [1mSELECT "removals".* FROM "removals"[0m
+  [1m[36mRemoval Load (0.6ms)[0m  [1mSELECT "removals".* FROM "removals"[0m
+  [1m[36mRemoval Load (0.5ms)[0m  [1mSELECT "removals".* FROM "removals"[0m
+  [1m[35mSQL (0.3ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+
+  [1m[36mGirl Load (0.9ms)[0m  [1mSELECT "girls".* FROM "girls" WHERE ("girls"."username" IS NULL) LIMIT 1[0m
+  [1m[35mGirl Load (0.4ms)[0m  SELECT "girls".* FROM "girls" WHERE ("girls"."username" = '610820754') LIMIT 1
+  [1m[36mAREL (1.5ms)[0m  [1mDELETE FROM "girls" WHERE ("girls"."id" = 2029)[0m
+  [1m[35mGuys Load (0.6ms)[0m  SELECT "guys".* FROM "guys" WHERE ("guys"."username" IS NULL) LIMIT 1
+  [1m[36mGirl Load (0.5ms)[0m  [1mSELECT "girls".* FROM "girls" WHERE ("girls"."username" = '610820754') LIMIT 1[0m
+  [1m[35mGuys Load (0.4ms)[0m  SELECT "guys".* FROM "guys" WHERE ("guys"."username" = '610820754') LIMIT 1
+  [1m[36mGirl Load (0.5ms)[0m  [1mSELECT "girls".* FROM "girls" WHERE ("girls"."username" IS NULL) LIMIT 1[0m
+  [1m[35mGirl Load (0.4ms)[0m  SELECT "girls".* FROM "girls" WHERE ("girls"."username" = '793805506') LIMIT 1
+  [1m[36mAREL (1.8ms)[0m  [1mDELETE FROM "girls" WHERE ("girls"."id" = 2328)[0m
+  [1m[35mGuys Load (0.4ms)[0m  SELECT "guys".* FROM "guys" WHERE ("guys"."username" IS NULL) LIMIT 1
+  [1m[36mGirl Load (0.5ms)[0m  [1mSELECT "girls".* FROM "girls" WHERE ("girls"."username" = '793805506') LIMIT 1[0m
+  [1m[35mGuys Load (0.3ms)[0m  SELECT "guys".* FROM "guys" WHERE ("guys"."username" = '793805506') LIMIT 1
+  [1m[36mGirl Load (0.4ms)[0m  [1mSELECT "girls".* FROM "girls" WHERE ("girls"."username" IS NULL) LIMIT 1[0m
+  [1m[35mGirl Load (0.4ms)[0m  SELECT "girls".* FROM "girls" WHERE ("girls"."username" = '884390178') LIMIT 1
+  [1m[36mAREL (1.5ms)[0m  [1mDELETE FROM "girls" WHERE ("girls"."id" = 2405)[0m
+  [1m[35mGuys Load (0.4ms)[0m  SELECT "guys".* FROM "guys" WHERE ("guys"."username" IS NULL) LIMIT 1
+  [1m[36mGirl Load (0.5ms)[0m  [1mSELECT "girls".* FROM "girls" WHERE ("girls"."username" = '884390178') LIMIT 1[0m
+  [1m[35mGuys Load (0.3ms)[0m  SELECT "guys".* FROM "guys" WHERE ("guys"."username" = '884390178') LIMIT 1
+  [1m[36mGirl Load (0.4ms)[0m  [1mSELECT "girls".* FROM "girls" WHERE ("girls"."username" IS NULL) LIMIT 1[0m
+  [1m[35mGirl Load (0.4ms)[0m  SELECT "girls".* FROM "girls" WHERE ("girls"."username" = '610820754') LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mGirl Load (0.9ms)[0m  SELECT "girls".* FROM "girls" WHERE ("girls"."username" = '793805506') LIMIT 1
+  [1m[36mGuys Load (0.8ms)[0m  [1mSELECT "guys".* FROM "guys" WHERE ("guys"."username" = '793805506') LIMIT 1[0m

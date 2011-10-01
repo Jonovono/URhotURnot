@@ -4,6 +4,7 @@ source 'http://rubygems.org'
 gem 'fb_graph'
 gem 'rails', '3.0.3' # At least 3.0.8 but below 3.1
 gem 'rake', '0.9.2'
+
 #gem 'mysql2', '< 0.3'   # Database engine.  3.0 is not compatible with Rails 3.0.x
 gem 'sqlite3-ruby', :require => 'sqlite3'
 gem "jquery-rails", "~> 1.0.14"
