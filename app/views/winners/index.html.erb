@@ -1,7 +1,7 @@
 <div class='both-sex'>
 
 <div id='top-girls'>
-	<h1>Top Women</h1>
+	<h1>Top 100 Women</h1>
 	<% @girls.each do |girl| %>
 	<%= link_to (image_tag(display_girl_image(girl), :height => 70)), girl %>
 		<%= girl.score %> <br />
@@ -11,7 +11,7 @@
 </div>
 
 <div id='top-boys'>
-	<h1>Top Men</h1>
+	<h1>Top 100 Men</h1>
 	<% @boys.each do |boy| %>
 	<%= link_to (image_tag(display_guy_image(boy), :height => 70)), boy %>
 		<%= boy.score %> <br />

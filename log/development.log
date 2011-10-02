@@ -5747,3 +5747,1000 @@ ActionController::RoutingError (No route matches "/tmp/stylesheets/screen.css"):
 
 
 Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.3ms)
+
+
+Started GET "/girls" for 127.0.0.1 at Sat Oct 01 23:11:27 -0600 2011
+  Processing by GirlsController#index as HTML
+  [1m[36mGirl Load (34.3ms)[0m  [1mSELECT "girls".* FROM "girls" ORDER BY RANDOM() LIMIT 2[0m
+Rendered layouts/_menwomen.html.erb (1.6ms)
+Rendered girls/_vote.html.erb (7.6ms)
+Rendered layouts/_header.html.erb (1.7ms)
+Rendered layouts/_footer.html.erb (0.5ms)
+Rendered girls/index.html.erb within layouts/application (68.2ms)
+Completed 200 OK in 116ms (Views: 75.2ms | ActiveRecord: 34.3ms)
+
+
+Started GET "/tmp/stylesheets/screen.css" for 127.0.0.1 at Sat Oct 01 23:11:28 -0600 2011
+
+ActionController::RoutingError (No route matches "/tmp/stylesheets/screen.css"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/winners" for 127.0.0.1 at Sat Oct 01 23:11:38 -0600 2011
+
+SyntaxError (/Users/Jordan/Desktop/tester/app/controllers/winners_controller.rb:8: syntax error, unexpected ':', expecting ')'
+...   @boys = Guys.paginate(page: 10).where('girls.username IN(...
+                              ^):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.5ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.5ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (26.8ms)
+
+
+Started GET "/winners" for 127.0.0.1 at Sat Oct 01 23:11:59 -0600 2011
+  Processing by WinnersController#index as HTML
+  [1m[35mGirl Load (4.1ms)[0m  SELECT "girls".* FROM "girls" ORDER BY score DESC LIMIT 5 OFFSET 0
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT COUNT(*) FROM "girls"[0m
+  [1m[35mGuys Load (0.3ms)[0m  SELECT "guys".* FROM "guys" WHERE (girls.username IN(SELECT username FROM girls ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0
+SQLite3::SQLException: no such column: girls.username: SELECT  "guys".* FROM "guys" WHERE (girls.username IN(SELECT username FROM girls ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0
+Rendered winners/index.html.erb within layouts/application (111.8ms)
+Completed   in 128ms
+
+ActionView::Template::Error (SQLite3::SQLException: no such column: girls.username: SELECT  "guys".* FROM "guys" WHERE (girls.username IN(SELECT username FROM girls ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0):
+    12: 
+    13: <div id='top-boys'>
+    14: 	<h1>Top Men</h1>
+    15: 	<% @boys.each do |boy| %>
+    16: 	<%= link_to (image_tag(display_guy_image(boy), :height => 70)), boy %>
+    17: 		<%= boy.score %> <br />
+    18: 	<% end %>
+  app/views/winners/index.html.erb:15:in `_app_views_winners_index_html_erb___1283246811_2177150800_0'
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+  [1m[36mGuys Load (0.4ms)[0m  [1mSELECT "guys".* FROM "guys" WHERE (girls.username IN(SELECT username FROM girls ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0[0m
+SQLite3::SQLException: no such column: girls.username: SELECT  "guys".* FROM "guys" WHERE (girls.username IN(SELECT username FROM girls ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0
+  [1m[35mGuys Load (0.1ms)[0m  SELECT "guys".* FROM "guys" WHERE (girls.username IN(SELECT username FROM girls ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0
+SQLite3::SQLException: no such column: girls.username: SELECT  "guys".* FROM "guys" WHERE (girls.username IN(SELECT username FROM girls ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (10.8ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (17.0ms)
+
+
+Started GET "/winners" for 127.0.0.1 at Sat Oct 01 23:12:11 -0600 2011
+  Processing by WinnersController#index as HTML
+  [1m[36mGirl Load (3.5ms)[0m  [1mSELECT "girls".* FROM "girls" ORDER BY score DESC LIMIT 5 OFFSET 0[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) FROM "girls"
+  [1m[36mGuys Load (24.2ms)[0m  [1mSELECT "guys".* FROM "guys" WHERE (guys.username IN(SELECT username FROM guys ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0[0m
+  [1m[35mSQL (2.5ms)[0m  SELECT COUNT(*) FROM "guys" WHERE (guys.username IN(SELECT username FROM guys ORDER BY score LIMIT 100))
+Rendered layouts/_header.html.erb (1.1ms)
+Rendered layouts/_footer.html.erb (0.2ms)
+Rendered winners/index.html.erb within layouts/application (61.4ms)
+Completed 200 OK in 75ms (Views: 36.4ms | ActiveRecord: 35.4ms)
+
+
+Started GET "/tmp/stylesheets/screen.css" for 127.0.0.1 at Sat Oct 01 23:12:12 -0600 2011
+
+ActionController::RoutingError (No route matches "/tmp/stylesheets/screen.css"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/winners/index?boys_page=20" for 127.0.0.1 at Sat Oct 01 23:12:22 -0600 2011
+  Processing by WinnersController#index as HTML
+  Parameters: {"boys_page"=>"20"}
+  [1m[36mGirl Load (3.7ms)[0m  [1mSELECT "girls".* FROM "girls" ORDER BY score DESC LIMIT 5 OFFSET 0[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) FROM "girls"
+  [1m[36mGuys Load (3.0ms)[0m  [1mSELECT "guys".* FROM "guys" WHERE (guys.username IN(SELECT username FROM guys ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 95[0m
+  [1m[35mSQL (2.4ms)[0m  SELECT COUNT(*) FROM "guys" WHERE (guys.username IN(SELECT username FROM guys ORDER BY score LIMIT 100))
+Rendered layouts/_header.html.erb (1.3ms)
+Rendered layouts/_footer.html.erb (0.2ms)
+Rendered winners/index.html.erb within layouts/application (41.3ms)
+Completed 200 OK in 55ms (Views: 37.6ms | ActiveRecord: 9.2ms)
+
+
+Started GET "/winners/tmp/stylesheets/screen.css" for 127.0.0.1 at Sat Oct 01 23:12:22 -0600 2011
+
+ActionController::RoutingError (No route matches "/winners/tmp/stylesheets/screen.css"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.2ms)
+
+
+Started GET "/winners/index?boys_page=20" for 127.0.0.1 at Sat Oct 01 23:14:29 -0600 2011
+  Processing by WinnersController#index as HTML
+  Parameters: {"boys_page"=>"20"}
+  [1m[36mGirl Load (0.5ms)[0m  [1mSELECT "girls".* FROM "girls" WHERE (girl.username IN(SELECT username FROM guys ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0[0m
+SQLite3::SQLException: no such column: girl.username: SELECT  "girls".* FROM "girls" WHERE (girl.username IN(SELECT username FROM guys ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0
+Rendered winners/index.html.erb within layouts/application (1.8ms)
+Completed   in 15ms
+
+ActionView::Template::Error (SQLite3::SQLException: no such column: girl.username: SELECT  "girls".* FROM "girls" WHERE (girl.username IN(SELECT username FROM guys ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0):
+    2: 
+    3: <div id='top-girls'>
+    4: 	<h1>Top Women</h1>
+    5: 	<% @girls.each do |girl| %>
+    6: 	<%= link_to (image_tag(display_girl_image(girl), :height => 70)), girl %>
+    7: 		<%= girl.score %> <br />
+    8: 	<% end %>
+  app/views/winners/index.html.erb:5:in `_app_views_winners_index_html_erb___1283246811_2179266460_0'
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+  [1m[35mGirl Load (0.4ms)[0m  SELECT "girls".* FROM "girls" WHERE (girl.username IN(SELECT username FROM guys ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0
+SQLite3::SQLException: no such column: girl.username: SELECT  "girls".* FROM "girls" WHERE (girl.username IN(SELECT username FROM guys ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0
+  [1m[36mGirl Load (0.1ms)[0m  [1mSELECT "girls".* FROM "girls" WHERE (girl.username IN(SELECT username FROM guys ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0[0m
+SQLite3::SQLException: no such column: girl.username: SELECT  "girls".* FROM "girls" WHERE (girl.username IN(SELECT username FROM guys ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (4.6ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (10.3ms)
+
+
+Started GET "/winners/index?boys_page=20" for 127.0.0.1 at Sat Oct 01 23:14:36 -0600 2011
+  Processing by WinnersController#index as HTML
+  Parameters: {"boys_page"=>"20"}
+  [1m[35mGirl Load (0.3ms)[0m  SELECT "girls".* FROM "girls" WHERE (girl.username IN(SELECT username FROM girl ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0
+SQLite3::SQLException: no such table: girl: SELECT  "girls".* FROM "girls" WHERE (girl.username IN(SELECT username FROM girl ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0
+Rendered winners/index.html.erb within layouts/application (1.7ms)
+Completed   in 16ms
+
+ActionView::Template::Error (SQLite3::SQLException: no such table: girl: SELECT  "girls".* FROM "girls" WHERE (girl.username IN(SELECT username FROM girl ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0):
+    2: 
+    3: <div id='top-girls'>
+    4: 	<h1>Top Women</h1>
+    5: 	<% @girls.each do |girl| %>
+    6: 	<%= link_to (image_tag(display_girl_image(girl), :height => 70)), girl %>
+    7: 		<%= girl.score %> <br />
+    8: 	<% end %>
+  app/views/winners/index.html.erb:5:in `_app_views_winners_index_html_erb___1283246811_2175881460_0'
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+  [1m[36mGirl Load (0.4ms)[0m  [1mSELECT "girls".* FROM "girls" WHERE (girl.username IN(SELECT username FROM girl ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0[0m
+SQLite3::SQLException: no such table: girl: SELECT  "girls".* FROM "girls" WHERE (girl.username IN(SELECT username FROM girl ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0
+  [1m[35mGirl Load (0.1ms)[0m  SELECT "girls".* FROM "girls" WHERE (girl.username IN(SELECT username FROM girl ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0
+SQLite3::SQLException: no such table: girl: SELECT  "girls".* FROM "girls" WHERE (girl.username IN(SELECT username FROM girl ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (4.6ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (10.5ms)
+
+
+Started GET "/winners/index?boys_page=20" for 127.0.0.1 at Sat Oct 01 23:14:46 -0600 2011
+  Processing by WinnersController#index as HTML
+  Parameters: {"boys_page"=>"20"}
+  [1m[36mGirl Load (0.3ms)[0m  [1mSELECT "girls".* FROM "girls" WHERE (girl.username IN(SELECT username FROM girls ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0[0m
+SQLite3::SQLException: no such column: girl.username: SELECT  "girls".* FROM "girls" WHERE (girl.username IN(SELECT username FROM girls ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0
+Rendered winners/index.html.erb within layouts/application (2.3ms)
+Completed   in 17ms
+
+ActionView::Template::Error (SQLite3::SQLException: no such column: girl.username: SELECT  "girls".* FROM "girls" WHERE (girl.username IN(SELECT username FROM girls ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0):
+    2: 
+    3: <div id='top-girls'>
+    4: 	<h1>Top Women</h1>
+    5: 	<% @girls.each do |girl| %>
+    6: 	<%= link_to (image_tag(display_girl_image(girl), :height => 70)), girl %>
+    7: 		<%= girl.score %> <br />
+    8: 	<% end %>
+  app/views/winners/index.html.erb:5:in `_app_views_winners_index_html_erb___1283246811_2179167260_0'
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+  [1m[35mGirl Load (0.4ms)[0m  SELECT "girls".* FROM "girls" WHERE (girl.username IN(SELECT username FROM girls ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0
+SQLite3::SQLException: no such column: girl.username: SELECT  "girls".* FROM "girls" WHERE (girl.username IN(SELECT username FROM girls ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0
+  [1m[36mGirl Load (0.1ms)[0m  [1mSELECT "girls".* FROM "girls" WHERE (girl.username IN(SELECT username FROM girls ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0[0m
+SQLite3::SQLException: no such column: girl.username: SELECT  "girls".* FROM "girls" WHERE (girl.username IN(SELECT username FROM girls ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (4.6ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (10.4ms)
+
+
+Started GET "/winners/index?boys_page=20" for 127.0.0.1 at Sat Oct 01 23:14:52 -0600 2011
+  Processing by WinnersController#index as HTML
+  Parameters: {"boys_page"=>"20"}
+  [1m[35mGirl Load (0.3ms)[0m  SELECT "girls".* FROM "girls" WHERE (girl.username IN(SELECT username FROM girl ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0
+SQLite3::SQLException: no such table: girl: SELECT  "girls".* FROM "girls" WHERE (girl.username IN(SELECT username FROM girl ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0
+Rendered winners/index.html.erb within layouts/application (1.6ms)
+Completed   in 15ms
+
+ActionView::Template::Error (SQLite3::SQLException: no such table: girl: SELECT  "girls".* FROM "girls" WHERE (girl.username IN(SELECT username FROM girl ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0):
+    2: 
+    3: <div id='top-girls'>
+    4: 	<h1>Top Women</h1>
+    5: 	<% @girls.each do |girl| %>
+    6: 	<%= link_to (image_tag(display_girl_image(girl), :height => 70)), girl %>
+    7: 		<%= girl.score %> <br />
+    8: 	<% end %>
+  app/views/winners/index.html.erb:5:in `_app_views_winners_index_html_erb___1283246811_2175827280_0'
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+  [1m[36mGirl Load (0.4ms)[0m  [1mSELECT "girls".* FROM "girls" WHERE (girl.username IN(SELECT username FROM girl ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0[0m
+SQLite3::SQLException: no such table: girl: SELECT  "girls".* FROM "girls" WHERE (girl.username IN(SELECT username FROM girl ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0
+  [1m[35mGirl Load (0.1ms)[0m  SELECT "girls".* FROM "girls" WHERE (girl.username IN(SELECT username FROM girl ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0
+SQLite3::SQLException: no such table: girl: SELECT  "girls".* FROM "girls" WHERE (girl.username IN(SELECT username FROM girl ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (5.1ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (11.7ms)
+
+
+Started GET "/winners/index?boys_page=20" for 127.0.0.1 at Sat Oct 01 23:15:09 -0600 2011
+  Processing by WinnersController#index as HTML
+  Parameters: {"boys_page"=>"20"}
+  [1m[36mGirl Load (0.3ms)[0m  [1mSELECT "girls".* FROM "girls" WHERE (girls.username IN(SELECT username FROM girl ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0[0m
+SQLite3::SQLException: no such table: girl: SELECT  "girls".* FROM "girls" WHERE (girls.username IN(SELECT username FROM girl ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0
+Rendered winners/index.html.erb within layouts/application (1.7ms)
+Completed   in 16ms
+
+ActionView::Template::Error (SQLite3::SQLException: no such table: girl: SELECT  "girls".* FROM "girls" WHERE (girls.username IN(SELECT username FROM girl ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0):
+    2: 
+    3: <div id='top-girls'>
+    4: 	<h1>Top Women</h1>
+    5: 	<% @girls.each do |girl| %>
+    6: 	<%= link_to (image_tag(display_girl_image(girl), :height => 70)), girl %>
+    7: 		<%= girl.score %> <br />
+    8: 	<% end %>
+  app/views/winners/index.html.erb:5:in `_app_views_winners_index_html_erb___1283246811_2179100920_0'
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+  [1m[35mGirl Load (0.4ms)[0m  SELECT "girls".* FROM "girls" WHERE (girls.username IN(SELECT username FROM girl ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0
+SQLite3::SQLException: no such table: girl: SELECT  "girls".* FROM "girls" WHERE (girls.username IN(SELECT username FROM girl ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0
+  [1m[36mGirl Load (0.1ms)[0m  [1mSELECT "girls".* FROM "girls" WHERE (girls.username IN(SELECT username FROM girl ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0[0m
+SQLite3::SQLException: no such table: girl: SELECT  "girls".* FROM "girls" WHERE (girls.username IN(SELECT username FROM girl ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (4.7ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (10.4ms)
+
+
+Started GET "/winners/index?boys_page=20" for 127.0.0.1 at Sat Oct 01 23:15:55 -0600 2011
+  Processing by WinnersController#index as HTML
+  Parameters: {"boys_page"=>"20"}
+  [1m[35mGirl Load (0.5ms)[0m  SELECT "girls".* FROM "girls" WHERE (girl.username IN(SELECT username FROM girl ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0
+SQLite3::SQLException: no such table: girl: SELECT  "girls".* FROM "girls" WHERE (girl.username IN(SELECT username FROM girl ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0
+Rendered winners/index.html.erb within layouts/application (1.8ms)
+Completed   in 15ms
+
+ActionView::Template::Error (SQLite3::SQLException: no such table: girl: SELECT  "girls".* FROM "girls" WHERE (girl.username IN(SELECT username FROM girl ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0):
+    2: 
+    3: <div id='top-girls'>
+    4: 	<h1>Top Women</h1>
+    5: 	<% @girls.each do |girl| %>
+    6: 	<%= link_to (image_tag(display_girl_image(girl), :height => 70)), girl %>
+    7: 		<%= girl.score %> <br />
+    8: 	<% end %>
+  app/views/winners/index.html.erb:5:in `_app_views_winners_index_html_erb___1283246811_2175700660_0'
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+  [1m[36mGirl Load (0.4ms)[0m  [1mSELECT "girls".* FROM "girls" WHERE (girl.username IN(SELECT username FROM girl ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0[0m
+SQLite3::SQLException: no such table: girl: SELECT  "girls".* FROM "girls" WHERE (girl.username IN(SELECT username FROM girl ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0
+  [1m[35mGirl Load (0.1ms)[0m  SELECT "girls".* FROM "girls" WHERE (girl.username IN(SELECT username FROM girl ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0
+SQLite3::SQLException: no such table: girl: SELECT  "girls".* FROM "girls" WHERE (girl.username IN(SELECT username FROM girl ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (81.3ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (87.0ms)
+
+
+Started GET "/winners/index?boys_page=20" for 127.0.0.1 at Sat Oct 01 23:15:55 -0600 2011
+  Processing by WinnersController#index as HTML
+  Parameters: {"boys_page"=>"20"}
+  [1m[36mGirl Load (0.3ms)[0m  [1mSELECT "girls".* FROM "girls" WHERE (girl.username IN(SELECT username FROM girl ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0[0m
+SQLite3::SQLException: no such table: girl: SELECT  "girls".* FROM "girls" WHERE (girl.username IN(SELECT username FROM girl ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0
+Rendered winners/index.html.erb within layouts/application (1.7ms)
+Completed   in 18ms
+
+ActionView::Template::Error (SQLite3::SQLException: no such table: girl: SELECT  "girls".* FROM "girls" WHERE (girl.username IN(SELECT username FROM girl ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0):
+    2: 
+    3: <div id='top-girls'>
+    4: 	<h1>Top Women</h1>
+    5: 	<% @girls.each do |girl| %>
+    6: 	<%= link_to (image_tag(display_girl_image(girl), :height => 70)), girl %>
+    7: 		<%= girl.score %> <br />
+    8: 	<% end %>
+  app/views/winners/index.html.erb:5:in `_app_views_winners_index_html_erb___1283246811_2179245380_0'
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+  [1m[35mGirl Load (0.4ms)[0m  SELECT "girls".* FROM "girls" WHERE (girl.username IN(SELECT username FROM girl ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0
+SQLite3::SQLException: no such table: girl: SELECT  "girls".* FROM "girls" WHERE (girl.username IN(SELECT username FROM girl ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0
+  [1m[36mGirl Load (0.1ms)[0m  [1mSELECT "girls".* FROM "girls" WHERE (girl.username IN(SELECT username FROM girl ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0[0m
+SQLite3::SQLException: no such table: girl: SELECT  "girls".* FROM "girls" WHERE (girl.username IN(SELECT username FROM girl ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (5.1ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (11.1ms)
+  [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.3ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+
+
+
+Started GET "/winners/index?boys_page=20" for 127.0.0.1 at Sat Oct 01 23:16:25 -0600 2011
+  Processing by WinnersController#index as HTML
+  Parameters: {"boys_page"=>"20"}
+  [1m[35mGirl Load (0.3ms)[0m  SELECT "girls".* FROM "girls" WHERE (girl.username IN(SELECT username FROM Girl ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0
+SQLite3::SQLException: no such table: Girl: SELECT  "girls".* FROM "girls" WHERE (girl.username IN(SELECT username FROM Girl ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0
+Rendered winners/index.html.erb within layouts/application (1.6ms)
+Completed   in 16ms
+
+ActionView::Template::Error (SQLite3::SQLException: no such table: Girl: SELECT  "girls".* FROM "girls" WHERE (girl.username IN(SELECT username FROM Girl ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0):
+    2: 
+    3: <div id='top-girls'>
+    4: 	<h1>Top Women</h1>
+    5: 	<% @girls.each do |girl| %>
+    6: 	<%= link_to (image_tag(display_girl_image(girl), :height => 70)), girl %>
+    7: 		<%= girl.score %> <br />
+    8: 	<% end %>
+  app/views/winners/index.html.erb:5:in `_app_views_winners_index_html_erb___1283246811_2175851440_0'
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+  [1m[36mGirl Load (0.4ms)[0m  [1mSELECT "girls".* FROM "girls" WHERE (girl.username IN(SELECT username FROM Girl ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0[0m
+SQLite3::SQLException: no such table: Girl: SELECT  "girls".* FROM "girls" WHERE (girl.username IN(SELECT username FROM Girl ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0
+  [1m[35mGirl Load (0.2ms)[0m  SELECT "girls".* FROM "girls" WHERE (girl.username IN(SELECT username FROM Girl ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0
+SQLite3::SQLException: no such table: Girl: SELECT  "girls".* FROM "girls" WHERE (girl.username IN(SELECT username FROM Girl ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (4.8ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (11.2ms)
+
+
+Started GET "/winners/index?boys_page=20" for 127.0.0.1 at Sat Oct 01 23:16:26 -0600 2011
+  Processing by WinnersController#index as HTML
+  Parameters: {"boys_page"=>"20"}
+  [1m[36mGirl Load (0.3ms)[0m  [1mSELECT "girls".* FROM "girls" WHERE (girl.username IN(SELECT username FROM Girl ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0[0m
+SQLite3::SQLException: no such table: Girl: SELECT  "girls".* FROM "girls" WHERE (girl.username IN(SELECT username FROM Girl ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0
+Rendered winners/index.html.erb within layouts/application (1.6ms)
+Completed   in 16ms
+
+ActionView::Template::Error (SQLite3::SQLException: no such table: Girl: SELECT  "girls".* FROM "girls" WHERE (girl.username IN(SELECT username FROM Girl ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0):
+    2: 
+    3: <div id='top-girls'>
+    4: 	<h1>Top Women</h1>
+    5: 	<% @girls.each do |girl| %>
+    6: 	<%= link_to (image_tag(display_girl_image(girl), :height => 70)), girl %>
+    7: 		<%= girl.score %> <br />
+    8: 	<% end %>
+  app/views/winners/index.html.erb:5:in `_app_views_winners_index_html_erb___1283246811_2179157180_0'
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+  [1m[35mGirl Load (0.4ms)[0m  SELECT "girls".* FROM "girls" WHERE (girl.username IN(SELECT username FROM Girl ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0
+SQLite3::SQLException: no such table: Girl: SELECT  "girls".* FROM "girls" WHERE (girl.username IN(SELECT username FROM Girl ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0
+  [1m[36mGirl Load (0.1ms)[0m  [1mSELECT "girls".* FROM "girls" WHERE (girl.username IN(SELECT username FROM Girl ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0[0m
+SQLite3::SQLException: no such table: Girl: SELECT  "girls".* FROM "girls" WHERE (girl.username IN(SELECT username FROM Girl ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (4.8ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (10.9ms)
+
+
+Started GET "/winners/" for 127.0.0.1 at Sat Oct 01 23:16:29 -0600 2011
+  Processing by WinnersController#index as HTML
+  [1m[35mGirl Load (0.3ms)[0m  SELECT "girls".* FROM "girls" WHERE (girl.username IN(SELECT username FROM Girl ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0
+SQLite3::SQLException: no such table: Girl: SELECT  "girls".* FROM "girls" WHERE (girl.username IN(SELECT username FROM Girl ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0
+Rendered winners/index.html.erb within layouts/application (1.8ms)
+Completed   in 17ms
+
+ActionView::Template::Error (SQLite3::SQLException: no such table: Girl: SELECT  "girls".* FROM "girls" WHERE (girl.username IN(SELECT username FROM Girl ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0):
+    2: 
+    3: <div id='top-girls'>
+    4: 	<h1>Top Women</h1>
+    5: 	<% @girls.each do |girl| %>
+    6: 	<%= link_to (image_tag(display_girl_image(girl), :height => 70)), girl %>
+    7: 		<%= girl.score %> <br />
+    8: 	<% end %>
+  app/views/winners/index.html.erb:5:in `_app_views_winners_index_html_erb___1283246811_2175817580_0'
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+  [1m[36mGirl Load (0.5ms)[0m  [1mSELECT "girls".* FROM "girls" WHERE (girl.username IN(SELECT username FROM Girl ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0[0m
+SQLite3::SQLException: no such table: Girl: SELECT  "girls".* FROM "girls" WHERE (girl.username IN(SELECT username FROM Girl ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0
+  [1m[35mGirl Load (0.1ms)[0m  SELECT "girls".* FROM "girls" WHERE (girl.username IN(SELECT username FROM Girl ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0
+SQLite3::SQLException: no such table: Girl: SELECT  "girls".* FROM "girls" WHERE (girl.username IN(SELECT username FROM Girl ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (5.4ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (17.2ms)
+
+
+Started GET "/winners/" for 127.0.0.1 at Sat Oct 01 23:16:38 -0600 2011
+  Processing by WinnersController#index as HTML
+  [1m[36mGirl Load (0.3ms)[0m  [1mSELECT "girls".* FROM "girls" WHERE (Girl.username IN(SELECT username FROM Girl ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0[0m
+SQLite3::SQLException: no such table: Girl: SELECT  "girls".* FROM "girls" WHERE (Girl.username IN(SELECT username FROM Girl ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0
+Rendered winners/index.html.erb within layouts/application (1.6ms)
+Completed   in 17ms
+
+ActionView::Template::Error (SQLite3::SQLException: no such table: Girl: SELECT  "girls".* FROM "girls" WHERE (Girl.username IN(SELECT username FROM Girl ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0):
+    2: 
+    3: <div id='top-girls'>
+    4: 	<h1>Top Women</h1>
+    5: 	<% @girls.each do |girl| %>
+    6: 	<%= link_to (image_tag(display_girl_image(girl), :height => 70)), girl %>
+    7: 		<%= girl.score %> <br />
+    8: 	<% end %>
+  app/views/winners/index.html.erb:5:in `_app_views_winners_index_html_erb___1283246811_2179102760_0'
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+  [1m[35mGirl Load (0.4ms)[0m  SELECT "girls".* FROM "girls" WHERE (Girl.username IN(SELECT username FROM Girl ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0
+SQLite3::SQLException: no such table: Girl: SELECT  "girls".* FROM "girls" WHERE (Girl.username IN(SELECT username FROM Girl ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0
+  [1m[36mGirl Load (0.1ms)[0m  [1mSELECT "girls".* FROM "girls" WHERE (Girl.username IN(SELECT username FROM Girl ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0[0m
+SQLite3::SQLException: no such table: Girl: SELECT  "girls".* FROM "girls" WHERE (Girl.username IN(SELECT username FROM Girl ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (4.6ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (10.5ms)
+
+
+Started GET "/winners/" for 127.0.0.1 at Sat Oct 01 23:17:06 -0600 2011
+  Processing by WinnersController#index as HTML
+  [1m[35mGirl Load (0.3ms)[0m  SELECT "girls".* FROM "girls" WHERE (girl.username IN(SELECT username FROM girl ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0
+SQLite3::SQLException: no such table: girl: SELECT  "girls".* FROM "girls" WHERE (girl.username IN(SELECT username FROM girl ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0
+Rendered winners/index.html.erb within layouts/application (1.6ms)
+Completed   in 15ms
+
+ActionView::Template::Error (SQLite3::SQLException: no such table: girl: SELECT  "girls".* FROM "girls" WHERE (girl.username IN(SELECT username FROM girl ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0):
+    2: 
+    3: <div id='top-girls'>
+    4: 	<h1>Top Women</h1>
+    5: 	<% @girls.each do |girl| %>
+    6: 	<%= link_to (image_tag(display_girl_image(girl), :height => 70)), girl %>
+    7: 		<%= girl.score %> <br />
+    8: 	<% end %>
+  app/views/winners/index.html.erb:5:in `_app_views_winners_index_html_erb___1283246811_2175724840_0'
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+  [1m[36mGirl Load (0.4ms)[0m  [1mSELECT "girls".* FROM "girls" WHERE (girl.username IN(SELECT username FROM girl ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0[0m
+SQLite3::SQLException: no such table: girl: SELECT  "girls".* FROM "girls" WHERE (girl.username IN(SELECT username FROM girl ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0
+  [1m[35mGirl Load (0.1ms)[0m  SELECT "girls".* FROM "girls" WHERE (girl.username IN(SELECT username FROM girl ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0
+SQLite3::SQLException: no such table: girl: SELECT  "girls".* FROM "girls" WHERE (girl.username IN(SELECT username FROM girl ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (4.8ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (11.0ms)
+
+
+Started GET "/winners/" for 127.0.0.1 at Sat Oct 01 23:17:07 -0600 2011
+  Processing by WinnersController#index as HTML
+  [1m[36mGirl Load (0.3ms)[0m  [1mSELECT "girls".* FROM "girls" WHERE (girl.username IN(SELECT username FROM girl ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0[0m
+SQLite3::SQLException: no such table: girl: SELECT  "girls".* FROM "girls" WHERE (girl.username IN(SELECT username FROM girl ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0
+Rendered winners/index.html.erb within layouts/application (1.7ms)
+Completed   in 16ms
+
+ActionView::Template::Error (SQLite3::SQLException: no such table: girl: SELECT  "girls".* FROM "girls" WHERE (girl.username IN(SELECT username FROM girl ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0):
+    2: 
+    3: <div id='top-girls'>
+    4: 	<h1>Top Women</h1>
+    5: 	<% @girls.each do |girl| %>
+    6: 	<%= link_to (image_tag(display_girl_image(girl), :height => 70)), girl %>
+    7: 		<%= girl.score %> <br />
+    8: 	<% end %>
+  app/views/winners/index.html.erb:5:in `_app_views_winners_index_html_erb___1283246811_2178966620_0'
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+  [1m[35mGirl Load (0.5ms)[0m  SELECT "girls".* FROM "girls" WHERE (girl.username IN(SELECT username FROM girl ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0
+SQLite3::SQLException: no such table: girl: SELECT  "girls".* FROM "girls" WHERE (girl.username IN(SELECT username FROM girl ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0
+  [1m[36mGirl Load (0.2ms)[0m  [1mSELECT "girls".* FROM "girls" WHERE (girl.username IN(SELECT username FROM girl ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0[0m
+SQLite3::SQLException: no such table: girl: SELECT  "girls".* FROM "girls" WHERE (girl.username IN(SELECT username FROM girl ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (5.8ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (11.7ms)
+
+
+Started GET "/winners/" for 127.0.0.1 at Sat Oct 01 23:17:08 -0600 2011
+  Processing by WinnersController#index as HTML
+  [1m[35mGirl Load (0.3ms)[0m  SELECT "girls".* FROM "girls" WHERE (girl.username IN(SELECT username FROM girl ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0
+SQLite3::SQLException: no such table: girl: SELECT  "girls".* FROM "girls" WHERE (girl.username IN(SELECT username FROM girl ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0
+Rendered winners/index.html.erb within layouts/application (1.6ms)
+Completed   in 18ms
+
+ActionView::Template::Error (SQLite3::SQLException: no such table: girl: SELECT  "girls".* FROM "girls" WHERE (girl.username IN(SELECT username FROM girl ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0):
+    2: 
+    3: <div id='top-girls'>
+    4: 	<h1>Top Women</h1>
+    5: 	<% @girls.each do |girl| %>
+    6: 	<%= link_to (image_tag(display_girl_image(girl), :height => 70)), girl %>
+    7: 		<%= girl.score %> <br />
+    8: 	<% end %>
+  app/views/winners/index.html.erb:5:in `_app_views_winners_index_html_erb___1283246811_2175867640_0'
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+  [1m[36mGirl Load (0.4ms)[0m  [1mSELECT "girls".* FROM "girls" WHERE (girl.username IN(SELECT username FROM girl ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0[0m
+SQLite3::SQLException: no such table: girl: SELECT  "girls".* FROM "girls" WHERE (girl.username IN(SELECT username FROM girl ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0
+  [1m[35mGirl Load (0.1ms)[0m  SELECT "girls".* FROM "girls" WHERE (girl.username IN(SELECT username FROM girl ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0
+SQLite3::SQLException: no such table: girl: SELECT  "girls".* FROM "girls" WHERE (girl.username IN(SELECT username FROM girl ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (4.4ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (10.1ms)
+
+
+Started GET "/winners/" for 127.0.0.1 at Sat Oct 01 23:17:08 -0600 2011
+  Processing by WinnersController#index as HTML
+  [1m[36mGirl Load (0.3ms)[0m  [1mSELECT "girls".* FROM "girls" WHERE (girl.username IN(SELECT username FROM girl ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0[0m
+SQLite3::SQLException: no such table: girl: SELECT  "girls".* FROM "girls" WHERE (girl.username IN(SELECT username FROM girl ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0
+Rendered winners/index.html.erb within layouts/application (1.6ms)
+Completed   in 17ms
+
+ActionView::Template::Error (SQLite3::SQLException: no such table: girl: SELECT  "girls".* FROM "girls" WHERE (girl.username IN(SELECT username FROM girl ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0):
+    2: 
+    3: <div id='top-girls'>
+    4: 	<h1>Top Women</h1>
+    5: 	<% @girls.each do |girl| %>
+    6: 	<%= link_to (image_tag(display_girl_image(girl), :height => 70)), girl %>
+    7: 		<%= girl.score %> <br />
+    8: 	<% end %>
+  app/views/winners/index.html.erb:5:in `_app_views_winners_index_html_erb___1283246811_2179198540_0'
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+  [1m[35mGirl Load (0.4ms)[0m  SELECT "girls".* FROM "girls" WHERE (girl.username IN(SELECT username FROM girl ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0
+SQLite3::SQLException: no such table: girl: SELECT  "girls".* FROM "girls" WHERE (girl.username IN(SELECT username FROM girl ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0
+  [1m[36mGirl Load (0.1ms)[0m  [1mSELECT "girls".* FROM "girls" WHERE (girl.username IN(SELECT username FROM girl ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0[0m
+SQLite3::SQLException: no such table: girl: SELECT  "girls".* FROM "girls" WHERE (girl.username IN(SELECT username FROM girl ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (4.7ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (10.5ms)
+
+
+Started GET "/winners/" for 127.0.0.1 at Sat Oct 01 23:17:09 -0600 2011
+  Processing by WinnersController#index as HTML
+  [1m[35mGirl Load (0.3ms)[0m  SELECT "girls".* FROM "girls" WHERE (girl.username IN(SELECT username FROM girl ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0
+SQLite3::SQLException: no such table: girl: SELECT  "girls".* FROM "girls" WHERE (girl.username IN(SELECT username FROM girl ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0
+Rendered winners/index.html.erb within layouts/application (1.6ms)
+Completed   in 15ms
+
+ActionView::Template::Error (SQLite3::SQLException: no such table: girl: SELECT  "girls".* FROM "girls" WHERE (girl.username IN(SELECT username FROM girl ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0):
+    2: 
+    3: <div id='top-girls'>
+    4: 	<h1>Top Women</h1>
+    5: 	<% @girls.each do |girl| %>
+    6: 	<%= link_to (image_tag(display_girl_image(girl), :height => 70)), girl %>
+    7: 		<%= girl.score %> <br />
+    8: 	<% end %>
+  app/views/winners/index.html.erb:5:in `_app_views_winners_index_html_erb___1283246811_2176037400_0'
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+  [1m[36mGirl Load (0.6ms)[0m  [1mSELECT "girls".* FROM "girls" WHERE (girl.username IN(SELECT username FROM girl ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0[0m
+SQLite3::SQLException: no such table: girl: SELECT  "girls".* FROM "girls" WHERE (girl.username IN(SELECT username FROM girl ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0
+  [1m[35mGirl Load (0.2ms)[0m  SELECT "girls".* FROM "girls" WHERE (girl.username IN(SELECT username FROM girl ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0
+SQLite3::SQLException: no such table: girl: SELECT  "girls".* FROM "girls" WHERE (girl.username IN(SELECT username FROM girl ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (5.8ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (11.6ms)
+
+
+Started GET "/winners/" for 127.0.0.1 at Sat Oct 01 23:17:09 -0600 2011
+  Processing by WinnersController#index as HTML
+  [1m[36mGirl Load (0.3ms)[0m  [1mSELECT "girls".* FROM "girls" WHERE (girl.username IN(SELECT username FROM girl ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0[0m
+SQLite3::SQLException: no such table: girl: SELECT  "girls".* FROM "girls" WHERE (girl.username IN(SELECT username FROM girl ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0
+Rendered winners/index.html.erb within layouts/application (1.7ms)
+Completed   in 95ms
+
+ActionView::Template::Error (SQLite3::SQLException: no such table: girl: SELECT  "girls".* FROM "girls" WHERE (girl.username IN(SELECT username FROM girl ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0):
+    2: 
+    3: <div id='top-girls'>
+    4: 	<h1>Top Women</h1>
+    5: 	<% @girls.each do |girl| %>
+    6: 	<%= link_to (image_tag(display_girl_image(girl), :height => 70)), girl %>
+    7: 		<%= girl.score %> <br />
+    8: 	<% end %>
+  app/views/winners/index.html.erb:5:in `_app_views_winners_index_html_erb___1283246811_2180608140_0'
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+  [1m[35mGirl Load (0.4ms)[0m  SELECT "girls".* FROM "girls" WHERE (girl.username IN(SELECT username FROM girl ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0
+SQLite3::SQLException: no such table: girl: SELECT  "girls".* FROM "girls" WHERE (girl.username IN(SELECT username FROM girl ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0
+  [1m[36mGirl Load (0.1ms)[0m  [1mSELECT "girls".* FROM "girls" WHERE (girl.username IN(SELECT username FROM girl ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0[0m
+SQLite3::SQLException: no such table: girl: SELECT  "girls".* FROM "girls" WHERE (girl.username IN(SELECT username FROM girl ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (5.2ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (12.1ms)
+
+
+Started GET "/winners/" for 127.0.0.1 at Sat Oct 01 23:17:10 -0600 2011
+  Processing by WinnersController#index as HTML
+  [1m[35mGirl Load (0.3ms)[0m  SELECT "girls".* FROM "girls" WHERE (girl.username IN(SELECT username FROM girl ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0
+SQLite3::SQLException: no such table: girl: SELECT  "girls".* FROM "girls" WHERE (girl.username IN(SELECT username FROM girl ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0
+Rendered winners/index.html.erb within layouts/application (1.6ms)
+Completed   in 15ms
+
+ActionView::Template::Error (SQLite3::SQLException: no such table: girl: SELECT  "girls".* FROM "girls" WHERE (girl.username IN(SELECT username FROM girl ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0):
+    2: 
+    3: <div id='top-girls'>
+    4: 	<h1>Top Women</h1>
+    5: 	<% @girls.each do |girl| %>
+    6: 	<%= link_to (image_tag(display_girl_image(girl), :height => 70)), girl %>
+    7: 		<%= girl.score %> <br />
+    8: 	<% end %>
+  app/views/winners/index.html.erb:5:in `_app_views_winners_index_html_erb___1283246811_2176436400_0'
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+  [1m[36mGirl Load (0.6ms)[0m  [1mSELECT "girls".* FROM "girls" WHERE (girl.username IN(SELECT username FROM girl ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0[0m
+SQLite3::SQLException: no such table: girl: SELECT  "girls".* FROM "girls" WHERE (girl.username IN(SELECT username FROM girl ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0
+  [1m[35mGirl Load (0.3ms)[0m  SELECT "girls".* FROM "girls" WHERE (girl.username IN(SELECT username FROM girl ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0
+SQLite3::SQLException: no such table: girl: SELECT  "girls".* FROM "girls" WHERE (girl.username IN(SELECT username FROM girl ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (5.7ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (11.5ms)
+
+
+Started GET "/winners/" for 127.0.0.1 at Sat Oct 01 23:17:42 -0600 2011
+  Processing by WinnersController#index as HTML
+  [1m[36mGirl Load (0.5ms)[0m  [1mSELECT "girls".* FROM "girls" WHERE (girl.username IN(SELECT username FROM girl ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0[0m
+SQLite3::SQLException: no such table: girl: SELECT  "girls".* FROM "girls" WHERE (girl.username IN(SELECT username FROM girl ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0
+Rendered winners/index.html.erb within layouts/application (1.9ms)
+Completed   in 18ms
+
+ActionView::Template::Error (SQLite3::SQLException: no such table: girl: SELECT  "girls".* FROM "girls" WHERE (girl.username IN(SELECT username FROM girl ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0):
+    2: 
+    3: <div id='top-girls'>
+    4: 	<h1>Top Women</h1>
+    5: 	<% @girls.each do |girl| %>
+    6: 	<%= link_to (image_tag(display_girl_image(girl), :height => 70)), girl %>
+    7: 		<%= girl.score %> <br />
+    8: 	<% end %>
+  app/views/winners/index.html.erb:5:in `_app_views_winners_index_html_erb___1283246811_2180292240_0'
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+  [1m[35mGirl Load (0.4ms)[0m  SELECT "girls".* FROM "girls" WHERE (girl.username IN(SELECT username FROM girl ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0
+SQLite3::SQLException: no such table: girl: SELECT  "girls".* FROM "girls" WHERE (girl.username IN(SELECT username FROM girl ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0
+  [1m[36mGirl Load (0.1ms)[0m  [1mSELECT "girls".* FROM "girls" WHERE (girl.username IN(SELECT username FROM girl ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0[0m
+SQLite3::SQLException: no such table: girl: SELECT  "girls".* FROM "girls" WHERE (girl.username IN(SELECT username FROM girl ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (4.8ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (10.9ms)
+
+
+Started GET "/winners/" for 127.0.0.1 at Sat Oct 01 23:19:52 -0600 2011
+  Processing by WinnersController#index as HTML
+  [1m[35mGirl Load (3.7ms)[0m  SELECT "girls".* FROM "girls" ORDER BY score DESC LIMIT 5 OFFSET 0
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) FROM "girls"[0m
+  [1m[35mGuys Load (2.2ms)[0m  SELECT "guys".* FROM "guys" WHERE (guys.username IN(SELECT username FROM guys ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0
+  [1m[36mSQL (2.7ms)[0m  [1mSELECT COUNT(*) FROM "guys" WHERE (guys.username IN(SELECT username FROM guys ORDER BY score LIMIT 100))[0m
+Rendered layouts/_header.html.erb (1.1ms)
+Rendered layouts/_footer.html.erb (0.2ms)
+Rendered winners/index.html.erb within layouts/application (40.2ms)
+Completed 200 OK in 54ms (Views: 36.8ms | ActiveRecord: 8.7ms)
+
+
+Started GET "/winners/tmp/stylesheets/screen.css" for 127.0.0.1 at Sat Oct 01 23:19:52 -0600 2011
+
+ActionController::RoutingError (No route matches "/winners/tmp/stylesheets/screen.css"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/winners/index?boys_page=2" for 127.0.0.1 at Sat Oct 01 23:19:59 -0600 2011
+  Processing by WinnersController#index as HTML
+  Parameters: {"boys_page"=>"2"}
+  [1m[35mGirl Load (3.8ms)[0m  SELECT "girls".* FROM "girls" ORDER BY score DESC LIMIT 5 OFFSET 0
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) FROM "girls"[0m
+  [1m[35mGuys Load (2.2ms)[0m  SELECT "guys".* FROM "guys" WHERE (guys.username IN(SELECT username FROM guys ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 5
+  [1m[36mSQL (2.4ms)[0m  [1mSELECT COUNT(*) FROM "guys" WHERE (guys.username IN(SELECT username FROM guys ORDER BY score LIMIT 100))[0m
+Rendered layouts/_header.html.erb (1.2ms)
+Rendered layouts/_footer.html.erb (0.3ms)
+Rendered winners/index.html.erb within layouts/application (41.4ms)
+Completed 200 OK in 56ms (Views: 39.2ms | ActiveRecord: 8.5ms)
+
+
+Started GET "/winners/tmp/stylesheets/screen.css" for 127.0.0.1 at Sat Oct 01 23:19:59 -0600 2011
+
+ActionController::RoutingError (No route matches "/winners/tmp/stylesheets/screen.css"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/winners/index?boys_page=2" for 127.0.0.1 at Sat Oct 01 23:20:08 -0600 2011
+  Processing by WinnersController#index as HTML
+  Parameters: {"boys_page"=>"2"}
+  [1m[35mGirl Load (0.5ms)[0m  SELECT "girls".* FROM "girls" WHERE (girl.username IN(SELECT username FROM girl ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0
+SQLite3::SQLException: no such table: girl: SELECT  "girls".* FROM "girls" WHERE (girl.username IN(SELECT username FROM girl ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0
+Rendered winners/index.html.erb within layouts/application (1.9ms)
+Completed   in 16ms
+
+ActionView::Template::Error (SQLite3::SQLException: no such table: girl: SELECT  "girls".* FROM "girls" WHERE (girl.username IN(SELECT username FROM girl ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0):
+    2: 
+    3: <div id='top-girls'>
+    4: 	<h1>Top Women</h1>
+    5: 	<% @girls.each do |girl| %>
+    6: 	<%= link_to (image_tag(display_girl_image(girl), :height => 70)), girl %>
+    7: 		<%= girl.score %> <br />
+    8: 	<% end %>
+  app/views/winners/index.html.erb:5:in `_app_views_winners_index_html_erb___1283246811_2178177580_0'
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+  [1m[36mGirl Load (0.4ms)[0m  [1mSELECT "girls".* FROM "girls" WHERE (girl.username IN(SELECT username FROM girl ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0[0m
+SQLite3::SQLException: no such table: girl: SELECT  "girls".* FROM "girls" WHERE (girl.username IN(SELECT username FROM girl ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0
+  [1m[35mGirl Load (0.2ms)[0m  SELECT "girls".* FROM "girls" WHERE (girl.username IN(SELECT username FROM girl ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0
+SQLite3::SQLException: no such table: girl: SELECT  "girls".* FROM "girls" WHERE (girl.username IN(SELECT username FROM girl ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (4.9ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (11.0ms)
+
+
+Started GET "/winners/index?boys_page=2" for 127.0.0.1 at Sat Oct 01 23:21:44 -0600 2011
+  Processing by WinnersController#index as HTML
+  Parameters: {"boys_page"=>"2"}
+  [1m[36mGirl Load (0.5ms)[0m  [1mSELECT "girls".* FROM "girls" WHERE (girl.username IN(SELECT username FROM girl ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0[0m
+SQLite3::SQLException: no such table: girl: SELECT  "girls".* FROM "girls" WHERE (girl.username IN(SELECT username FROM girl ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0
+Rendered winners/index.html.erb within layouts/application (1.9ms)
+Completed   in 92ms
+
+ActionView::Template::Error (SQLite3::SQLException: no such table: girl: SELECT  "girls".* FROM "girls" WHERE (girl.username IN(SELECT username FROM girl ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0):
+    2: 
+    3: <div id='top-girls'>
+    4: 	<h1>Top Women</h1>
+    5: 	<% @girls.each do |girl| %>
+    6: 	<%= link_to (image_tag(display_girl_image(girl), :height => 70)), girl %>
+    7: 		<%= girl.score %> <br />
+    8: 	<% end %>
+  app/views/winners/index.html.erb:5:in `_app_views_winners_index_html_erb___1283246811_2180608520_0'
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+  [1m[35mGirl Load (0.4ms)[0m  SELECT "girls".* FROM "girls" WHERE (girl.username IN(SELECT username FROM girl ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0
+SQLite3::SQLException: no such table: girl: SELECT  "girls".* FROM "girls" WHERE (girl.username IN(SELECT username FROM girl ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0
+  [1m[36mGirl Load (0.2ms)[0m  [1mSELECT "girls".* FROM "girls" WHERE (girl.username IN(SELECT username FROM girl ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0[0m
+SQLite3::SQLException: no such table: girl: SELECT  "girls".* FROM "girls" WHERE (girl.username IN(SELECT username FROM girl ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (4.9ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (10.7ms)
+
+
+Started GET "/winners/index?boys_page=2" for 127.0.0.1 at Sat Oct 01 23:21:59 -0600 2011
+  Processing by WinnersController#index as HTML
+  Parameters: {"boys_page"=>"2"}
+Rendered winners/index.html.erb within layouts/application (0.8ms)
+Completed   in 14ms
+
+ActionView::Template::Error (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.each):
+    2: 
+    3: <div id='top-girls'>
+    4: 	<h1>Top Women</h1>
+    5: 	<% @girls.each do |girl| %>
+    6: 	<%= link_to (image_tag(display_girl_image(girl), :height => 70)), girl %>
+    7: 		<%= girl.score %> <br />
+    8: 	<% end %>
+  app/views/winners/index.html.erb:5:in `_app_views_winners_index_html_erb___1283246811_2176424560_0'
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+  [1m[35mGirl Load (0.4ms)[0m  SELECT "girls".* FROM "girls" WHERE (girl.username IN(SELECT username FROM girl ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0
+SQLite3::SQLException: no such table: girl: SELECT  "girls".* FROM "girls" WHERE (girl.username IN(SELECT username FROM girl ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0
+  [1m[36mGirl Load (0.2ms)[0m  [1mSELECT "girls".* FROM "girls" WHERE (girl.username IN(SELECT username FROM girl ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0[0m
+SQLite3::SQLException: no such table: girl: SELECT  "girls".* FROM "girls" WHERE (girl.username IN(SELECT username FROM girl ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (5.1ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (10.9ms)
+
+
+Started GET "/winners/index?boys_page=2" for 127.0.0.1 at Sat Oct 01 23:22:05 -0600 2011
+  Processing by WinnersController#index as HTML
+  Parameters: {"boys_page"=>"2"}
+Completed   in 2ms
+
+NameError (uninitialized constant WinnersController::Girls):
+  app/controllers/winners_controller.rb:6:in `index'
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (5.5ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (11.3ms)
+
+
+Started GET "/winners/index?boys_page=2" for 127.0.0.1 at Sat Oct 01 23:22:10 -0600 2011
+  Processing by WinnersController#index as HTML
+  Parameters: {"boys_page"=>"2"}
+  [1m[35mGirl Load (0.5ms)[0m  SELECT "girls".* FROM "girls" WHERE (girl.username IN(SELECT username FROM girl ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0
+SQLite3::SQLException: no such table: girl: SELECT  "girls".* FROM "girls" WHERE (girl.username IN(SELECT username FROM girl ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0
+Rendered winners/index.html.erb within layouts/application (1.8ms)
+Completed   in 16ms
+
+ActionView::Template::Error (SQLite3::SQLException: no such table: girl: SELECT  "girls".* FROM "girls" WHERE (girl.username IN(SELECT username FROM girl ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0):
+    2: 
+    3: <div id='top-girls'>
+    4: 	<h1>Top Women</h1>
+    5: 	<% @girls.each do |girl| %>
+    6: 	<%= link_to (image_tag(display_girl_image(girl), :height => 70)), girl %>
+    7: 		<%= girl.score %> <br />
+    8: 	<% end %>
+  app/views/winners/index.html.erb:5:in `_app_views_winners_index_html_erb___1283246811_2176882740_0'
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+  [1m[36mGirl Load (0.5ms)[0m  [1mSELECT "girls".* FROM "girls" WHERE (girl.username IN(SELECT username FROM girl ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0[0m
+SQLite3::SQLException: no such table: girl: SELECT  "girls".* FROM "girls" WHERE (girl.username IN(SELECT username FROM girl ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0
+  [1m[35mGirl Load (0.1ms)[0m  SELECT "girls".* FROM "girls" WHERE (girl.username IN(SELECT username FROM girl ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0
+SQLite3::SQLException: no such table: girl: SELECT  "girls".* FROM "girls" WHERE (girl.username IN(SELECT username FROM girl ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (5.6ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (12.2ms)
+
+
+Started GET "/winners/index?boys_page=2" for 127.0.0.1 at Sat Oct 01 23:22:54 -0600 2011
+  Processing by WinnersController#index as HTML
+  Parameters: {"boys_page"=>"2"}
+  [1m[36mGirl Load (0.6ms)[0m  [1mSELECT "girls".* FROM "girls" WHERE (guys.username IN(SELECT username FROM guys ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0[0m
+SQLite3::SQLException: no such column: guys.username: SELECT  "girls".* FROM "girls" WHERE (guys.username IN(SELECT username FROM guys ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0
+Rendered winners/index.html.erb within layouts/application (2.3ms)
+Completed   in 95ms
+
+ActionView::Template::Error (SQLite3::SQLException: no such column: guys.username: SELECT  "girls".* FROM "girls" WHERE (guys.username IN(SELECT username FROM guys ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0):
+    2: 
+    3: <div id='top-girls'>
+    4: 	<h1>Top Women</h1>
+    5: 	<% @girls.each do |girl| %>
+    6: 	<%= link_to (image_tag(display_girl_image(girl), :height => 70)), girl %>
+    7: 		<%= girl.score %> <br />
+    8: 	<% end %>
+  app/views/winners/index.html.erb:5:in `_app_views_winners_index_html_erb___1283246811_2180612780_0'
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+  [1m[35mGirl Load (0.4ms)[0m  SELECT "girls".* FROM "girls" WHERE (guys.username IN(SELECT username FROM guys ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0
+SQLite3::SQLException: no such column: guys.username: SELECT  "girls".* FROM "girls" WHERE (guys.username IN(SELECT username FROM guys ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0
+  [1m[36mGirl Load (0.1ms)[0m  [1mSELECT "girls".* FROM "girls" WHERE (guys.username IN(SELECT username FROM guys ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0[0m
+SQLite3::SQLException: no such column: guys.username: SELECT  "girls".* FROM "girls" WHERE (guys.username IN(SELECT username FROM guys ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (5.1ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (11.3ms)
+
+
+Started GET "/winners/index?boys_page=2" for 127.0.0.1 at Sat Oct 01 23:23:34 -0600 2011
+  Processing by WinnersController#index as HTML
+  Parameters: {"boys_page"=>"2"}
+  [1m[35mGuys Load (2.4ms)[0m  SELECT "guys".* FROM "guys" WHERE (guys.username IN(SELECT username FROM guys ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0
+  [1m[36mSQL (2.4ms)[0m  [1mSELECT COUNT(*) FROM "guys" WHERE (guys.username IN(SELECT username FROM guys ORDER BY score LIMIT 100))[0m
+  [1m[35mGuys Load (2.3ms)[0m  SELECT "guys".* FROM "guys" WHERE (guys.username IN(SELECT username FROM guys ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 5
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "guys" WHERE (guys.username IN(SELECT username FROM guys ORDER BY score LIMIT 100))[0m
+Rendered layouts/_header.html.erb (1.3ms)
+Rendered layouts/_footer.html.erb (0.3ms)
+Rendered winners/index.html.erb within layouts/application (34.0ms)
+Completed 200 OK in 44ms (Views: 32.3ms | ActiveRecord: 7.0ms)
+
+
+Started GET "/winners/tmp/stylesheets/screen.css" for 127.0.0.1 at Sat Oct 01 23:23:34 -0600 2011
+
+ActionController::RoutingError (No route matches "/winners/tmp/stylesheets/screen.css"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/winners/index?boys_page=2" for 127.0.0.1 at Sat Oct 01 23:24:01 -0600 2011
+  Processing by WinnersController#index as HTML
+  Parameters: {"boys_page"=>"2"}
+  [1m[35mGirl Load (0.5ms)[0m  SELECT "girls".* FROM "girls" WHERE (girl.username IN(SELECT username FROM girl ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0
+SQLite3::SQLException: no such table: girl: SELECT  "girls".* FROM "girls" WHERE (girl.username IN(SELECT username FROM girl ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0
+Rendered winners/index.html.erb within layouts/application (1.8ms)
+Completed   in 16ms
+
+ActionView::Template::Error (SQLite3::SQLException: no such table: girl: SELECT  "girls".* FROM "girls" WHERE (girl.username IN(SELECT username FROM girl ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0):
+    2: 
+    3: <div id='top-girls'>
+    4: 	<h1>Top Women</h1>
+    5: 	<% @girls.each do |girl| %>
+    6: 	<%= link_to (image_tag(display_girl_image(girl), :height => 70)), girl %>
+    7: 		<%= girl.score %> <br />
+    8: 	<% end %>
+  app/views/winners/index.html.erb:5:in `_app_views_winners_index_html_erb___1283246811_2178161800_0'
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+  [1m[36mGirl Load (0.4ms)[0m  [1mSELECT "girls".* FROM "girls" WHERE (girl.username IN(SELECT username FROM girl ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0[0m
+SQLite3::SQLException: no such table: girl: SELECT  "girls".* FROM "girls" WHERE (girl.username IN(SELECT username FROM girl ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0
+  [1m[35mGirl Load (0.2ms)[0m  SELECT "girls".* FROM "girls" WHERE (girl.username IN(SELECT username FROM girl ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0
+SQLite3::SQLException: no such table: girl: SELECT  "girls".* FROM "girls" WHERE (girl.username IN(SELECT username FROM girl ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (4.9ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (11.0ms)
+
+
+Started GET "/winners/index?boys_page=2" for 127.0.0.1 at Sat Oct 01 23:24:54 -0600 2011
+  Processing by WinnersController#index as HTML
+  Parameters: {"boys_page"=>"2"}
+  [1m[36mGirl Load (0.5ms)[0m  [1mSELECT "girls".* FROM "girls" WHERE (Girl.username IN(SELECT username FROM girl ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0[0m
+SQLite3::SQLException: no such table: girl: SELECT  "girls".* FROM "girls" WHERE (Girl.username IN(SELECT username FROM girl ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0
+Rendered winners/index.html.erb within layouts/application (1.9ms)
+Completed   in 92ms
+
+ActionView::Template::Error (SQLite3::SQLException: no such table: girl: SELECT  "girls".* FROM "girls" WHERE (Girl.username IN(SELECT username FROM girl ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0):
+    2: 
+    3: <div id='top-girls'>
+    4: 	<h1>Top Women</h1>
+    5: 	<% @girls.each do |girl| %>
+    6: 	<%= link_to (image_tag(display_girl_image(girl), :height => 70)), girl %>
+    7: 		<%= girl.score %> <br />
+    8: 	<% end %>
+  app/views/winners/index.html.erb:5:in `_app_views_winners_index_html_erb___1283246811_2180767880_0'
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+  [1m[35mGirl Load (0.4ms)[0m  SELECT "girls".* FROM "girls" WHERE (Girl.username IN(SELECT username FROM girl ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0
+SQLite3::SQLException: no such table: girl: SELECT  "girls".* FROM "girls" WHERE (Girl.username IN(SELECT username FROM girl ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0
+  [1m[36mGirl Load (0.2ms)[0m  [1mSELECT "girls".* FROM "girls" WHERE (Girl.username IN(SELECT username FROM girl ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0[0m
+SQLite3::SQLException: no such table: girl: SELECT  "girls".* FROM "girls" WHERE (Girl.username IN(SELECT username FROM girl ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (4.9ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (10.7ms)
+
+
+Started GET "/winners/index?boys_page=2" for 127.0.0.1 at Sat Oct 01 23:26:10 -0600 2011
+  Processing by WinnersController#index as HTML
+  Parameters: {"boys_page"=>"2"}
+  [1m[35mGirl Load (3.1ms)[0m  SELECT "girls".* FROM "girls" WHERE (girls.username IN(SELECT username FROM girls ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0
+  [1m[36mSQL (3.3ms)[0m  [1mSELECT COUNT(*) FROM "girls" WHERE (girls.username IN(SELECT username FROM girls ORDER BY score LIMIT 100))[0m
+  [1m[35mGuys Load (2.2ms)[0m  SELECT "guys".* FROM "guys" WHERE (guys.username IN(SELECT username FROM guys ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 5
+  [1m[36mSQL (2.3ms)[0m  [1mSELECT COUNT(*) FROM "guys" WHERE (guys.username IN(SELECT username FROM guys ORDER BY score LIMIT 100))[0m
+Rendered layouts/_header.html.erb (1.1ms)
+Rendered layouts/_footer.html.erb (0.2ms)
+Rendered winners/index.html.erb within layouts/application (42.3ms)
+Completed 200 OK in 56ms (Views: 36.5ms | ActiveRecord: 11.0ms)
+
+
+Started GET "/winners/tmp/stylesheets/screen.css" for 127.0.0.1 at Sat Oct 01 23:26:10 -0600 2011
+
+ActionController::RoutingError (No route matches "/winners/tmp/stylesheets/screen.css"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/winners/index?boys_page=2" for 127.0.0.1 at Sat Oct 01 23:26:37 -0600 2011
+  Processing by WinnersController#index as HTML
+  Parameters: {"boys_page"=>"2"}
+  [1m[35mGirl Load (3.1ms)[0m  SELECT "girls".* FROM "girls" WHERE (girls.username IN(SELECT username FROM girls ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0
+  [1m[36mSQL (3.2ms)[0m  [1mSELECT COUNT(*) FROM "girls" WHERE (girls.username IN(SELECT username FROM girls ORDER BY score LIMIT 100))[0m
+  [1m[35mGuys Load (2.2ms)[0m  SELECT "guys".* FROM "guys" WHERE (guys.username IN(SELECT username FROM guys ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 5
+  [1m[36mSQL (2.3ms)[0m  [1mSELECT COUNT(*) FROM "guys" WHERE (guys.username IN(SELECT username FROM guys ORDER BY score LIMIT 100))[0m
+Rendered layouts/_header.html.erb (1.1ms)
+Rendered layouts/_footer.html.erb (0.3ms)
+Rendered winners/index.html.erb within layouts/application (42.9ms)
+Completed 200 OK in 58ms (Views: 37.4ms | ActiveRecord: 10.9ms)
+
+
+Started GET "/winners/tmp/stylesheets/screen.css" for 127.0.0.1 at Sat Oct 01 23:26:37 -0600 2011
+
+ActionController::RoutingError (No route matches "/winners/tmp/stylesheets/screen.css"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/winners/index?boys_page=2&girls_page=21" for 127.0.0.1 at Sat Oct 01 23:26:40 -0600 2011
+  Processing by WinnersController#index as HTML
+  Parameters: {"girls_page"=>"21", "boys_page"=>"2"}
+  [1m[35mGirl Load (4.1ms)[0m  SELECT "girls".* FROM "girls" WHERE (girls.username IN(SELECT username FROM girls ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 100
+  [1m[36mGuys Load (2.3ms)[0m  [1mSELECT "guys".* FROM "guys" WHERE (guys.username IN(SELECT username FROM guys ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 5[0m
+  [1m[35mSQL (2.4ms)[0m  SELECT COUNT(*) FROM "guys" WHERE (guys.username IN(SELECT username FROM guys ORDER BY score LIMIT 100))
+Rendered layouts/_header.html.erb (1.5ms)
+Rendered layouts/_footer.html.erb (0.4ms)
+Rendered winners/index.html.erb within layouts/application (39.6ms)
+Completed 200 OK in 54ms (Views: 36.6ms | ActiveRecord: 8.9ms)
+
+
+Started GET "/winners/tmp/stylesheets/screen.css" for 127.0.0.1 at Sat Oct 01 23:26:40 -0600 2011
+
+ActionController::RoutingError (No route matches "/winners/tmp/stylesheets/screen.css"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/winners/index?boys_page=2&girls_page=1" for 127.0.0.1 at Sat Oct 01 23:26:42 -0600 2011
+  Processing by WinnersController#index as HTML
+  Parameters: {"girls_page"=>"1", "boys_page"=>"2"}
+  [1m[36mGirl Load (3.1ms)[0m  [1mSELECT "girls".* FROM "girls" WHERE (girls.username IN(SELECT username FROM girls ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0[0m
+  [1m[35mSQL (3.3ms)[0m  SELECT COUNT(*) FROM "girls" WHERE (girls.username IN(SELECT username FROM girls ORDER BY score LIMIT 100))
+  [1m[36mGuys Load (2.3ms)[0m  [1mSELECT "guys".* FROM "guys" WHERE (guys.username IN(SELECT username FROM guys ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 5[0m
+  [1m[35mSQL (2.6ms)[0m  SELECT COUNT(*) FROM "guys" WHERE (guys.username IN(SELECT username FROM guys ORDER BY score LIMIT 100))
+Rendered layouts/_header.html.erb (1.2ms)
+Rendered layouts/_footer.html.erb (0.3ms)
+Rendered winners/index.html.erb within layouts/application (44.0ms)
+Completed 200 OK in 58ms (Views: 38.2ms | ActiveRecord: 11.3ms)
+
+
+Started GET "/winners/tmp/stylesheets/screen.css" for 127.0.0.1 at Sat Oct 01 23:26:42 -0600 2011
+
+ActionController::RoutingError (No route matches "/winners/tmp/stylesheets/screen.css"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
