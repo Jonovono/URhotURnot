@@ -6744,3 +6744,69 @@ ActionController::RoutingError (No route matches "/winners/tmp/stylesheets/scree
 
 
 Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/winners/index?boys_page=2&girls_page=2" for 127.0.0.1 at Sat Oct 01 23:28:22 -0600 2011
+  Processing by WinnersController#index as HTML
+  Parameters: {"girls_page"=>"2", "boys_page"=>"2"}
+  [1m[36mGirl Load (4.2ms)[0m  [1mSELECT "girls".* FROM "girls" WHERE (girls.username IN(SELECT username FROM girls ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 5[0m
+  [1m[35mSQL (4.6ms)[0m  SELECT COUNT(*) FROM "girls" WHERE (girls.username IN(SELECT username FROM girls ORDER BY score LIMIT 100))
+  [1m[36mGuys Load (3.0ms)[0m  [1mSELECT "guys".* FROM "guys" WHERE (guys.username IN(SELECT username FROM guys ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 5[0m
+  [1m[35mSQL (2.8ms)[0m  SELECT COUNT(*) FROM "guys" WHERE (guys.username IN(SELECT username FROM guys ORDER BY score LIMIT 100))
+Rendered layouts/_header.html.erb (1.1ms)
+Rendered layouts/_footer.html.erb (0.3ms)
+Rendered winners/index.html.erb within layouts/application (52.2ms)
+Completed 200 OK in 72ms (Views: 44.6ms | ActiveRecord: 14.6ms)
+
+
+Started GET "/winners/tmp/stylesheets/screen.css" for 127.0.0.1 at Sat Oct 01 23:28:22 -0600 2011
+
+ActionController::RoutingError (No route matches "/winners/tmp/stylesheets/screen.css"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.7ms)
+
+
+Started GET "/winners/index?boys_page=2&girls_page=1" for 127.0.0.1 at Sat Oct 01 23:28:24 -0600 2011
+  Processing by WinnersController#index as HTML
+  Parameters: {"girls_page"=>"1", "boys_page"=>"2"}
+  [1m[36mGirl Load (3.2ms)[0m  [1mSELECT "girls".* FROM "girls" WHERE (girls.username IN(SELECT username FROM girls ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 0[0m
+  [1m[35mSQL (3.3ms)[0m  SELECT COUNT(*) FROM "girls" WHERE (girls.username IN(SELECT username FROM girls ORDER BY score LIMIT 100))
+  [1m[36mGuys Load (2.2ms)[0m  [1mSELECT "guys".* FROM "guys" WHERE (guys.username IN(SELECT username FROM guys ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 5[0m
+  [1m[35mSQL (2.8ms)[0m  SELECT COUNT(*) FROM "guys" WHERE (guys.username IN(SELECT username FROM guys ORDER BY score LIMIT 100))
+Rendered layouts/_header.html.erb (1.1ms)
+Rendered layouts/_footer.html.erb (0.2ms)
+Rendered winners/index.html.erb within layouts/application (42.7ms)
+Completed 200 OK in 59ms (Views: 36.6ms | ActiveRecord: 11.5ms)
+
+
+Started GET "/winners/tmp/stylesheets/screen.css" for 127.0.0.1 at Sat Oct 01 23:28:24 -0600 2011
+
+ActionController::RoutingError (No route matches "/winners/tmp/stylesheets/screen.css"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/winners/index?boys_page=2&girls_page=1" for 127.0.0.1 at Sat Oct 01 23:28:46 -0600 2011
+  Processing by WinnersController#index as HTML
+  Parameters: {"girls_page"=>"1", "boys_page"=>"2"}
+  [1m[36mGirl Load (3.2ms)[0m  [1mSELECT "girls".* FROM "girls" WHERE (girls.username IN(SELECT username FROM girls ORDER BY score DESC LIMIT 100)) LIMIT 5 OFFSET 0[0m
+  [1m[35mSQL (3.2ms)[0m  SELECT COUNT(*) FROM "girls" WHERE (girls.username IN(SELECT username FROM girls ORDER BY score DESC LIMIT 100))
+  [1m[36mGuys Load (2.2ms)[0m  [1mSELECT "guys".* FROM "guys" WHERE (guys.username IN(SELECT username FROM guys ORDER BY score LIMIT 100)) LIMIT 5 OFFSET 5[0m
+  [1m[35mSQL (2.5ms)[0m  SELECT COUNT(*) FROM "guys" WHERE (guys.username IN(SELECT username FROM guys ORDER BY score LIMIT 100))
+Rendered layouts/_header.html.erb (1.1ms)
+Rendered layouts/_footer.html.erb (0.2ms)
+Rendered winners/index.html.erb within layouts/application (41.6ms)
+Completed 200 OK in 57ms (Views: 36.1ms | ActiveRecord: 11.0ms)
+
+
+Started GET "/winners/tmp/stylesheets/screen.css" for 127.0.0.1 at Sat Oct 01 23:28:47 -0600 2011
+
+ActionController::RoutingError (No route matches "/winners/tmp/stylesheets/screen.css"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
