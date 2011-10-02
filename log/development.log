@@ -6810,3 +6810,515 @@ ActionController::RoutingError (No route matches "/winners/tmp/stylesheets/scree
 
 
 Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/winners/index?boys_page=2&girls_page=1" for 127.0.0.1 at Sat Oct 01 23:31:24 -0600 2011
+  Processing by WinnersController#index as HTML
+  Parameters: {"girls_page"=>"1", "boys_page"=>"2"}
+  [1m[36mGirl Load (0.2ms)[0m  [1mSELECT "girls".* FROM "girls" WHERE (girls.username IN(SELECT username FROM girls ORDER BY DESC score LIMIT 100)) LIMIT 5 OFFSET 0[0m
+SQLite3::SQLException: near "score": syntax error: SELECT  "girls".* FROM "girls" WHERE (girls.username IN(SELECT username FROM girls ORDER BY DESC score LIMIT 100)) LIMIT 5 OFFSET 0
+Rendered winners/index.html.erb within layouts/application (1.5ms)
+Completed   in 15ms
+
+ActionView::Template::Error (SQLite3::SQLException: near "score": syntax error: SELECT  "girls".* FROM "girls" WHERE (girls.username IN(SELECT username FROM girls ORDER BY DESC score LIMIT 100)) LIMIT 5 OFFSET 0):
+    2: 
+    3: <div id='top-girls'>
+    4: 	<h1>Top 100 Women</h1>
+    5: 	<% @girls.each do |girl| %>
+    6: 	<%= link_to (image_tag(display_girl_image(girl), :height => 70)), girl %>
+    7: 		<%= girl.score %> <br />
+    8: 	<% end %>
+  app/views/winners/index.html.erb:5:in `_app_views_winners_index_html_erb___1283246811_2179176060_0'
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+  [1m[35mGirl Load (0.2ms)[0m  SELECT "girls".* FROM "girls" WHERE (girls.username IN(SELECT username FROM girls ORDER BY DESC score LIMIT 100)) LIMIT 5 OFFSET 0
+SQLite3::SQLException: near "score": syntax error: SELECT  "girls".* FROM "girls" WHERE (girls.username IN(SELECT username FROM girls ORDER BY DESC score LIMIT 100)) LIMIT 5 OFFSET 0
+  [1m[36mGirl Load (0.1ms)[0m  [1mSELECT "girls".* FROM "girls" WHERE (girls.username IN(SELECT username FROM girls ORDER BY DESC score LIMIT 100)) LIMIT 5 OFFSET 0[0m
+SQLite3::SQLException: near "score": syntax error: SELECT  "girls".* FROM "girls" WHERE (girls.username IN(SELECT username FROM girls ORDER BY DESC score LIMIT 100)) LIMIT 5 OFFSET 0
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (4.8ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (10.8ms)
+
+
+Started GET "/winners/index?boys_page=2&girls_page=1" for 127.0.0.1 at Sat Oct 01 23:31:48 -0600 2011
+  Processing by WinnersController#index as HTML
+  Parameters: {"girls_page"=>"1", "boys_page"=>"2"}
+  [1m[35mGirl Load (3.2ms)[0m  SELECT "girls".* FROM "girls" WHERE (girls.username IN(SELECT username FROM girls ORDER BY score DESC LIMIT 100)) LIMIT 5 OFFSET 0
+  [1m[36mSQL (3.3ms)[0m  [1mSELECT COUNT(*) FROM "girls" WHERE (girls.username IN(SELECT username FROM girls ORDER BY score DESC LIMIT 100))[0m
+  [1m[35mGuys Load (2.3ms)[0m  SELECT "guys".* FROM "guys" WHERE (guys.username IN(SELECT username FROM guys ORDER BY score DESC LIMIT 100)) LIMIT 5 OFFSET 5
+  [1m[36mSQL (2.4ms)[0m  [1mSELECT COUNT(*) FROM "guys" WHERE (guys.username IN(SELECT username FROM guys ORDER BY score DESC LIMIT 100))[0m
+Rendered layouts/_header.html.erb (1.3ms)
+Rendered layouts/_footer.html.erb (0.3ms)
+Rendered winners/index.html.erb within layouts/application (120.7ms)
+Completed 200 OK in 135ms (Views: 115.1ms | ActiveRecord: 11.7ms)
+
+
+Started GET "/winners/tmp/stylesheets/screen.css" for 127.0.0.1 at Sat Oct 01 23:31:48 -0600 2011
+
+ActionController::RoutingError (No route matches "/winners/tmp/stylesheets/screen.css"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/winners/index?boys_page=2&girls_page=2" for 127.0.0.1 at Sat Oct 01 23:31:53 -0600 2011
+  Processing by WinnersController#index as HTML
+  Parameters: {"girls_page"=>"2", "boys_page"=>"2"}
+  [1m[35mGirl Load (3.3ms)[0m  SELECT "girls".* FROM "girls" WHERE (girls.username IN(SELECT username FROM girls ORDER BY score DESC LIMIT 100)) LIMIT 5 OFFSET 5
+  [1m[36mSQL (3.3ms)[0m  [1mSELECT COUNT(*) FROM "girls" WHERE (girls.username IN(SELECT username FROM girls ORDER BY score DESC LIMIT 100))[0m
+  [1m[35mGuys Load (2.3ms)[0m  SELECT "guys".* FROM "guys" WHERE (guys.username IN(SELECT username FROM guys ORDER BY score DESC LIMIT 100)) LIMIT 5 OFFSET 5
+  [1m[36mSQL (2.3ms)[0m  [1mSELECT COUNT(*) FROM "guys" WHERE (guys.username IN(SELECT username FROM guys ORDER BY score DESC LIMIT 100))[0m
+Rendered layouts/_header.html.erb (1.1ms)
+Rendered layouts/_footer.html.erb (79.1ms)
+Rendered winners/index.html.erb within layouts/application (122.0ms)
+Completed 200 OK in 136ms (Views: 116.3ms | ActiveRecord: 11.2ms)
+
+
+Started GET "/winners/tmp/stylesheets/screen.css" for 127.0.0.1 at Sat Oct 01 23:31:54 -0600 2011
+
+ActionController::RoutingError (No route matches "/winners/tmp/stylesheets/screen.css"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/winners/index?boys_page=2&girls_page=2" for 127.0.0.1 at Sat Oct 01 23:32:29 -0600 2011
+  Processing by WinnersController#index as HTML
+  Parameters: {"girls_page"=>"2", "boys_page"=>"2"}
+  [1m[35mGirl Load (3.8ms)[0m  SELECT "girls".* FROM "girls" ORDER BY score DESC LIMIT 5 OFFSET 5
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT COUNT(*) FROM "girls"[0m
+  [1m[35mGuys Load (2.7ms)[0m  SELECT "guys".* FROM "guys" ORDER BY score DESC LIMIT 5 OFFSET 5
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT COUNT(*) FROM "guys"[0m
+Rendered layouts/_header.html.erb (1.1ms)
+Rendered layouts/_footer.html.erb (0.3ms)
+Rendered winners/index.html.erb within layouts/application (39.0ms)
+Completed 200 OK in 53ms (Views: 37.6ms | ActiveRecord: 6.8ms)
+
+
+Started GET "/winners/tmp/stylesheets/screen.css" for 127.0.0.1 at Sat Oct 01 23:32:29 -0600 2011
+
+ActionController::RoutingError (No route matches "/winners/tmp/stylesheets/screen.css"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/winners/index?boys_page=2&girls_page=2" for 127.0.0.1 at Sat Oct 01 23:33:26 -0600 2011
+  Processing by WinnersController#index as HTML
+  Parameters: {"girls_page"=>"2", "boys_page"=>"2"}
+  [1m[35mGirl Load (3.9ms)[0m  SELECT "girls".* FROM "girls" ORDER BY score DESC LIMIT 5 OFFSET 5
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) FROM "girls"[0m
+  [1m[35mGuys Load (0.7ms)[0m  SELECT "guys".* FROM "guys" WHERE (guys.username IN(SELECT username FROM guys LIMIT 100)) LIMIT 5 OFFSET 5
+  [1m[36mSQL (1.3ms)[0m  [1mSELECT COUNT(*) FROM "guys" WHERE (guys.username IN(SELECT username FROM guys LIMIT 100))[0m
+Rendered layouts/_header.html.erb (1.1ms)
+Rendered layouts/_footer.html.erb (0.2ms)
+Rendered winners/index.html.erb within layouts/application (37.8ms)
+Completed 200 OK in 51ms (Views: 37.2ms | ActiveRecord: 6.0ms)
+
+
+Started GET "/winners/tmp/stylesheets/screen.css" for 127.0.0.1 at Sat Oct 01 23:33:27 -0600 2011
+
+ActionController::RoutingError (No route matches "/winners/tmp/stylesheets/screen.css"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/winners/index?boys_page=2&girls_page=2" for 127.0.0.1 at Sat Oct 01 23:33:43 -0600 2011
+  Processing by WinnersController#index as HTML
+  Parameters: {"girls_page"=>"2", "boys_page"=>"2"}
+  [1m[35mGirl Load (3.8ms)[0m  SELECT "girls".* FROM "girls" ORDER BY score DESC LIMIT 5 OFFSET 5
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) FROM "girls"[0m
+  [1m[35mGuys Load (1.9ms)[0m  SELECT "guys".* FROM "guys" WHERE (guys.username IN(SELECT username FROM guys LIMIT 100)) ORDER BY score DESC LIMIT 5 OFFSET 5
+  [1m[36mSQL (0.9ms)[0m  [1mSELECT COUNT(*) FROM "guys" WHERE (guys.username IN(SELECT username FROM guys LIMIT 100))[0m
+Rendered layouts/_header.html.erb (1.1ms)
+Rendered layouts/_footer.html.erb (0.2ms)
+Rendered winners/index.html.erb within layouts/application (38.0ms)
+Completed 200 OK in 52ms (Views: 36.6ms | ActiveRecord: 6.8ms)
+
+
+Started GET "/winners/tmp/stylesheets/screen.css" for 127.0.0.1 at Sat Oct 01 23:33:44 -0600 2011
+
+ActionController::RoutingError (No route matches "/winners/tmp/stylesheets/screen.css"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/winners/index?boys_page=2&girls_page=2" for 127.0.0.1 at Sat Oct 01 23:34:32 -0600 2011
+  Processing by WinnersController#index as HTML
+  Parameters: {"girls_page"=>"2", "boys_page"=>"2"}
+  [1m[35mGirl Load (2.4ms)[0m  SELECT "girls".* FROM "girls" WHERE (girls.username IN(SELECT username FROM girls LIMIT 100)) ORDER BY score DESC LIMIT 5 OFFSET 5
+  [1m[36mSQL (1.3ms)[0m  [1mSELECT COUNT(*) FROM "girls" WHERE (girls.username IN(SELECT username FROM girls LIMIT 100))[0m
+  [1m[35mGuys Load (1.8ms)[0m  SELECT "guys".* FROM "guys" WHERE (guys.username IN(SELECT username FROM guys LIMIT 100)) ORDER BY score DESC LIMIT 5 OFFSET 5
+  [1m[36mSQL (0.9ms)[0m  [1mSELECT COUNT(*) FROM "guys" WHERE (guys.username IN(SELECT username FROM guys LIMIT 100))[0m
+Rendered layouts/_header.html.erb (1.2ms)
+Rendered layouts/_footer.html.erb (0.2ms)
+Rendered winners/index.html.erb within layouts/application (38.1ms)
+Completed 200 OK in 51ms (Views: 37.1ms | ActiveRecord: 6.4ms)
+
+
+Started GET "/winners/tmp/stylesheets/screen.css" for 127.0.0.1 at Sat Oct 01 23:34:32 -0600 2011
+
+ActionController::RoutingError (No route matches "/winners/tmp/stylesheets/screen.css"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/winners/index?boys_page=2&girls_page=3" for 127.0.0.1 at Sat Oct 01 23:34:36 -0600 2011
+  Processing by WinnersController#index as HTML
+  Parameters: {"girls_page"=>"3", "boys_page"=>"2"}
+  [1m[35mGirl Load (2.4ms)[0m  SELECT "girls".* FROM "girls" WHERE (girls.username IN(SELECT username FROM girls LIMIT 100)) ORDER BY score DESC LIMIT 5 OFFSET 10
+  [1m[36mSQL (1.5ms)[0m  [1mSELECT COUNT(*) FROM "girls" WHERE (girls.username IN(SELECT username FROM girls LIMIT 100))[0m
+  [1m[35mGuys Load (1.8ms)[0m  SELECT "guys".* FROM "guys" WHERE (guys.username IN(SELECT username FROM guys LIMIT 100)) ORDER BY score DESC LIMIT 5 OFFSET 5
+  [1m[36mSQL (1.0ms)[0m  [1mSELECT COUNT(*) FROM "guys" WHERE (guys.username IN(SELECT username FROM guys LIMIT 100))[0m
+Rendered layouts/_header.html.erb (1.1ms)
+Rendered layouts/_footer.html.erb (0.3ms)
+Rendered winners/index.html.erb within layouts/application (39.4ms)
+Completed 200 OK in 53ms (Views: 38.0ms | ActiveRecord: 6.7ms)
+
+
+Started GET "/winners/tmp/stylesheets/screen.css" for 127.0.0.1 at Sat Oct 01 23:34:36 -0600 2011
+
+ActionController::RoutingError (No route matches "/winners/tmp/stylesheets/screen.css"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.3ms)
+
+
+Started GET "/winners/index?boys_page=2&girls_page=4" for 127.0.0.1 at Sat Oct 01 23:34:38 -0600 2011
+  Processing by WinnersController#index as HTML
+  Parameters: {"girls_page"=>"4", "boys_page"=>"2"}
+  [1m[35mGirl Load (2.4ms)[0m  SELECT "girls".* FROM "girls" WHERE (girls.username IN(SELECT username FROM girls LIMIT 100)) ORDER BY score DESC LIMIT 5 OFFSET 15
+  [1m[36mSQL (1.3ms)[0m  [1mSELECT COUNT(*) FROM "girls" WHERE (girls.username IN(SELECT username FROM girls LIMIT 100))[0m
+  [1m[35mGuys Load (2.0ms)[0m  SELECT "guys".* FROM "guys" WHERE (guys.username IN(SELECT username FROM guys LIMIT 100)) ORDER BY score DESC LIMIT 5 OFFSET 5
+  [1m[36mSQL (1.1ms)[0m  [1mSELECT COUNT(*) FROM "guys" WHERE (guys.username IN(SELECT username FROM guys LIMIT 100))[0m
+Rendered layouts/_header.html.erb (1.1ms)
+Rendered layouts/_footer.html.erb (0.2ms)
+Rendered winners/index.html.erb within layouts/application (39.2ms)
+Completed 200 OK in 53ms (Views: 37.8ms | ActiveRecord: 6.9ms)
+
+
+Started GET "/winners/tmp/stylesheets/screen.css" for 127.0.0.1 at Sat Oct 01 23:34:38 -0600 2011
+
+ActionController::RoutingError (No route matches "/winners/tmp/stylesheets/screen.css"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/winners/index?boys_page=2&girls_page=5" for 127.0.0.1 at Sat Oct 01 23:34:39 -0600 2011
+  Processing by WinnersController#index as HTML
+  Parameters: {"girls_page"=>"5", "boys_page"=>"2"}
+  [1m[35mGirl Load (2.6ms)[0m  SELECT "girls".* FROM "girls" WHERE (girls.username IN(SELECT username FROM girls LIMIT 100)) ORDER BY score DESC LIMIT 5 OFFSET 20
+  [1m[36mSQL (1.7ms)[0m  [1mSELECT COUNT(*) FROM "girls" WHERE (girls.username IN(SELECT username FROM girls LIMIT 100))[0m
+  [1m[35mGuys Load (1.8ms)[0m  SELECT "guys".* FROM "guys" WHERE (guys.username IN(SELECT username FROM guys LIMIT 100)) ORDER BY score DESC LIMIT 5 OFFSET 5
+  [1m[36mSQL (0.9ms)[0m  [1mSELECT COUNT(*) FROM "guys" WHERE (guys.username IN(SELECT username FROM guys LIMIT 100))[0m
+Rendered layouts/_header.html.erb (1.3ms)
+Rendered layouts/_footer.html.erb (0.5ms)
+Rendered winners/index.html.erb within layouts/application (42.4ms)
+Completed 200 OK in 56ms (Views: 40.8ms | ActiveRecord: 7.0ms)
+
+
+Started GET "/winners/tmp/stylesheets/screen.css" for 127.0.0.1 at Sat Oct 01 23:34:39 -0600 2011
+
+ActionController::RoutingError (No route matches "/winners/tmp/stylesheets/screen.css"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.2ms)
+
+
+Started GET "/winners/index?boys_page=2&girls_page=6" for 127.0.0.1 at Sat Oct 01 23:34:41 -0600 2011
+  Processing by WinnersController#index as HTML
+  Parameters: {"girls_page"=>"6", "boys_page"=>"2"}
+  [1m[35mGirl Load (2.7ms)[0m  SELECT "girls".* FROM "girls" WHERE (girls.username IN(SELECT username FROM girls LIMIT 100)) ORDER BY score DESC LIMIT 5 OFFSET 25
+  [1m[36mSQL (1.5ms)[0m  [1mSELECT COUNT(*) FROM "girls" WHERE (girls.username IN(SELECT username FROM girls LIMIT 100))[0m
+  [1m[35mGuys Load (1.7ms)[0m  SELECT "guys".* FROM "guys" WHERE (guys.username IN(SELECT username FROM guys LIMIT 100)) ORDER BY score DESC LIMIT 5 OFFSET 5
+  [1m[36mSQL (1.0ms)[0m  [1mSELECT COUNT(*) FROM "guys" WHERE (guys.username IN(SELECT username FROM guys LIMIT 100))[0m
+Rendered layouts/_header.html.erb (1.3ms)
+Rendered layouts/_footer.html.erb (0.2ms)
+Rendered winners/index.html.erb within layouts/application (40.9ms)
+Completed 200 OK in 56ms (Views: 40.2ms | ActiveRecord: 6.9ms)
+
+
+Started GET "/winners/tmp/stylesheets/screen.css" for 127.0.0.1 at Sat Oct 01 23:34:41 -0600 2011
+
+ActionController::RoutingError (No route matches "/winners/tmp/stylesheets/screen.css"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/winners/index?boys_page=2&girls_page=7" for 127.0.0.1 at Sat Oct 01 23:34:44 -0600 2011
+  Processing by WinnersController#index as HTML
+  Parameters: {"girls_page"=>"7", "boys_page"=>"2"}
+  [1m[35mGirl Load (2.7ms)[0m  SELECT "girls".* FROM "girls" WHERE (girls.username IN(SELECT username FROM girls LIMIT 100)) ORDER BY score DESC LIMIT 5 OFFSET 30
+  [1m[36mSQL (1.4ms)[0m  [1mSELECT COUNT(*) FROM "girls" WHERE (girls.username IN(SELECT username FROM girls LIMIT 100))[0m
+  [1m[35mGuys Load (1.8ms)[0m  SELECT "guys".* FROM "guys" WHERE (guys.username IN(SELECT username FROM guys LIMIT 100)) ORDER BY score DESC LIMIT 5 OFFSET 5
+  [1m[36mSQL (1.0ms)[0m  [1mSELECT COUNT(*) FROM "guys" WHERE (guys.username IN(SELECT username FROM guys LIMIT 100))[0m
+Rendered layouts/_header.html.erb (1.3ms)
+Rendered layouts/_footer.html.erb (0.2ms)
+Rendered winners/index.html.erb within layouts/application (40.4ms)
+Completed 200 OK in 56ms (Views: 39.8ms | ActiveRecord: 6.9ms)
+
+
+Started GET "/winners/tmp/stylesheets/screen.css" for 127.0.0.1 at Sat Oct 01 23:34:45 -0600 2011
+
+ActionController::RoutingError (No route matches "/winners/tmp/stylesheets/screen.css"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/winners/index?boys_page=3&girls_page=7" for 127.0.0.1 at Sat Oct 01 23:35:14 -0600 2011
+  Processing by WinnersController#index as HTML
+  Parameters: {"girls_page"=>"7", "boys_page"=>"3"}
+  [1m[35mGirl Load (2.6ms)[0m  SELECT "girls".* FROM "girls" WHERE (girls.username IN(SELECT username FROM girls LIMIT 100)) ORDER BY score DESC LIMIT 5 OFFSET 30
+  [1m[36mSQL (1.4ms)[0m  [1mSELECT COUNT(*) FROM "girls" WHERE (girls.username IN(SELECT username FROM girls LIMIT 100))[0m
+  [1m[35mGuys Load (1.9ms)[0m  SELECT "guys".* FROM "guys" WHERE (guys.username IN(SELECT username FROM guys LIMIT 100)) ORDER BY score DESC LIMIT 5 OFFSET 10
+  [1m[36mSQL (1.0ms)[0m  [1mSELECT COUNT(*) FROM "guys" WHERE (guys.username IN(SELECT username FROM guys LIMIT 100))[0m
+Rendered layouts/_header.html.erb (1.2ms)
+Rendered layouts/_footer.html.erb (0.2ms)
+Rendered winners/index.html.erb within layouts/application (38.7ms)
+Completed 200 OK in 54ms (Views: 37.4ms | ActiveRecord: 6.8ms)
+
+
+Started GET "/winners/tmp/stylesheets/screen.css" for 127.0.0.1 at Sat Oct 01 23:35:14 -0600 2011
+
+ActionController::RoutingError (No route matches "/winners/tmp/stylesheets/screen.css"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.2ms)
+
+
+Started GET "/winners/index?boys_page=4&girls_page=7" for 127.0.0.1 at Sat Oct 01 23:35:16 -0600 2011
+  Processing by WinnersController#index as HTML
+  Parameters: {"girls_page"=>"7", "boys_page"=>"4"}
+  [1m[35mGirl Load (2.5ms)[0m  SELECT "girls".* FROM "girls" WHERE (girls.username IN(SELECT username FROM girls LIMIT 100)) ORDER BY score DESC LIMIT 5 OFFSET 30
+  [1m[36mSQL (1.3ms)[0m  [1mSELECT COUNT(*) FROM "girls" WHERE (girls.username IN(SELECT username FROM girls LIMIT 100))[0m
+  [1m[35mGuys Load (1.8ms)[0m  SELECT "guys".* FROM "guys" WHERE (guys.username IN(SELECT username FROM guys LIMIT 100)) ORDER BY score DESC LIMIT 5 OFFSET 15
+  [1m[36mSQL (1.0ms)[0m  [1mSELECT COUNT(*) FROM "guys" WHERE (guys.username IN(SELECT username FROM guys LIMIT 100))[0m
+Rendered layouts/_header.html.erb (1.2ms)
+Rendered layouts/_footer.html.erb (0.2ms)
+Rendered winners/index.html.erb within layouts/application (40.6ms)
+Completed 200 OK in 55ms (Views: 39.5ms | ActiveRecord: 6.6ms)
+
+
+Started GET "/winners/tmp/stylesheets/screen.css" for 127.0.0.1 at Sat Oct 01 23:35:16 -0600 2011
+
+ActionController::RoutingError (No route matches "/winners/tmp/stylesheets/screen.css"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/winners/index?boys_page=5&girls_page=7" for 127.0.0.1 at Sat Oct 01 23:35:17 -0600 2011
+  Processing by WinnersController#index as HTML
+  Parameters: {"girls_page"=>"7", "boys_page"=>"5"}
+  [1m[35mGirl Load (2.6ms)[0m  SELECT "girls".* FROM "girls" WHERE (girls.username IN(SELECT username FROM girls LIMIT 100)) ORDER BY score DESC LIMIT 5 OFFSET 30
+  [1m[36mSQL (1.4ms)[0m  [1mSELECT COUNT(*) FROM "girls" WHERE (girls.username IN(SELECT username FROM girls LIMIT 100))[0m
+  [1m[35mGuys Load (1.9ms)[0m  SELECT "guys".* FROM "guys" WHERE (guys.username IN(SELECT username FROM guys LIMIT 100)) ORDER BY score DESC LIMIT 5 OFFSET 20
+  [1m[36mSQL (0.9ms)[0m  [1mSELECT COUNT(*) FROM "guys" WHERE (guys.username IN(SELECT username FROM guys LIMIT 100))[0m
+Rendered layouts/_header.html.erb (1.1ms)
+Rendered layouts/_footer.html.erb (0.2ms)
+Rendered winners/index.html.erb within layouts/application (39.4ms)
+Completed 200 OK in 54ms (Views: 38.2ms | ActiveRecord: 6.8ms)
+
+
+Started GET "/winners/tmp/stylesheets/screen.css" for 127.0.0.1 at Sat Oct 01 23:35:17 -0600 2011
+
+ActionController::RoutingError (No route matches "/winners/tmp/stylesheets/screen.css"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.7ms)
+
+
+Started GET "/winners/index?boys_page=5&girls_page=7" for 127.0.0.1 at Sat Oct 01 23:35:34 -0600 2011
+  Processing by WinnersController#index as HTML
+  Parameters: {"girls_page"=>"7", "boys_page"=>"5"}
+  [1m[35mGirl Load (4.5ms)[0m  SELECT "girls".* FROM "girls" ORDER BY score DESC LIMIT 5 OFFSET 30
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) FROM "girls"[0m
+  [1m[35mGuys Load (3.2ms)[0m  SELECT "guys".* FROM "guys" ORDER BY score DESC LIMIT 5 OFFSET 20
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) FROM "guys"[0m
+Rendered layouts/_header.html.erb (1.1ms)
+Rendered layouts/_footer.html.erb (0.4ms)
+Rendered winners/index.html.erb within layouts/application (39.3ms)
+Completed 200 OK in 53ms (Views: 36.6ms | ActiveRecord: 8.0ms)
+
+
+Started GET "/winners/tmp/stylesheets/screen.css" for 127.0.0.1 at Sat Oct 01 23:35:35 -0600 2011
+
+ActionController::RoutingError (No route matches "/winners/tmp/stylesheets/screen.css"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/winners/index?boys_page=5&girls_page=7" for 127.0.0.1 at Sat Oct 01 23:35:46 -0600 2011
+  Processing by WinnersController#index as HTML
+  Parameters: {"girls_page"=>"7", "boys_page"=>"5"}
+  [1m[35mGirl Load (2.5ms)[0m  SELECT "girls".* FROM "girls" WHERE (girls.username IN(SELECT username FROM girls LIMIT 100)) ORDER BY score DESC LIMIT 5 OFFSET 30
+  [1m[36mSQL (1.4ms)[0m  [1mSELECT COUNT(*) FROM "girls" WHERE (girls.username IN(SELECT username FROM girls LIMIT 100))[0m
+  [1m[35mGuys Load (2.0ms)[0m  SELECT "guys".* FROM "guys" WHERE (guys.username IN(SELECT username FROM guys LIMIT 100)) ORDER BY score DESC LIMIT 5 OFFSET 20
+  [1m[36mSQL (1.0ms)[0m  [1mSELECT COUNT(*) FROM "guys" WHERE (guys.username IN(SELECT username FROM guys LIMIT 100))[0m
+Rendered layouts/_header.html.erb (1.1ms)
+Rendered layouts/_footer.html.erb (0.3ms)
+Rendered winners/index.html.erb within layouts/application (39.9ms)
+Completed 200 OK in 55ms (Views: 38.3ms | ActiveRecord: 6.9ms)
+
+
+Started GET "/winners/tmp/stylesheets/screen.css" for 127.0.0.1 at Sat Oct 01 23:35:46 -0600 2011
+
+ActionController::RoutingError (No route matches "/winners/tmp/stylesheets/screen.css"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/winners/index?boys_page=5&girls_page=7" for 127.0.0.1 at Sat Oct 01 23:36:10 -0600 2011
+  Processing by WinnersController#index as HTML
+  Parameters: {"girls_page"=>"7", "boys_page"=>"5"}
+  [1m[35mGirl Load (2.8ms)[0m  SELECT "girls".* FROM "girls" WHERE (girls.username IN(SELECT username FROM girls LIMIT 100)) ORDER BY score DESC LIMIT 5 OFFSET 30
+  [1m[36mSQL (1.4ms)[0m  [1mSELECT COUNT(*) FROM "girls" WHERE (girls.username IN(SELECT username FROM girls LIMIT 100))[0m
+  [1m[35mGuys Load (1.9ms)[0m  SELECT "guys".* FROM "guys" WHERE (guys.username IN(SELECT username FROM guys LIMIT 100)) ORDER BY score DESC LIMIT 5 OFFSET 20
+  [1m[36mSQL (1.0ms)[0m  [1mSELECT COUNT(*) FROM "guys" WHERE (guys.username IN(SELECT username FROM guys LIMIT 100))[0m
+Rendered layouts/_header.html.erb (1.3ms)
+Rendered layouts/_footer.html.erb (0.3ms)
+Rendered winners/index.html.erb within layouts/application (41.4ms)
+Completed 200 OK in 133ms (Views: 40.0ms | ActiveRecord: 7.1ms)
+
+
+Started GET "/winners/tmp/stylesheets/screen.css" for 127.0.0.1 at Sat Oct 01 23:36:10 -0600 2011
+
+ActionController::RoutingError (No route matches "/winners/tmp/stylesheets/screen.css"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/winners/index?boys_page=5&girls_page=7" for 127.0.0.1 at Sat Oct 01 23:36:12 -0600 2011
+  Processing by WinnersController#index as HTML
+  Parameters: {"girls_page"=>"7", "boys_page"=>"5"}
+  [1m[35mGirl Load (2.6ms)[0m  SELECT "girls".* FROM "girls" WHERE (girls.username IN(SELECT username FROM girls LIMIT 100)) ORDER BY score DESC LIMIT 5 OFFSET 30
+  [1m[36mSQL (1.3ms)[0m  [1mSELECT COUNT(*) FROM "girls" WHERE (girls.username IN(SELECT username FROM girls LIMIT 100))[0m
+  [1m[35mGuys Load (1.9ms)[0m  SELECT "guys".* FROM "guys" WHERE (guys.username IN(SELECT username FROM guys LIMIT 100)) ORDER BY score DESC LIMIT 5 OFFSET 20
+  [1m[36mSQL (1.0ms)[0m  [1mSELECT COUNT(*) FROM "guys" WHERE (guys.username IN(SELECT username FROM guys LIMIT 100))[0m
+Rendered layouts/_header.html.erb (1.2ms)
+Rendered layouts/_footer.html.erb (0.3ms)
+Rendered winners/index.html.erb within layouts/application (41.7ms)
+Completed 200 OK in 133ms (Views: 117.9ms | ActiveRecord: 6.8ms)
+
+
+Started GET "/winners/tmp/stylesheets/screen.css" for 127.0.0.1 at Sat Oct 01 23:36:12 -0600 2011
+
+ActionController::RoutingError (No route matches "/winners/tmp/stylesheets/screen.css"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/winners/index?boys_page=5&girls_page=7" for 127.0.0.1 at Sat Oct 01 23:36:28 -0600 2011
+  Processing by WinnersController#index as HTML
+  Parameters: {"girls_page"=>"7", "boys_page"=>"5"}
+  [1m[35mGirl Load (2.5ms)[0m  SELECT "girls".* FROM "girls" WHERE (girls.username IN(SELECT username FROM girls LIMIT 100)) ORDER BY score DESC LIMIT 5 OFFSET 30
+  [1m[36mSQL (1.3ms)[0m  [1mSELECT COUNT(*) FROM "girls" WHERE (girls.username IN(SELECT username FROM girls LIMIT 100))[0m
+  [1m[35mGuys Load (3.1ms)[0m  SELECT "guys".* FROM "guys" ORDER BY score DESC LIMIT 5 OFFSET 20
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) FROM "guys"[0m
+Rendered layouts/_header.html.erb (1.2ms)
+Rendered layouts/_footer.html.erb (0.3ms)
+Rendered winners/index.html.erb within layouts/application (119.7ms)
+Completed 200 OK in 133ms (Views: 118.0ms | ActiveRecord: 7.0ms)
+
+
+Started GET "/winners/tmp/stylesheets/screen.css" for 127.0.0.1 at Sat Oct 01 23:36:28 -0600 2011
+
+ActionController::RoutingError (No route matches "/winners/tmp/stylesheets/screen.css"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/winners/index?boys_page=5&girls_page=7" for 127.0.0.1 at Sat Oct 01 23:36:47 -0600 2011
+  Processing by WinnersController#index as HTML
+  Parameters: {"girls_page"=>"7", "boys_page"=>"5"}
+  [1m[35mGirl Load (2.5ms)[0m  SELECT "girls".* FROM "girls" WHERE (girls.username IN(SELECT username FROM girls LIMIT 100)) ORDER BY score DESC LIMIT 5 OFFSET 30
+  [1m[36mSQL (1.3ms)[0m  [1mSELECT COUNT(*) FROM "girls" WHERE (girls.username IN(SELECT username FROM girls LIMIT 100))[0m
+  [1m[35mGuys Load (1.9ms)[0m  SELECT "guys".* FROM "guys" WHERE (guys.username IN(SELECT username FROM guys LIMIT 100)) ORDER BY score DESC LIMIT 5 OFFSET 20
+  [1m[36mSQL (1.1ms)[0m  [1mSELECT COUNT(*) FROM "guys" WHERE (guys.username IN(SELECT username FROM guys LIMIT 100))[0m
+Rendered layouts/_header.html.erb (1.2ms)
+Rendered layouts/_footer.html.erb (0.3ms)
+Rendered winners/index.html.erb within layouts/application (120.0ms)
+Completed 200 OK in 133ms (Views: 118.5ms | ActiveRecord: 6.8ms)
+
+
+Started GET "/winners/tmp/stylesheets/screen.css" for 127.0.0.1 at Sat Oct 01 23:36:47 -0600 2011
+
+ActionController::RoutingError (No route matches "/winners/tmp/stylesheets/screen.css"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/winners/index?boys_page=5&girls_page=7" for 127.0.0.1 at Sat Oct 01 23:36:49 -0600 2011
+  Processing by WinnersController#index as HTML
+  Parameters: {"girls_page"=>"7", "boys_page"=>"5"}
+  [1m[35mGirl Load (2.7ms)[0m  SELECT "girls".* FROM "girls" WHERE (girls.username IN(SELECT username FROM girls LIMIT 100)) ORDER BY score DESC LIMIT 5 OFFSET 30
+  [1m[36mSQL (1.3ms)[0m  [1mSELECT COUNT(*) FROM "girls" WHERE (girls.username IN(SELECT username FROM girls LIMIT 100))[0m
+  [1m[35mGuys Load (1.9ms)[0m  SELECT "guys".* FROM "guys" WHERE (guys.username IN(SELECT username FROM guys LIMIT 100)) ORDER BY score DESC LIMIT 5 OFFSET 20
+  [1m[36mSQL (1.0ms)[0m  [1mSELECT COUNT(*) FROM "guys" WHERE (guys.username IN(SELECT username FROM guys LIMIT 100))[0m
+Rendered layouts/_header.html.erb (1.7ms)
+Rendered layouts/_footer.html.erb (0.4ms)
+Rendered winners/index.html.erb within layouts/application (134.0ms)
+Completed 200 OK in 148ms (Views: 132.5ms | ActiveRecord: 6.9ms)
+
+
+Started GET "/winners/tmp/stylesheets/screen.css" for 127.0.0.1 at Sat Oct 01 23:36:49 -0600 2011
+
+ActionController::RoutingError (No route matches "/winners/tmp/stylesheets/screen.css"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/winners/index?boys_page=5&girls_page=7" for 127.0.0.1 at Sat Oct 01 23:37:04 -0600 2011
+  Processing by WinnersController#index as HTML
+  Parameters: {"girls_page"=>"7", "boys_page"=>"5"}
+  [1m[35mGirl Load (4.6ms)[0m  SELECT "girls".* FROM "girls" ORDER BY score DESC LIMIT 5 OFFSET 30
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) FROM "girls"[0m
+  [1m[35mGuys Load (3.1ms)[0m  SELECT "guys".* FROM "guys" ORDER BY score DESC LIMIT 5 OFFSET 20
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) FROM "guys"[0m
+Rendered layouts/_header.html.erb (2.2ms)
+Rendered layouts/_footer.html.erb (0.4ms)
+Rendered winners/index.html.erb within layouts/application (119.9ms)
+Completed 200 OK in 134ms (Views: 117.3ms | ActiveRecord: 7.9ms)
+
+
+Started GET "/winners/tmp/stylesheets/screen.css" for 127.0.0.1 at Sat Oct 01 23:37:04 -0600 2011
+
+ActionController::RoutingError (No route matches "/winners/tmp/stylesheets/screen.css"):
+  
+
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
