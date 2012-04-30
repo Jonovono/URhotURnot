@@ -1,54 +1,54 @@
 Tester::Application.routes.draw do
   
-  get "goodbye/index"
+  # get "goodbye/index"
 
-  #get "guys/index"
-  #get "guys/show"
+  get "guys/index"
+    get "guys/show"
 
-  #get "check/index"
+    get "check/index"
 
-  #get "winners/index"
+    get "winners/index"
 
-  #get "home/index"
-  #get "girls/index"
+    get "home/index"
+    get "girls/index"
 
-  #get "check/test"
-  #get "girls/show"
+    get "check/test"
+    get "girls/show"
+    
+    
+    match 'check/test' => 'check#test'
+    match 'check/remove/:id' => 'check#remove'
+    match 'check/addtion/:id' => 'check#addition'
+    match 'check/addition' => 'check#addition'
+  
+  match 'girls' => 'girls#index'
+  # match 'girls' => 'goodbye#index'
+  
+  match 'winners' => 'winners#index'
+  # match 'winners' => 'goodbye#index'
+  
+  # match 'check' => 'goodbye#index'
+  match 'check' => 'check#index'
+  
+  match 'guy' => 'guys#index'
+  match 'guys' => 'guys#index'
+  # match 'guys' => 'goodbye#index'
   
   
-  # match 'check/test' => 'check#test'
-  # match 'check/remove/:id' => 'check#remove'
-  # match 'check/addtion/:id' => 'check#addition'
-  # match 'check/addition' => 'check#addition'
-  
-  #match 'girls' => 'girls#index'
-  match 'girls' => 'goodbye#index'
-  
-  #match 'winners' => 'winners#index'
-  match 'winners' => 'goodbye#index'
-  
-  match 'check' => 'goodbye#index'
-  #match 'check' => 'check#index'
-  
-  #match 'guy' => 'guys#index'
-  #match 'guys' => 'guys#index'
-  match 'guys' => 'goodbye#index'
+  match "guys/update/:win/:lose" => 'guys#update', :as => 'update_guys'
+  # match "guys/update/:win/:lose" => 'goodbye#index'
   
   
-  #match "guys/update/:win/:lose" => 'guys#update', :as => 'update_guys'
-  match "guys/update/:win/:lose" => 'goodbye#index'
+  match "girls/update/:win/:lose" => 'girls#update', :as => 'update_girls'
+  # match "girls/update/:win/:lose" => 'goodbye#update', :as => 'update_girls'
   
+  match "girls/update" => 'girls#update'
   
- # match "girls/update/:win/:lose" => 'girls#update', :as => 'update_girls'
-  match "girls/update/:win/:lose" => 'goodbye#update', :as => 'update_girls'
-  
-  #match "girls/update" => 'girls#update'
-  
-  #root :to => "girls#index"
-  root :to => "goodbye#index"
-  #resources :girls
-  #resources :guys
-  #resources :check
+  root :to => "girls#index"
+  # root :to => "goodbye#index"
+  resources :girls
+  resources :guys
+  resources :check
 
   # Demonstrations. Remove demo routes, controller, view, and stylesheet for production
 
